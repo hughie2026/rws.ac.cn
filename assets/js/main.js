@@ -18,6 +18,8 @@ navLinks.forEach((link) => {
   }
 
   link.addEventListener("click", () => {
-    siteNav.classList.remove("open");
+    if (siteNav) {
+      siteNav.classList.remove("open");
+    }
   });
 });
