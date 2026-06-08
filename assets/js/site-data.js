@@ -1,364 +1,1173 @@
-window.SITE = {
-  org: {
-    name: "广东横琴粤澳深度合作区真研健康科学中心",
-    shortName: "横琴真研健康科学中心",
-    enName: "Health Sciences Center for Real-World Study",
-    domain: "www.rws.ac.cn",
-    email: "contact@rws.ac.cn",
-    phone: "+86-756-7699800",
-    address: "广东省珠海市横琴粤澳深度合作区"
-  },
+/* =========================================================
+   横琴真研健康科学中心官网 · 高级版视觉设计
+   文件路径：assets/css/styles.css
+   适用：GitHub Pages 静态官网
+   ========================================================= */
 
-  nav: [
-    ["首页", "index.html", "home"],
-    ["机构简介", "about.html", "about"],
-    ["研究体系", "research.html", "research"],
-    ["数据平台", "platforms.html", "platforms"],
-    ["重点项目", "projects.html", "projects"],
-    ["服务对象", "services.html", "services"],
-    ["组织治理", "governance.html", "governance"],
-    ["伦理合规", "ethics.html", "ethics"],
-    ["合作方向", "partnership.html", "partnership"],
-    ["联系我们", "contact.html", "contact"]
-  ],
+/* ---------- 基础变量 ---------- */
+:root {
+  --bg: #f5f8fc;
+  --bg-soft: #eef4fb;
+  --bg-deep: #071a33;
 
-  home: {
-    kicker: "真实世界研究 · 公共健康智库 · 健康科学转化",
-    title: "用真实世界证据，推动健康行动真正发生",
-    desc: "立足横琴、联动澳门、服务大湾区、辐射亚洲。中心以真实世界数据与证据为基础，连接科学、政策、产业与生活场景，推动公众健康改善与健康产业高质量发展。",
-    metrics: [
-      ["6", "核心研究与业务中心"],
-      ["3", "底层能力与转化平台"],
-      ["10万级", "琴澳前瞻性健康队列规划"],
-      ["3-5年", "重点建设周期"]
-    ],
-    intro: {
-      title: "从数据到证据，从证据到改变",
-      text: "真研中心不局限于传统临床研究场景，而是将真实世界研究前置到社区、企业、康养空间、城市生活场景和跨境人群健康管理之中，关注疾病发生之前、健康状态变化之中和干预措施落地之后的全过程证据生成。",
-      pipeline: ["数据采集", "证据生成", "决策支持", "实施优化", "产业转化"]
-    },
-    cards: [
-      {
-        title: "公众健康与生活方式医学",
-        text: "聚焦营养、运动、睡眠、心理行为、环境暴露与慢病风险，形成可评价、可推广的主动健康方案。"
-      },
-      {
-        title: "数字流行病学与数据科学",
-        text: "建设多源健康数据治理体系，开展队列研究、可穿戴设备研究、因果推断与风险预测。"
-      },
-      {
-        title: "健康款待学与康养转化",
-        text: "面向酒店、度假区、康养机构、会展空间与高端服务业，开展健康价值验证和标准建设。"
-      }
-    ]
-  },
+  --primary: #0b4a8f;
+  --primary-dark: #063766;
+  --primary-light: #1d7fd1;
+  --cyan: #22b7e8;
+  --teal: #1fc7b6;
 
-  pages: {
-    about: {
-      eyebrow: "About Us",
-      title: "机构简介",
-      desc: "中心是立足横琴粤澳深度合作区、面向粤港澳大湾区及亚洲区域的创新型健康科学研究机构与真实世界研究智库。",
-      anchors: ["机构定位", "使命愿景", "核心价值观", "战略定位"],
-      sections: [
-        {
-          h: "机构定位",
-          p: [
-            "广东横琴粤澳深度合作区真研健康科学中心以真实世界研究为核心方法体系，服务健康干预、公共卫生政策、慢病管理、主动健康服务与康养产业发展的科学化、标准化和可评价化。",
-            "中心依托横琴制度创新优势、澳门国际化平台优势和粤港澳大湾区丰富的人群、医疗、文旅与产业场景，构建“数据—证据—决策—实施—转化”的全链条科研体系。"
-          ]
-        },
-        {
-          h: "使命愿景",
-          cards: [
-            {
-              title: "使命",
-              text: "以真实世界证据和前沿健康科学推动公众健康改善，缩短科学证据与真实改变之间的距离。"
-            },
-            {
-              title: "愿景",
-              text: "建设成为立足横琴、联动澳门、服务大湾区、辐射亚洲的真实世界研究高地、公共卫生数据智库、健康科学转化平台和复合型人才培养基地。"
-            }
-          ]
-        },
-        {
-          h: "核心价值观",
-          list: [
-            "科学严谨：以高质量数据和透明方法支撑结论。",
-            "真实世界：关注真实人群、真实场景、真实行为和真实结果。",
-            "跨界融合：推动公共卫生、医学、数据科学、行为科学、经济学、城市空间、文旅康养与款待服务交叉创新。",
-            "实施导向：关注如何落地、为谁有效、在何种条件下有效、能否持续有效。",
-            "社会责任：以提升公众健康水平、减少健康不平等、提高公共资源使用效率为根本目标。"
-          ]
-        },
-        {
-          h: "战略定位",
-          quote: "一体两翼三平台：以真实世界研究为核心方法体系，以公众健康科学与健康产业转化为两翼，以真实世界数据、健康干预评价、健康款待学转化为三大平台。"
-        }
-      ]
-    },
+  --text: #102033;
+  --text-soft: #5f7188;
+  --text-light: #eef7ff;
 
-    research: {
-      eyebrow: "Research Framework",
-      title: "六大研究与业务中心",
-      desc: "围绕真实世界证据生成与健康科学转化，形成覆盖公共健康、实施科学、数据科学、政策评估、康养转化与人才发展的研究体系。",
-      anchors: ["公众健康", "实施科学", "数字流行病学", "卫生经济", "健康款待", "人才交流"],
-      cards: [
-        {
-          title: "公众健康与生活方式医学中心",
-          text: "开展慢性病预防、主动健康管理和生活方式干预评价，重点关注营养、运动、睡眠、压力管理、心理行为和社会支持。",
-          points: ["生活方式干预真实世界评价", "慢性病主动健康管理示范", "健康行为与风险因素研究", "重点人群健康促进"]
-        },
-        {
-          title: "健康实施科学中心",
-          text: "研究有效健康干预如何在复杂真实环境中被接受、执行、持续，并产生可衡量健康收益。",
-          points: ["证据到实践转化研究", "实施策略设计与优化", "混合研究方法应用", "规模化推广研究"]
-        },
-        {
-          title: "数字流行病学与数据科学中心",
-          text: "支撑真实世界数据治理、队列建设、数字健康监测、因果推断分析和人工智能辅助研究。",
-          points: ["琴澳前瞻性健康队列", "真实世界数据治理", "数字健康与可穿戴设备研究", "因果推断与预测模型"]
-        },
-        {
-          title: "卫生经济学与健康政策评估中心",
-          text: "面向政府、医保、医疗机构、公共卫生部门和健康产业方开展价值评估。",
-          points: ["成本效果与成本效用分析", "预算影响与投资回报评估", "公共卫生政策评估", "智库报告与蓝皮书发布"]
-        },
-        {
-          title: "健康款待学与康养产业转化中心",
-          text: "面向酒店、度假区、康养机构、会展空间、文旅综合体与高端服务业开展健康价值验证。",
-          points: ["健康款待学理论与标准", "康养服务真实世界效用评价", "健康空间与环境暴露研究", "产品科学背书与转化咨询"]
-        },
-        {
-          title: "粤澳健康科学人才发展与交流中心",
-          text: "培养兼具公共卫生、真实世界研究、数据科学、实施科学与产业转化能力的复合型人才。",
-          points: ["交叉学科人才培养", "博士后与青年科学家计划", "国际学术交流平台", "产学研协同培训"]
-        }
-      ]
-    },
+  --white: #ffffff;
+  --line: rgba(11, 74, 143, 0.12);
+  --line-strong: rgba(11, 74, 143, 0.22);
 
-    platforms: {
-      eyebrow: "Core Platforms",
-      title: "数据、评价与转化平台",
-      desc: "以三大平台支撑中心科研、政策、产业和人才培养工作，形成从数据治理到实施落地的能力闭环。",
-      anchors: ["三大平台", "核心能力", "技术路径"],
-      sections: [
-        {
-          h: "三大平台",
-          cards: [
-            {
-              title: "真实世界数据与数字流行病学平台",
-              text: "整合体检、医疗、公共卫生、问卷、可穿戴设备、环境暴露和随访数据，服务科研与决策。"
-            },
-            {
-              title: "健康干预评价与实施科学平台",
-              text: "围绕社区、企业、学校、酒店与康养机构等真实场景，开展干预设计、过程评价、效果评价、成本评价和推广路径研究。"
-            },
-            {
-              title: "健康款待学与康养产业转化平台",
-              text: "围绕健康空间、服务体验、康养产品和高端服务业，建立评价指标、研究方法与产业标准。"
-            }
-          ]
-        },
-        {
-          h: "核心能力",
-          list: [
-            "真实世界研究设计能力",
-            "多源健康数据治理能力",
-            "因果推断与统计分析能力",
-            "健康干预实施与评价能力",
-            "政策研究与智库转化能力",
-            "健康产业科学验证能力"
-          ]
-        },
-        {
-          h: "技术路径",
-          p: [
-            "中心将探索隐私计算、联邦学习、数据沙箱和可信数据空间等技术路径，在保障个人隐私和数据安全的前提下，推动跨机构、跨区域、跨场景健康数据协同研究。"
-          ]
-        }
-      ]
-    },
+  --shadow-sm: 0 10px 30px rgba(6, 35, 71, 0.08);
+  --shadow-md: 0 20px 60px rgba(6, 35, 71, 0.14);
+  --shadow-lg: 0 30px 90px rgba(6, 35, 71, 0.22);
 
-    projects: {
-      eyebrow: "Key Initiatives",
-      title: "未来三至五年重点建设项目",
-      desc: "通过标志性项目形成可持续数据基础设施、主动健康示范模式、产业评价标准和国际交流品牌。",
-      timeline: [
-        {
-          title: "琴澳前瞻性健康队列",
-          text: "建设覆盖横琴、澳门及大湾区重点人群的长期健康队列，持续追踪生活方式、环境暴露、健康行为、慢病风险和健康结局。"
-        },
-        {
-          title: "大湾区主动健康示范项目",
-          text: "围绕高血压、糖尿病、肥胖、睡眠障碍、心理压力和亚健康状态，开展社区与企业场景下的主动健康干预示范。"
-        },
-        {
-          title: "真实世界数据治理与研究平台",
-          text: "建设符合伦理、合规和数据安全要求的数据平台，服务科研课题、政策评估、产业验证和国际合作。"
-        },
-        {
-          title: "健康款待学示范场景",
-          text: "联合横琴与澳门酒店、度假区、会展中心和康养机构，打造具有科学评价体系的健康款待学示范项目。"
-        },
-        {
-          title: "大湾区公众健康与卫生经济蓝皮书",
-          text: "定期发布区域健康趋势、慢病负担、生活方式风险、健康服务价值和卫生经济学评价报告。"
-        },
-        {
-          title: "国际真实世界研究与公众健康论坛",
-          text: "打造具有区域影响力和国际识别度的学术交流平台，促进横琴在真实世界研究与公众健康领域的国际合作。"
-        }
-      ]
-    },
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
 
-    services: {
-      eyebrow: "Who We Serve",
-      title: "服务对象与合作场景",
-      desc: "面向公共部门、科研机构、医疗与公共卫生机构、企业和社区组织提供科研、咨询、评价和转化服务。",
-      cards: [
-        {
-          title: "公共部门",
-          text: "公共卫生政策研究、健康城市建设建议、慢病防控方案评价、卫生经济学分析和区域健康数据智库支持。"
-        },
-        {
-          title: "医疗与公共卫生机构",
-          text: "真实世界研究设计、队列建设、慢病管理项目评价、基层公共卫生干预优化和医防融合研究支持。"
-        },
-        {
-          title: "高校与科研机构",
-          text: "联合课题、数据合作、研究生联合培养、博士后项目、国际会议和学术平台共建。"
-        },
-        {
-          title: "数字健康与健康管理企业",
-          text: "产品真实世界评价、用户依从性研究、健康效果验证、数据治理咨询和市场准入证据支持。"
-        },
-        {
-          title: "酒店、文旅与康养企业",
-          text: "健康款待学研究、康养服务效果评价、健康空间评价、服务标准设计和品牌科学背书。"
-        },
-        {
-          title: "社区、学校与企业组织",
-          text: "人群健康风险评估、生活方式干预项目、员工健康管理、心理健康促进和长期效果监测。"
-        }
-      ]
-    },
+  --container: 1180px;
+}
 
-    governance: {
-      eyebrow: "Governance & Organization",
-      title: "组织架构与治理体系",
-      desc: "中心拟实行理事会领导下的主任负责制，建立战略咨询、学术质量、伦理数据治理与业务执行协同的组织体系。",
-      sections: [
-        {
-          h: "治理框架",
-          quote: "理事会—战略咨询委员会—学术委员会—伦理与数据治理委员会—六大业务中心—综合办公室"
-        },
-        {
-          h: "组织职责",
-          cards: [
-            {
-              title: "理事会",
-              text: "负责中心重大战略、资源配置、制度建设和发展方向审议。"
-            },
-            {
-              title: "战略咨询委员会",
-              text: "邀请公共卫生、真实世界研究、生活方式医学、数据科学、健康产业和款待学专家提供战略咨询。"
-            },
-            {
-              title: "学术委员会",
-              text: "负责研究方向论证、重大课题评审、学术质量把关、科研诚信建设和成果评价。"
-            },
-            {
-              title: "伦理与数据治理委员会",
-              text: "负责人群研究、数据使用、隐私保护、知情同意、风险控制和科研伦理审查。"
-            },
-            {
-              title: "六大业务中心",
-              text: "承担科研、评价、转化、培训、国际交流与智库输出。"
-            },
-            {
-              title: "综合办公室",
-              text: "负责行政、财务、法务合规、项目管理、外联合作、品牌传播、政府事务与日常运行。"
-            }
-          ]
-        }
-      ]
-    },
+/* ---------- 全局重置 ---------- */
+* {
+  box-sizing: border-box;
+}
 
-    ethics: {
-      eyebrow: "Ethics & Data Security",
-      title: "伦理合规与数据安全",
-      desc: "中心将建立覆盖研究全流程的伦理合规体系，确保真实世界数据在合法、合规、尊重个人权益的前提下用于科学研究与健康服务改进。",
-      sections: [
-        {
-          h: "治理原则",
-          quote: "安全、合规、透明、可追溯"
-        },
-        {
-          h: "全流程机制",
-          list: [
-            "研究方案审查",
-            "知情同意管理",
-            "数据最小化采集",
-            "数据脱敏处理",
-            "访问权限控制",
-            "数据留痕审计",
-            "研究风险评估",
-            "成果发布审核"
-          ]
-        },
-        {
-          h: "重点合规场景",
-          p: [
-            "对于涉及跨境数据、敏感健康信息和多机构协作的项目，中心将严格按照国家及合作区域相关法律法规和伦理规范开展审查与管理。"
-          ]
-        }
-      ]
-    },
+html {
+  scroll-behavior: smooth;
+}
 
-    partnership: {
-      eyebrow: "Partnership Opportunities",
-      title: "合作方向",
-      desc: "中心欢迎与政府部门、高校院所、医疗机构、公共卫生机构、企业、社会组织和国际学术机构开展合作。",
-      cards: [
-        {
-          title: "真实世界研究课题合作",
-          text: "围绕真实人群、真实场景、真实行为和真实结果设计高质量研究。"
-        },
-        {
-          title: "琴澳及大湾区健康队列共建",
-          text: "联合建设可持续、多场景、多来源的人群健康数据基础设施。"
-        },
-        {
-          title: "公共卫生政策与经济学评价",
-          text: "开展政策覆盖率、公平性、成本、健康收益和长期社会价值评价。"
-        },
-        {
-          title: "数字健康产品验证",
-          text: "评估产品有效性、依从性、真实世界应用价值与市场准入证据。"
-        },
-        {
-          title: "康养文旅与健康空间研究",
-          text: "围绕酒店、度假区、会展空间、康养机构和城市休闲空间开展健康效用评价。"
-        },
-        {
-          title: "人才培养与国际交流",
-          text: "共建课程、训练营、工作坊、博士后平台、联合实验室和国际会议。"
-        }
-      ]
-    },
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    Arial,
+    sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(34, 183, 232, 0.15), transparent 30%),
+    radial-gradient(circle at top right, rgba(31, 199, 182, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4fb 42%, #f7fafd 100%);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
 
-    contact: {
-      eyebrow: "Contact Us",
-      title: "联系我们",
-      desc: "欢迎就政府智库合作、科研课题合作、真实世界研究设计、健康产业评价、康养文旅转化、人才培养与国际交流进行联系。",
-      contacts: [
-        ["机构名称", "广东横琴粤澳深度合作区真研健康科学中心"],
-        ["英文名称", "Health Sciences Center for Real-World Study, Guangdong-Macao In-Depth Cooperation Zone in Hengqin, Guangdong"],
-        ["地址", "广东省珠海市横琴粤澳深度合作区"],
-        ["官方网站", "www.rws.ac.cn"],
-        ["合作邮箱", "contact@rws.ac.cn"],
-        ["联系电话", "+86-756-7699800"]
-      ]
-    }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  color: #fff;
+  background: var(--primary);
+}
+
+/* ---------- 顶部导航 ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 251, 255, 0.82);
+  backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(11, 74, 143, 0.1);
+}
+
+.header-inner {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 280px;
+}
+
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  padding: 6px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(230, 244, 255, 0.9));
+  box-shadow: 0 12px 26px rgba(11, 74, 143, 0.16);
+}
+
+.brand-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 3px;
+  max-width: 320px;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--text-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  position: relative;
+  padding: 9px 11px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 650;
+  color: #38526c;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav a:hover {
+  color: var(--primary-dark);
+  background: rgba(11, 74, 143, 0.08);
+}
+
+.nav a.active {
+  color: #fff;
+  background:
+    linear-gradient(135deg, var(--primary), var(--primary-light));
+  box-shadow: 0 10px 24px rgba(11, 74, 143, 0.22);
+}
+
+.nav-toggle {
+  display: none;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  box-shadow: 0 12px 28px rgba(11, 74, 143, 0.22);
+}
+
+/* ---------- 通用布局 ---------- */
+main {
+  overflow: hidden;
+}
+
+.section {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 86px 0;
+}
+
+.section.compact {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  align-items: end;
+  gap: 54px;
+  margin-bottom: 34px;
+}
+
+.section-head h2,
+.prose h2,
+.page-title h1 {
+  margin: 0;
+  letter-spacing: -0.05em;
+}
+
+.section-head h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.12;
+  color: var(--primary-dark);
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 17px;
+}
+
+.eyebrow,
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(34, 183, 232, 0.11);
+  border: 1px solid rgba(34, 183, 232, 0.22);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.eyebrow::before,
+.kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--cyan), var(--teal));
+  box-shadow: 0 0 0 5px rgba(34, 183, 232, 0.11);
+}
+
+/* ---------- 首页 Hero ---------- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 78px);
+  display: flex;
+  align-items: center;
+  padding: 86px 0;
+  background:
+    linear-gradient(115deg, rgba(7, 26, 51, 0.96), rgba(5, 52, 93, 0.92)),
+    radial-gradient(circle at 78% 18%, rgba(34, 183, 232, 0.34), transparent 26%),
+    radial-gradient(circle at 68% 86%, rgba(31, 199, 182, 0.22), transparent 32%);
+  color: var(--text-light);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 78%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  top: 40px;
+  width: 560px;
+  height: 560px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 183, 232, 0.25);
+  background:
+    radial-gradient(circle, rgba(34, 183, 232, 0.18), transparent 62%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  align-items: center;
+  gap: 72px;
+}
+
+.hero .kicker {
+  color: #bdefff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -0.07em;
+  font-weight: 900;
+}
+
+.hero p {
+  max-width: 690px;
+  margin: 28px 0 0;
+  color: rgba(238, 247, 255, 0.82);
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  color: #05223f;
+  background: linear-gradient(135deg, #ffffff, #bdefff);
+  box-shadow: 0 18px 38px rgba(34, 183, 232, 0.28);
+}
+
+.btn.secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-panel {
+  position: relative;
+  padding: 34px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.07));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -70px;
+  top: -70px;
+  border-radius: 999px;
+  background: rgba(34, 183, 232, 0.24);
+  filter: blur(4px);
+}
+
+.hero-panel img {
+  position: relative;
+  width: 94px;
+  height: 94px;
+  padding: 12px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.hero-panel h3 {
+  position: relative;
+  margin: 28px 0 10px;
+  font-size: 26px;
+  line-height: 1.26;
+  letter-spacing: -0.04em;
+}
+
+.hero-panel p {
+  position: relative;
+  margin-top: 0;
+  color: rgba(238, 247, 255, 0.74);
+  font-size: 15px;
+}
+
+.metric-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.metric {
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.metric b {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.metric span {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(238, 247, 255, 0.72);
+}
+
+/* ---------- 首页定位区 ---------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.glass {
+  padding: 34px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(233, 244, 255, 0.78));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.glass h3 {
+  margin: 0 0 14px;
+  color: var(--primary-dark);
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+
+.glass p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.pipeline {
+  display: grid;
+  gap: 14px;
+}
+
+.pipeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  padding: 0 24px;
+  border-radius: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.pipeline-item::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--primary-light), var(--cyan), var(--teal));
+}
+
+.pipeline-item span:first-child {
+  font-size: 18px;
+  font-weight: 850;
+  color: var(--primary-dark);
+}
+
+.pipeline-item span:last-child {
+  font-size: 15px;
+  font-weight: 900;
+  color: rgba(11, 74, 143, 0.22);
+}
+
+/* ---------- 特色背景区 ---------- */
+.feature-band {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(232, 242, 251, 0.62));
+  border-top: 1px solid rgba(11, 74, 143, 0.08);
+  border-bottom: 1px solid rgba(11, 74, 143, 0.08);
+}
+
+/* ---------- 通用卡片 ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 251, 255, 0.96));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  top: -70px;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(34, 183, 232, 0.17), transparent 70%);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover::after {
+  transform: scale(1.25);
+}
+
+.tag {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  color: var(--primary);
+  background: rgba(11, 74, 143, 0.08);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
+  color: var(--primary-dark);
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+.card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.card ul {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card li {
+  position: relative;
+  padding-left: 18px;
+  margin-top: 9px;
+  color: #52687f;
+  font-size: 14px;
+}
+
+.card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary-light), var(--cyan));
+}
+
+/* ---------- 子页面标题 ---------- */
+.page-title {
+  position: relative;
+  padding: 92px 0 78px;
+  color: #fff;
+  background:
+    linear-gradient(115deg, rgba(7, 26, 51, 0.96), rgba(8, 65, 114, 0.92)),
+    radial-gradient(circle at 84% 22%, rgba(34, 183, 232, 0.24), transparent 30%);
+  overflow: hidden;
+}
+
+.page-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.038) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, black 0%, transparent 78%);
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: -130px;
+  width: 360px;
+  height: 360px;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 183, 232, 0.25);
+  background: rgba(34, 183, 232, 0.08);
+}
+
+.page-title-inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  margin-bottom: 18px;
+  color: rgba(238, 247, 255, 0.62);
+  font-size: 14px;
+}
+
+.page-title .kicker {
+  color: #bdefff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.page-title h1 {
+  max-width: 780px;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.page-title p {
+  max-width: 800px;
+  margin: 24px 0 0;
+  color: rgba(238, 247, 255, 0.78);
+  font-size: 18px;
+}
+
+/* ---------- 子页面内容 ---------- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.side-card {
+  position: sticky;
+  top: 104px;
+  min-height: auto;
+}
+
+.side-card h3 {
+  margin-bottom: 18px;
+}
+
+.side-card a {
+  display: block;
+  padding: 11px 0;
+  color: var(--text-soft);
+  border-bottom: 1px solid rgba(11, 74, 143, 0.08);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.side-card a:hover {
+  color: var(--primary);
+}
+
+.prose {
+  display: grid;
+  gap: 34px;
+}
+
+.prose section {
+  padding: 34px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.prose h2 {
+  margin-bottom: 18px;
+  color: var(--primary-dark);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.18;
+}
+
+.prose p {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prose li {
+  position: relative;
+  padding: 15px 16px 15px 42px;
+  border-radius: 16px;
+  color: #40576f;
+  background: rgba(11, 74, 143, 0.045);
+  border: 1px solid rgba(11, 74, 143, 0.08);
+}
+
+.prose li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 23px;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary-light), var(--cyan));
+}
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 32px 34px;
+  border-radius: 26px;
+  color: var(--primary-dark);
+  background:
+    linear-gradient(135deg, rgba(34, 183, 232, 0.11), rgba(31, 199, 182, 0.08));
+  border: 1px solid rgba(34, 183, 232, 0.22);
+  font-size: 22px;
+  font-weight: 850;
+  line-height: 1.65;
+  letter-spacing: -0.03em;
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  right: 26px;
+  top: -18px;
+  color: rgba(11, 74, 143, 0.12);
+  font-size: 96px;
+  font-family: Georgia, serif;
+}
+
+/* ---------- 时间线 ---------- */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary-light), var(--cyan), var(--teal));
+}
+
+.timeline-item {
+  position: relative;
+  padding: 28px 30px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 34px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--cyan);
+  box-shadow:
+    0 0 0 6px rgba(34, 183, 232, 0.14),
+    0 0 0 12px rgba(34, 183, 232, 0.07);
+}
+
+.timeline-item h3 {
+  margin: 0 0 10px;
+  color: var(--primary-dark);
+  font-size: 23px;
+  letter-spacing: -0.035em;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+/* ---------- 联系页面 ---------- */
+.contact-box {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-line {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(11, 74, 143, 0.045);
+  border: 1px solid rgba(11, 74, 143, 0.08);
+}
+
+.contact-line b {
+  color: var(--primary-dark);
+}
+
+.contact-line span {
+  color: var(--text-soft);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(11, 74, 143, 0.14);
+  border-radius: 18px;
+  padding: 15px 17px;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: rgba(34, 183, 232, 0.75);
+  box-shadow: 0 0 0 4px rgba(34, 183, 232, 0.12);
+}
+
+.form .btn.primary {
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  color: rgba(238, 247, 255, 0.76);
+  background:
+    radial-gradient(circle at 82% 0%, rgba(34, 183, 232, 0.16), transparent 34%),
+    linear-gradient(135deg, #06172d, #082946 62%, #06172d);
+}
+
+.footer-inner {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 36px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 48px;
+}
+
+.footer-inner h2 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+.footer-inner p {
+  max-width: 620px;
+  margin: 0 0 16px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.footer-links a {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(238, 247, 255, 0.78);
+  font-weight: 700;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  width: min(var(--container), calc(100% - 40px));
+  margin: 0 auto;
+  padding: 22px 0 28px;
+  color: rgba(238, 247, 255, 0.48);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  font-size: 14px;
+}
+
+/* ---------- 无障碍与细节 ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(34, 183, 232, 0.45);
+  outline-offset: 3px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1080px) {
+  .header-inner {
+    flex-wrap: wrap;
+    padding: 14px 0;
   }
-};
+
+  .brand {
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 0 4px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .hero-grid,
+  .section-head,
+  .split,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-panel {
+    max-width: 620px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-card {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner,
+  .hero-grid,
+  .section,
+  .page-title-inner,
+  .footer-inner,
+  .copyright {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-title {
+    font-size: 16px;
+  }
+
+  .brand-subtitle {
+    max-width: 220px;
+  }
+
+  .nav {
+    gap: 8px;
+  }
+
+  .nav a {
+    width: calc(50% - 4px);
+    text-align: center;
+    background: rgba(11, 74, 143, 0.055);
+  }
+
+  .hero {
+    padding: 64px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 12vw, 58px);
+  }
+
+  .hero p,
+  .page-title p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-panel {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .metric-grid,
+  .cards,
+  .prose ul,
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .page-title {
+    padding: 64px 0 56px;
+  }
+
+  .page-title h1 {
+    font-size: clamp(36px, 12vw, 54px);
+  }
+
+  .card,
+  .prose section {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .contact-line {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline-item::before {
+    left: -23px;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .nav a {
+    width: 100%;
+  }
+
+  .hero-panel img {
+    width: 78px;
+    height: 78px;
+  }
+
+  .metric {
+    padding: 18px;
+  }
+}
