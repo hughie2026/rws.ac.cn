@@ -47,10 +47,9 @@
     --radius-lg: 12px;
 
     /* Header logo control */
-    --nav-height: 108px;
-    --nav-max-width: 1440px;
-    --logo-height: 76px;
-    --logo-max-width: 520px;
+    --nav-height: 148px;
+    --nav-max-width: 1480px;
+    --logo-width: 420px;
 }
 
 html {
@@ -111,11 +110,35 @@ h1, h2, h3, h4, h5 {
     letter-spacing: -.005em;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -.02em; }
-h2 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); font-weight: 700; letter-spacing: -.015em; }
-h3 { font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 700; }
-h4 { font-size: 1.15rem; font-weight: 600; }
-h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-soft); }
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -.015em;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+}
 
 .lead {
     font-family: var(--font-serif);
@@ -176,7 +199,15 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
 }
 
 /* =====================================================
-   HEADER & LOGO — WIDER NAVIGATION BAR
+   HEADER & LOGO
+   所有页面统一使用完整 logo：logo.png
+   推荐 HTML：
+   <a class="brand" href="index.html">
+       <img class="brand-logo" src="assets/images/logo.png" alt="Health Sciences Center for Real-World Study">
+   </a>
+
+   说明：
+   .brand-mark 只作为旧页面 class 兼容，不再按小图标处理。
    ===================================================== */
 .site-header {
     position: sticky;
@@ -211,32 +242,45 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
 .brand {
     display: inline-flex !important;
     align-items: center;
+    justify-content: flex-start;
     gap: .75rem;
     text-decoration: none;
     color: var(--text-primary);
     line-height: 1;
-    flex-shrink: 0;
-
-    max-width: var(--logo-max-width);
+    flex: 0 0 auto;
+    width: var(--logo-width);
+    max-width: 42vw;
     overflow: visible;
 }
 
-.site-header img,
+/* Header 中的完整 logo */
+.site-header .brand-logo,
+.site-header .brand-mark,
+.site-header .site-logo,
 .site-header .brand img,
-.site-header .brand-mark {
-    height: var(--logo-height) !important;
-    max-height: var(--logo-height) !important;
+.site-header img.brand-logo,
+.site-header img.brand-mark,
+.site-header img.site-logo {
+    display: block !important;
 
-    width: auto !important;
-    max-width: var(--logo-max-width) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: auto !important;
+    max-height: none !important;
 
     object-fit: contain !important;
     object-position: left center !important;
-    display: block !important;
+
     flex-shrink: 0;
 }
 
-/* logo 文件已含完整中英文名，旁边的 brand-text 一律隐藏 */
+/* 防止旧 logo-mark 被当成小图标裁切 */
+.site-header .brand-mark {
+    min-width: 0;
+}
+
+/* logo 图片已经包含完整中英文名称，所以隐藏旁边文字 */
 .brand-text,
 .site-header .brand span,
 .site-header .brand small {
@@ -244,14 +288,14 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
 }
 
 .site-header .brand:hover {
-    opacity: .9;
+    opacity: .92;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: .25rem;
-    flex-shrink: 1;
+    flex: 1 1 auto;
     justify-content: flex-end;
     align-items: center;
     min-width: 0;
@@ -289,6 +333,7 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
 
 /* =====================================================
    FOOTER LOGO
+   Footer 同样使用完整 logo，不使用 logo-mark 小图标
    ===================================================== */
 .brand--footer {
     display: inline-block !important;
@@ -297,18 +342,22 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
     border-radius: 10px;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    width: 320px;
     max-width: 100%;
     overflow: hidden;
 }
 
 .brand--footer img,
-.brand--footer .brand-mark {
-    height: 48px !important;
-    max-height: 48px !important;
-    width: auto !important;
-    max-width: 280px !important;
-    object-fit: contain !important;
+.brand--footer .brand-logo,
+.brand--footer .brand-mark,
+.brand--footer .site-logo {
     display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: left center !important;
 }
 
 .brand--footer .brand-text,
@@ -514,7 +563,7 @@ h5 { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform:
 
 .label-col {
     position: sticky;
-    top: 130px;
+    top: calc(var(--nav-height) + 24px);
 }
 
 .label-col h5 {
@@ -1071,9 +1120,8 @@ blockquote cite {
    ===================================================== */
 @media (max-width: 1180px) {
     :root {
-        --nav-height: 96px;
-        --logo-height: 66px;
-        --logo-max-width: 430px;
+        --nav-height: 132px;
+        --logo-width: 360px;
     }
 
     .nav-container {
@@ -1089,9 +1137,8 @@ blockquote cite {
 
 @media (max-width: 1024px) {
     :root {
-        --nav-height: 88px;
-        --logo-height: 60px;
-        --logo-max-width: 380px;
+        --nav-height: 118px;
+        --logo-width: 310px;
     }
 
     .editorial {
@@ -1108,12 +1155,11 @@ blockquote cite {
     }
 }
 
-@media (max-width: 768px) {
+/* 提前进入移动菜单，避免 logo + 导航项在平板宽度拥挤 */
+@media (max-width: 900px) {
     :root {
-        --section-pad: 4rem;
-        --nav-height: 78px;
-        --logo-height: 50px;
-        --logo-max-width: 260px;
+        --nav-height: 96px;
+        --logo-width: 270px;
     }
 
     .nav-container {
@@ -1124,22 +1170,8 @@ blockquote cite {
     }
 
     .brand {
-        max-width: var(--logo-max-width);
-    }
-
-    .site-header img,
-    .site-header .brand img,
-    .site-header .brand-mark {
-        height: var(--logo-height) !important;
-        max-height: var(--logo-height) !important;
-        max-width: var(--logo-max-width) !important;
-    }
-
-    .brand--footer img,
-    .brand--footer .brand-mark {
-        height: 40px !important;
-        max-height: 40px !important;
-        max-width: 220px !important;
+        width: var(--logo-width);
+        max-width: calc(100vw - 130px);
     }
 
     .nav-menu {
@@ -1167,6 +1199,14 @@ blockquote cite {
 
     .nav-toggle {
         display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-pad: 4rem;
+        --nav-height: 90px;
+        --logo-width: 250px;
     }
 
     .grid--2,
@@ -1223,13 +1263,16 @@ blockquote cite {
         display: block;
         overflow-x: auto;
     }
+
+    .brand--footer {
+        width: 280px;
+    }
 }
 
 @media (max-width: 480px) {
     :root {
-        --nav-height: 72px;
-        --logo-height: 44px;
-        --logo-max-width: 220px;
+        --nav-height: 78px;
+        --logo-width: 220px;
     }
 
     .container {
@@ -1240,9 +1283,22 @@ blockquote cite {
         padding: 0 1rem;
     }
 
+    .brand {
+        max-width: calc(100vw - 120px);
+    }
+
+    .nav-toggle {
+        padding: .45rem .75rem;
+        font-size: .85rem;
+    }
+
     .card,
     .center-card {
         padding: 1.5rem;
+    }
+
+    .brand--footer {
+        width: 240px;
     }
 }
 
