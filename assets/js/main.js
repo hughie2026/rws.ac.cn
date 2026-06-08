@@ -1,39 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".site-nav");
+// 導航欄滾動效果
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+});
 
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
+// 行動裝置選單切換
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+}
+
+// 標記當前頁面
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) {
+    link.classList.add('active');
   }
+});
 
-  const currentPage = document.body.getAttribute("data-page");
-  document.querySelectorAll(".site-nav a").forEach((link) => {
-    const href = link.getAttribute("href") || "";
-    if (href.includes(currentPage)) {
-      link.setAttribute("aria-current", "page");
+// 卡片進場動畫
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
     }
   });
+}, { threshold: 0.1 });
 
-  const reveals = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    reveals.forEach((el) => observer.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add("visible"));
-  }
+document.querySelectorAll('.card, .feature-row, .stat, .contact-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
 });
