@@ -3,61 +3,659 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>研究体系 - 横琴真研健康科学中心</title>
-    <link rel="stylesheet" href="style.css">
+    <title>研究方向 | 真研健康科学中心</title>
+    <meta name="description" content="真研健康科学中心六大研究业务中心 — 公众健康与生活方式医学、健康实施科学、数字流行病学、卫生经济学、健康款待学与人才发展。">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <h1>横琴真研健康科学中心</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="about.html">关于我们</a></li>
-                    <li><a href="research.html">研究体系</a></li>
-                    <li><a href="services.html">合作与服务</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
+<!-- =====================================================
+     Header / Navigation
+===================================================== -->
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="brand" style="display:flex; align-items:center; gap:.75rem;">
+            <img src="img/logo.png" alt="真研健康科学中心" style="height:42px; width:auto;">
+            <span>
+                真研健康科学中心
+                <small>Health Sciences Center for Real-World Study</small>
+            </span>
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html" class="is-active">研究方向</a></li>
+                <li><a href="services.html">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="菜单">菜单</button>
+        </nav>
+    </div>
+</header>
+
+<!-- =====================================================
+     Page Header
+===================================================== -->
+<section class="page-header">
     <div class="container">
-        <h2>六大核心研究与业务板块 [cite: 61]</h2>
-        
-        <div class="card">
-            <h3>1. 公众健康与生活方式医学中心 [cite: 62]</h3>
-            <p>聚焦慢性病预防、主动健康管理和生活方式干预评价 [cite: 64]。</p>
+        <ul class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li>研究方向</li>
+        </ul>
+        <span class="eyebrow">Research Framework</span>
+        <h1>六大<em style="font-style:italic; color:#7fdada;">研究业务中心</em></h1>
+        <p>围绕真实世界证据生成与健康科学转化，形成六大核心研究与业务板块，覆盖从数据、方法、评价到产业转化的完整链条。</p>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Center Index
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Quick Index</span>
+            <h2>研究中心导览</h2>
+            <p class="lead">点击下方任一中心，跳转至对应研究方向的详细介绍。</p>
         </div>
 
-        <div class="card">
-            <h3>2. 健康实施科学中心 [cite: 80]</h3>
-            <p>关注已经被证明有效的健康干预，如何在复杂真实世界环境中被接受、被执行并产生收益 [cite: 82, 83]。</p>
+        <div class="grid grid--3">
+            <a href="#center-1" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 01</div>
+                <h3>公众健康与生活方式医学</h3>
+                <span class="en">Public Health & Lifestyle Medicine</span>
+                <p>慢性病预防、主动健康管理与生活方式干预评价。</p>
+                <span class="more">查看详情</span>
+            </a>
+            <a href="#center-2" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 02</div>
+                <h3>健康实施科学</h3>
+                <span class="en">Health Implementation Science</span>
+                <p>有效干预如何在真实世界中被接受、被执行、被持续。</p>
+                <span class="more">查看详情</span>
+            </a>
+            <a href="#center-3" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 03</div>
+                <h3>数字流行病学与数据科学</h3>
+                <span class="en">Digital Epidemiology & Data Science</span>
+                <p>真实世界数据治理、队列建设与因果推断分析。</p>
+                <span class="more">查看详情</span>
+            </a>
+            <a href="#center-4" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 04</div>
+                <h3>卫生经济学与健康政策评估</h3>
+                <span class="en">Health Economics & Policy Evaluation</span>
+                <p>公共卫生政策、健康干预与服务模式的价值评估。</p>
+                <span class="more">查看详情</span>
+            </a>
+            <a href="#center-5" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 05</div>
+                <h3>健康款待学与康养产业转化</h3>
+                <span class="en">Health-Hospitality & Wellness Translation</span>
+                <p>构建健康款待学学科框架，推动康养产业证据驱动。</p>
+                <span class="more">查看详情</span>
+            </a>
+            <a href="#center-6" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 06</div>
+                <h3>粤澳健康科学人才发展与交流</h3>
+                <span class="en">Talent Development & Exchange</span>
+                <p>培养兼具公共卫生、研究、数据与转化能力的复合人才。</p>
+                <span class="more">查看详情</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 01: Public Health & Lifestyle Medicine
+===================================================== -->
+<section class="section section--soft" id="center-1">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 01</h5>
+                <div class="divider"></div>
+                <p>Public Health &<br>Lifestyle Medicine</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">公众健康与生活方式医学中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Chronic Disease</span>
+                <span class="tag tag--accent">Active Health</span>
+                <span class="tag tag--accent">Lifestyle Intervention</span>
+
+                <h2 class="mt-2">公众健康与生活方式医学中心</h2>
+                <p class="lead">
+                    聚焦慢性病预防、主动健康管理和生活方式干预评价，重点研究营养、运动、睡眠、压力管理、戒烟限酒、心理行为与社会支持等因素对健康结局的长期影响。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>生活方式干预真实世界评价</h4>
+                            <p>针对营养干预、运动处方、体重管理、睡眠改善、心理行为干预与综合生活方式医学项目，设计真实世界研究方案，评价其对血压、血糖、血脂、体重、炎症指标、心肺适能、心理健康、生活质量与健康寿命相关指标的影响。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>慢性病主动健康管理示范</h4>
+                            <p>联合社区卫生服务机构、基层医疗机构、企业健康管理部门与数字健康平台，开展高血压、糖尿病、肥胖、脂肪肝、代谢综合征等慢性病高风险人群的早筛、分层、干预与随访研究，探索可复制、可推广的主动健康管理模式。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>健康行为与风险因素研究</h4>
+                            <p>研究饮食模式、身体活动、久坐行为、睡眠节律、压力暴露、电子设备使用、工作方式与城市生活环境对人群健康的综合影响，建立适用于大湾区人群的健康风险评估模型。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>重点人群健康促进</h4>
+                            <p>面向儿童青少年、职场人群、跨境通勤人群、老年人群、女性健康人群与旅游康养人群，开展有针对性的健康促进项目与真实世界干预研究。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 02: Health Implementation Science
+===================================================== -->
+<section class="section" id="center-2">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 02</h5>
+                <div class="divider"></div>
+                <p>Health<br>Implementation Science</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">健康实施科学中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Evidence to Practice</span>
+                <span class="tag tag--accent">Mixed Methods</span>
+                <span class="tag tag--accent">Scale-Up</span>
+
+                <h2 class="mt-2">健康实施科学中心</h2>
+                <p class="lead">
+                    关注一个核心问题：已经被证明有效的健康干预，如何在复杂真实世界环境中被接受、被执行、被持续，并最终产生可衡量的健康收益。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>证据到实践转化研究</h4>
+                            <p>围绕临床指南、公共卫生政策、慢病管理方案与健康促进项目，研究其在社区、学校、企业、酒店、康养机构与基层医疗体系中的落地机制，识别影响实施效果的组织、人员、流程、文化与资源因素。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>实施策略设计与优化</h4>
+                            <p>评估数字干预、健康教练、同伴支持、行为经济学激励、家庭参与、医防融合、社区动员、分层管理与多部门协作等实施策略的可接受性、适应性、可行性、覆盖率、实施保真度与可持续性。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>混合研究方法应用</h4>
+                            <p>综合使用定量研究、定性访谈、焦点小组、过程评价、实施效果评价与真实世界数据分析，既回答"有没有效果"，也回答"为什么有效或无效"、"在哪些条件下有效"、"如何改进实施"。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>规模化推广研究</h4>
+                            <p>围绕公共卫生项目从试点到推广的全过程，建立实施路径图、质量控制标准、培训体系与效果监测指标，为政府与产业方提供可操作的落地方案。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 03: Digital Epidemiology & Data Science
+===================================================== -->
+<section class="section section--soft" id="center-3">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 03</h5>
+                <div class="divider"></div>
+                <p>Digital Epidemiology<br>& Data Science</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">数字流行病学与数据科学中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Cohort</span>
+                <span class="tag tag--accent">Causal Inference</span>
+                <span class="tag tag--accent">Privacy Computing</span>
+
+                <h2 class="mt-2">数字流行病学与数据科学中心</h2>
+                <p class="lead">
+                    中心的底层方法与数据能力平台，负责真实世界数据治理、队列建设、数字健康监测、因果推断分析与人工智能辅助研究。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>琴澳前瞻性健康队列建设</h4>
+                            <p>拟建设十万级琴澳及大湾区前瞻性健康队列，系统收集人口学信息、生活方式、疾病史、体检指标、可穿戴设备数据、心理健康指标、环境暴露数据与长期健康结局，追踪生活方式与社会环境变化对心血管、代谢、肿瘤、心理健康与健康老龄化的影响。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>真实世界数据治理体系</h4>
+                            <p>建立覆盖数据采集、清洗、标准化、脱敏、质控、权限管理、数据安全与合规审查的真实世界数据治理体系，推动多来源健康数据在科研与决策中的规范使用。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>数字健康与可穿戴设备研究</h4>
+                            <p>开展智能手表、连续血糖监测、睡眠监测、运动监测、心率变异性监测与无感健康监测设备在真实人群中的有效性、依从性与应用价值研究。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>因果推断与预测模型</h4>
+                            <p>运用流行病学设计、统计建模、机器学习、倾向评分、工具变量、目标试验模拟、断点回归、差异中的差异等方法，提高真实世界研究中的因果解释能力，开发适用于公共卫生与健康管理的风险预测模型。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>隐私保护与安全计算</h4>
+                            <p>探索隐私计算、联邦学习、数据沙箱与可信数据空间等技术路径，在保障个人隐私与数据安全的前提下，推动跨机构、跨区域、跨场景健康数据协同研究。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 04: Health Economics & Policy Evaluation
+===================================================== -->
+<section class="section" id="center-4">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 04</h5>
+                <div class="divider"></div>
+                <p>Health Economics<br>& Policy Evaluation</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">卫生经济学与健康政策评估中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Cost-Effectiveness</span>
+                <span class="tag tag--accent">Policy Evaluation</span>
+                <span class="tag tag--accent">HTA</span>
+
+                <h2 class="mt-2">卫生经济学与健康政策评估中心</h2>
+                <p class="lead">
+                    面向政府、医保、医疗机构、公共卫生部门与健康产业方，开展公共卫生政策、健康干预项目与健康服务模式的价值评估。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>卫生经济学评价</h4>
+                            <p>围绕癌症早筛、疫苗接种、慢病管理、生活方式干预、数字健康服务、康复管理与长期照护等项目，开展成本效果分析、成本效用分析、预算影响分析与投资回报评估。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>公共卫生政策评估</h4>
+                            <p>基于真实世界数据，评估公共卫生政策与健康服务项目的覆盖率、公平性、成本、健康收益与长期社会价值，为政府公共卫生预算配置、医保支付改革与健康城市建设提供证据支持。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>健康技术评估与服务价值评估</h4>
+                            <p>对数字健康产品、健康管理服务、康养服务项目与创新健康技术开展真实世界价值评估，帮助政府与产业方判断其临床价值、公共卫生价值、经济价值与推广潜力。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>智库报告与蓝皮书发布</h4>
+                            <p>拟定期发布《大湾区公众健康与真实世界研究蓝皮书》《琴澳主动健康指数报告》《大湾区健康经济与康养产业价值报告》等系列成果，形成具有区域影响力的政策研究品牌。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 05: Health-Hospitality & Wellness Translation
+===================================================== -->
+<section class="section section--soft" id="center-5">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 05</h5>
+                <div class="divider"></div>
+                <p>Health-Hospitality<br>& Wellness Translation</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">健康款待学与康养产业转化中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Hospitality × Health</span>
+                <span class="tag tag--accent">Wellness</span>
+                <span class="tag tag--accent">Spatial Health</span>
+
+                <h2 class="mt-2">健康款待学与康养产业转化中心</h2>
+                <p class="lead">
+                    中心的特色交叉平台，面向酒店、度假区、康养机构、会展空间、文旅综合体、中医药康养项目与高端服务业，开展健康价值验证、服务标准建设与产业转化研究。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>健康款待学理论与标准建设</h4>
+                            <p>构建"健康款待学"学科框架，研究住宿、餐饮、休闲、康养、会展、社交体验、空间设计与服务流程对身心健康的影响，建立健康服务体验的评价指标体系。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>康养服务真实世界效用评价</h4>
+                            <p>联合酒店、度假村、康养机构、中医药产业平台与健康管理企业，评估中医理疗、芳香疗法、睡眠改善服务、营养膳食、运动康复、冥想放松、温泉疗愈与自然暴露等康养项目对游客与消费者生理、心理及行为指标的影响。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>健康空间与环境暴露研究</h4>
+                            <p>研究酒店客房、会展中心、办公空间、康养空间与文旅场景中的光照、声音、空气质量、温湿度、气味、动线、绿植、拥挤度与社交环境对人群健康体验与生理指标的影响，形成面向空间健康设计的科学证据。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>康养产品科学背书与转化咨询</h4>
+                            <p>为康养文旅产品、酒店健康服务、企业健康项目与城市休闲空间提供研究设计、数据采集、效果评估、标准制定、白皮书发布与品牌科学背书服务，推动健康产业从"体验叙事"走向"证据驱动"。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Center 06: Talent Development & Exchange
+===================================================== -->
+<section class="section" id="center-6">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Center · 06</h5>
+                <div class="divider"></div>
+                <p>Talent Development<br>& Exchange</p>
+                <p class="text-muted mt-2" style="font-size:.85rem;">粤澳健康科学人才发展与交流中心</p>
+            </div>
+            <div>
+                <span class="tag tag--accent">Postdoc</span>
+                <span class="tag tag--accent">Cross-Disciplinary</span>
+                <span class="tag tag--accent">International Exchange</span>
+
+                <h2 class="mt-2">粤澳健康科学人才发展与交流中心</h2>
+                <p class="lead">
+                    致力于培养兼具公共卫生素养、真实世界研究能力、数据科学能力、实施科学能力与产业转化能力的复合型人才。
+                </p>
+
+                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <ol class="bullets">
+                    <li>
+                        <div>
+                            <h4>交叉学科人才培养</h4>
+                            <p>联合高校、科研院所、医疗机构与产业平台，开展真实世界研究、流行病学、生活方式医学、实施科学、卫生经济学、数字健康与健康款待学相关课程、训练营、工作坊与联合培育项目。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>博士后与青年科学家计划</h4>
+                            <p>吸引公共卫生、医学、统计学、数据科学、管理学、旅游与酒店管理等领域青年人才在横琴开展交叉研究。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>国际学术交流平台</h4>
+                            <p>定期举办"大湾区真实世界研究与公众健康国际论坛"、"健康款待学国际研讨会"、"粤澳实施科学与生活方式医学工作坊"等学术活动，建立客座研究员、访问学者与国际合作导师制度。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h4>产学研协同培训</h4>
+                            <p>为医疗机构、基层公共卫生人员、企业健康管理团队、酒店康养团队与数字健康企业提供专业培训，提升区域健康服务体系的科学化与规范化水平。</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Core Capabilities
+===================================================== -->
+<section class="section section--ink">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Core Capabilities</span>
+            <h2>中心核心能力</h2>
+            <p class="lead">围绕真实世界研究全链条，形成方法、数据、分析、实施、政策与产业转化的六项核心能力。</p>
         </div>
 
-        <div class="card">
-            <h3>3. 数字流行病学与数据科学中心 [cite: 99]</h3>
-            <p>负责真实世界数据治理、队列建设、因果推断分析和人工智能辅助研究 [cite: 101]。</p>
+        <div class="grid grid--3">
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 01</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">真实世界研究设计</h3>
+                <p>能够根据不同研究问题，设计队列研究、病例对照研究、横断面研究、自然实验研究、务实性试验、目标试验模拟、混合方法研究与实施科学研究方案。</p>
+            </div>
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 02</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">多源健康数据治理</h3>
+                <p>能够整合体检数据、医疗数据、公共卫生数据、问卷数据、可穿戴设备数据、环境暴露数据、消费场景数据与随访数据，并进行标准化、质控、脱敏与合规管理。</p>
+            </div>
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 03</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">因果推断与统计分析</h3>
+                <p>能够运用现代流行病学与统计方法，提高真实世界研究的科学解释力，减少混杂偏倚、选择偏倚与信息偏倚对研究结论的影响。</p>
+            </div>
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 04</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">健康干预实施与评价</h3>
+                <p>能够围绕社区、企业、学校、酒店、康养机构等真实场景，开展干预设计、过程评价、效果评价、成本评价与推广路径研究。</p>
+            </div>
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 05</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">政策研究与智库转化</h3>
+                <p>能够将复杂科研结果转化为政府可读、产业可用、公众可理解的政策建议、标准文件、白皮书、蓝皮书与决策简报。</p>
+            </div>
+            <div class="card feature-card">
+                <div class="num" style="color:#7fdada;">CAPABILITY · 06</div>
+                <h3 style="border-bottom-color:rgba(255,255,255,.15);">健康产业科学验证</h3>
+                <p>能够为康养服务、数字健康产品、酒店健康体验、企业健康项目与城市健康空间提供独立、规范、可信的科学评价与证据支持。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Key Initiatives
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Key Initiatives · 2025–2030</span>
+            <h2>未来三至五年重点建设项目</h2>
+            <p class="lead">面向横琴、澳门与大湾区的标志性研究与产业转化项目，构建从数据、证据到决策、实施、转化的完整闭环。</p>
         </div>
 
-        <div class="card">
-            <h3>4. 卫生经济学与健康政策评估中心 [cite: 121]</h3>
-            <p>面向政府和产业方，开展公共卫生政策、健康干预项目和健康服务模式的价值评估 [cite: 123, 124]。</p>
+        <ol class="bullets">
+            <li>
+                <div>
+                    <h4>琴澳前瞻性健康队列建设</h4>
+                    <p>覆盖横琴、澳门及大湾区重点人群的长期健康队列，形成生活方式、环境暴露、健康行为、慢病风险与健康结局的持续追踪体系。</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>大湾区主动健康示范项目</h4>
+                    <p>围绕高血压、糖尿病、肥胖、睡眠障碍、心理压力与亚健康状态，开展社区与企业场景下的主动健康干预示范，形成可复制的服务模式。</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>真实世界数据治理与研究平台</h4>
+                    <p>建设符合伦理、合规与数据安全要求的真实世界数据平台，服务科研课题、政策评估、产业验证与国际合作。</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>健康款待学示范场景</h4>
+                    <p>联合横琴与澳门酒店、度假区、会展中心与康养机构，打造一批具有科学评价体系的健康款待学示范项目。</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>大湾区公众健康与卫生经济蓝皮书</h4>
+                    <p>定期发布区域健康趋势、慢病负担、生活方式风险、健康服务价值与卫生经济学评价报告，形成面向政府与产业的高质量智库成果。</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <h4>国际真实世界研究与公众健康论坛</h4>
+                    <p>打造具有区域影响力与国际识别度的学术交流平台，促进横琴在真实世界研究、生活方式医学、实施科学与健康款待学领域的国际合作。</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Ethics & Data Security
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="editorial">
+            <div class="label-col">
+                <h5>Ethics & Data</h5>
+                <div class="divider"></div>
+                <p>Research Integrity &<br>Data Security</p>
+            </div>
+            <div>
+                <h2>研究伦理与数据安全</h2>
+                <p class="lead">
+                    中心高度重视人群研究伦理、个人信息保护、数据安全与科研诚信，建立覆盖研究全流程的伦理合规体系，坚持"安全、合规、透明、可追溯"的数据治理原则。
+                </p>
+                <ul class="checklist mt-3">
+                    <li>研究方案审查 · 知情同意管理</li>
+                    <li>数据最小化采集 · 数据脱敏处理</li>
+                    <li>访问权限控制 · 数据留痕审计</li>
+                    <li>研究风险评估 · 成果发布审核</li>
+                    <li>跨境数据合规 · 多机构协作审查</li>
+                </ul>
+                <p class="mt-3">
+                    对于涉及跨境数据、敏感健康信息与多机构协作的项目，中心严格按照国家及合作区域相关法律法规与伦理规范开展审查与管理。
+                </p>
+                <a href="about.html#governance" class="btn btn-outline mt-3">了解治理体系</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+<section class="cta">
+    <div class="container">
+        <span class="eyebrow" style="color:#7fdada; border-color:#7fdada;">Collaborate With Us</span>
+        <h2>共建真实世界研究课题</h2>
+        <p>欢迎与中心开展课题合作、队列共建、产业评价、人才培养与国际交流。</p>
+        <div class="hero-actions" style="justify-content:center;">
+            <a href="services.html" class="btn btn-primary">查看合作方向</a>
+            <a href="contact.html" class="btn btn-ghost">联系我们</a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="brand" style="display:flex; align-items:center; gap:.75rem;">
+                <img src="img/logo.png" alt="真研健康科学中心" style="height:40px; width:auto; filter:brightness(0) invert(1);">
+                <span>
+                    真研健康科学中心
+                    <small>Health Sciences Center for Real-World Study</small>
+                </span>
+            </div>
+            <p>立足横琴粤澳深度合作区、面向粤港澳大湾区及亚洲区域的创新型健康科学研究机构与真实世界研究智库。</p>
         </div>
 
-        <div class="card">
-            <h3>5. 健康款待学与康养产业转化中心 [cite: 139]</h3>
-            <p>特色交叉平台，构建“健康款待学”学科框架，开展健康价值验证与服务标准建设 [cite: 141, 142, 145]。</p>
+        <div>
+            <h5>导航</h5>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="services.html">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
         </div>
 
-        <div class="card">
-            <h3>6. 粤澳健康科学人才发展与交流中心 [cite: 156]</h3>
-            <p>致力于培养具备真实世界研究能力与产业转化能力的复合型人才 [cite: 158, 159]。</p>
+        <div>
+            <h5>研究中心</h5>
+            <ul>
+                <li><a href="research.html#center-1">公众健康与生活方式医学</a></li>
+                <li><a href="research.html#center-2">健康实施科学</a></li>
+                <li><a href="research.html#center-3">数字流行病学与数据科学</a></li>
+                <li><a href="research.html#center-4">卫生经济学与政策评估</a></li>
+                <li><a href="research.html#center-5">健康款待学与康养转化</a></li>
+                <li><a href="research.html#center-6">人才发展与交流</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h5>联络渠道</h5>
+            <ul>
+                <li><a href="mailto:info@rws.ac.cn">info@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">一般咨询</span></li>
+                <li style="margin-top:.5rem;"><a href="mailto:partnerships@rws.ac.cn">partnerships@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">合作与课题</span></li>
+                <li style="margin-top:.5rem;"><a href="mailto:media@rws.ac.cn">media@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">媒体与传播</span></li>
+            </ul>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 广东横琴粤澳深度合作区真研健康科学中心. 保留所有权利。</p>
-    </footer>
+    <div class="legal">
+        <span>© 2025 广东横琴粤澳深度合作区真研健康科学中心</span>
+        <span>Health Sciences Center for Real-World Study, Hengqin, Guangdong</span>
+    </div>
+</footer>
+
+<!-- =====================================================
+     Minimal interactivity
+===================================================== -->
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('is-open'));
+    }
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.section, .card, .center-card').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
+    });
+</script>
+
 </body>
 </html>
