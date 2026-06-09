@@ -13,6 +13,148 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Team Marquee Styles
+    ===================================================== -->
+    <style>
+        .team-marquee {
+            padding: 5rem 0 5.5rem;
+            background: linear-gradient(180deg, #f7faf9 0%, #eef5f4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .team-marquee::before,
+        .team-marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .team-marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, #eef5f4 0%, rgba(238, 245, 244, 0) 100%);
+        }
+        .team-marquee::after {
+            right: 0;
+            background: linear-gradient(270deg, #eef5f4 0%, rgba(238, 245, 244, 0) 100%);
+        }
+
+        .team-marquee .section-head {
+            position: relative;
+            z-index: 4;
+        }
+
+        .marquee-track-wrap {
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .marquee-track {
+            display: flex;
+            gap: 1.4rem;
+            width: max-content;
+            animation: marquee-scroll 80s linear infinite;
+            will-change: transform;
+        }
+        .marquee-track-wrap:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        .pi-card {
+            flex: 0 0 220px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .06);
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+        }
+        .pi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(20, 58, 58, .12);
+            border-color: rgba(10, 138, 138, .35);
+        }
+
+        .pi-photo {
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 35%, #c9dede 0 22%, transparent 23%),
+                radial-gradient(ellipse at 50% 110%, #c9dede 0 40%, transparent 41%),
+                linear-gradient(135deg, #eef5f5 0%, #d9eaea 100%);
+        }
+        .pi-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .55s ease;
+        }
+        .pi-card:hover .pi-photo img {
+            transform: scale(1.06);
+        }
+
+        .pi-body {
+            padding: .95rem 1rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+        }
+        .pi-name {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+        .pi-role {
+            font-size: .7rem;
+            font-weight: 600;
+            color: #0a8a8a;
+            letter-spacing: .04em;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .pi-center {
+            font-size: .75rem;
+            color: #5a6b6b;
+            line-height: 1.5;
+            margin: .15rem 0 0;
+            padding-top: .5rem;
+            border-top: 1px dashed rgba(0, 0, 0, .12);
+        }
+
+        @media (max-width: 768px) {
+            .team-marquee { padding: 3.5rem 0; }
+            .pi-card { flex: 0 0 170px; }
+            .pi-body { padding: .8rem .85rem 1rem; }
+            .pi-name { font-size: .92rem; }
+            .pi-center { font-size: .7rem; }
+            .marquee-track { animation-duration: 60s; }
+            .team-marquee::before,
+            .team-marquee::after { width: 60px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee-track { animation: none; }
+            .marquee-track-wrap { overflow-x: auto; }
+        }
+    </style>
 </head>
 <body>
 
@@ -82,6 +224,223 @@
                 </blockquote>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Research Team Marquee
+===================================================== -->
+<section class="team-marquee">
+    <div class="container">
+        <div class="section-head" style="text-align:center;">
+            <span class="eyebrow">Our Scientists</span>
+            <h2>科研团队代表</h2>
+            <p class="lead">来自公共卫生、流行病学、数据科学、卫生经济学与健康款待学等领域的研究员，共同推动真实世界证据生成与健康科学转化。</p>
+        </div>
+    </div>
+
+    <div class="marquee-track-wrap" aria-label="科研团队照片滚动栏">
+        <div class="marquee-track">
+            <!-- ====== Pass 1 ====== -->
+            <a href="research.html#center-1" class="pi-card">
+                <div class="pi-photo"><img src="img/team/chen-jiayi.jpg" alt="陈嘉怡 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">陈嘉怡 博士</h4>
+                    <span class="pi-role">学术委员会主任委员暨分中心主任</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card">
+                <div class="pi-photo"><img src="img/team/tao-xiaoyu.jpg" alt="陶晓宇 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">陶晓宇 博士</h4>
+                    <span class="pi-role">中心执行主任暨分中心主任</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-6" class="pi-card">
+                <div class="pi-photo"><img src="img/team/ye-jianing.jpg" alt="叶嘉宁 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">叶嘉宁 博士</h4>
+                    <span class="pi-role">战略咨询委员会主任委员暨分中心主任</span>
+                    <p class="pi-center">人才发展与交流中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-2" class="pi-card">
+                <div class="pi-photo"><img src="img/team/huang-zijian.jpg" alt="黄子健 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">黄子健 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">健康实施科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-4" class="pi-card">
+                <div class="pi-photo"><img src="img/team/ma-jingwen.jpg" alt="马静雯 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">马静雯 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">卫生经济学与健康政策评估中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-5" class="pi-card">
+                <div class="pi-photo"><img src="img/team/he-wanlin.jpg" alt="何婉琳 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">何婉琳 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">健康款待学与康养产业转化中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-1" class="pi-card">
+                <div class="pi-photo"><img src="img/team/liang-cheng.jpg" alt="梁澄 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">梁澄 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-1" class="pi-card">
+                <div class="pi-photo"><img src="img/team/james-oconnor.jpg" alt="James O'Connor 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">James O'Connor 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card">
+                <div class="pi-photo"><img src="img/team/aisha-rahman.jpg" alt="Aisha Rahman 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">Aisha Rahman 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card">
+                <div class="pi-photo"><img src="img/team/deng-siqi.jpg" alt="邓思琪 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">邓思琪 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-5" class="pi-card">
+                <div class="pi-photo"><img src="img/team/maria-silva.jpg" alt="Maria Silva 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">Maria Silva 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">健康款待学与康养产业转化中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-4" class="pi-card">
+                <div class="pi-photo"><img src="img/team/zheng-haoran.jpg" alt="郑浩然 博士" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">郑浩然 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">卫生经济学与健康政策评估中心</p>
+                </div>
+            </a>
+
+            <!-- ====== Pass 2 (复制一遍以实现无缝循环) ====== -->
+            <a href="research.html#center-1" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/chen-jiayi.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">陈嘉怡 博士</h4>
+                    <span class="pi-role">学术委员会主任委员暨分中心主任</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/tao-xiaoyu.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">陶晓宇 博士</h4>
+                    <span class="pi-role">中心执行主任暨分中心主任</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-6" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/ye-jianing.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">叶嘉宁 博士</h4>
+                    <span class="pi-role">战略咨询委员会主任委员暨分中心主任</span>
+                    <p class="pi-center">人才发展与交流中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-2" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/huang-zijian.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">黄子健 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">健康实施科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-4" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/ma-jingwen.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">马静雯 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">卫生经济学与健康政策评估中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-5" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/he-wanlin.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">何婉琳 博士</h4>
+                    <span class="pi-role">分中心主任</span>
+                    <p class="pi-center">健康款待学与康养产业转化中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-1" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/liang-cheng.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">梁澄 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-1" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/james-oconnor.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">James O'Connor 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">公众健康与生活方式医学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/aisha-rahman.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">Aisha Rahman 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-3" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/deng-siqi.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">邓思琪 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">数字流行病学与数据科学中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-5" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/maria-silva.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">Maria Silva 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">健康款待学与康养产业转化中心</p>
+                </div>
+            </a>
+            <a href="research.html#center-4" class="pi-card" aria-hidden="true">
+                <div class="pi-photo"><img src="img/team/zheng-haoran.jpg" alt="" loading="lazy"></div>
+                <div class="pi-body">
+                    <h4 class="pi-name">郑浩然 博士</h4>
+                    <span class="pi-role">研究员</span>
+                    <p class="pi-center">卫生经济学与健康政策评估中心</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container" style="text-align:center; margin-top:2.5rem; position:relative; z-index:4;">
+        <a href="research.html" class="btn btn-outline">查看完整研究团队</a>
     </div>
 </section>
 
