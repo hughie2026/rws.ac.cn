@@ -10,20 +10,31 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- =====================================================
-         Global Font Override
-         全站统一使用黑体
+         Global Font System
+         中文：黑体体系
+         英文 / 数字：参考科研机构官网常用的现代无衬线字体体系
     ===================================================== -->
     <style>
         :root {
-            --font-heiti: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+            --font-cn: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+            --font-latin: "IBM Plex Sans", "Inter", "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --font-display: "IBM Plex Sans Condensed", "Inter Tight", "Aptos Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --font-mono-num: "IBM Plex Mono", "Roboto Mono", "SFMono-Regular", Consolas, monospace;
         }
 
         html,
-        body,
+        body {
+            font-family: var(--font-latin), var(--font-cn);
+            font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
+        }
+
         *,
         *::before,
         *::after {
-            font-family: var(--font-heiti) !important;
+            font-family: inherit;
         }
 
         button,
@@ -31,6 +42,56 @@
         textarea,
         select {
             font: inherit;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .brand,
+        .nav-menu,
+        .btn {
+            font-family: var(--font-latin), var(--font-cn);
+            letter-spacing: -0.015em;
+        }
+
+        h1,
+        h2 {
+            font-weight: 800;
+        }
+
+        .eyebrow,
+        .en,
+        .num,
+        .figure,
+        .hero-meta strong,
+        .legal span:last-child {
+            font-family: var(--font-display), var(--font-latin), var(--font-cn);
+            font-feature-settings: "tnum" 1, "lnum" 1, "kern" 1;
+        }
+
+        .eyebrow,
+        .num,
+        .en {
+            letter-spacing: 0.08em;
+        }
+
+        .figure,
+        .hero-meta strong {
+            letter-spacing: -0.04em;
+        }
+
+        .pi-name,
+        .pi-role,
+        .pi-center,
+        .stat .label,
+        .card p,
+        .bullets p,
+        .footer-grid p,
+        .footer-grid li {
+            font-family: var(--font-latin), var(--font-cn);
         }
     </style>
 
@@ -44,6 +105,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .team-marquee::before,
         .team-marquee::after {
             content: '';
@@ -54,10 +116,12 @@
             z-index: 3;
             pointer-events: none;
         }
+
         .team-marquee::before {
             left: 0;
             background: linear-gradient(90deg, #eef5f4 0%, rgba(238, 245, 244, 0) 100%);
         }
+
         .team-marquee::after {
             right: 0;
             background: linear-gradient(270deg, #eef5f4 0%, rgba(238, 245, 244, 0) 100%);
@@ -73,6 +137,7 @@
             position: relative;
             z-index: 1;
         }
+
         .marquee-track {
             display: flex;
             gap: 1.4rem;
@@ -80,6 +145,7 @@
             animation: marquee-scroll 80s linear infinite;
             will-change: transform;
         }
+
         .marquee-track-wrap:hover .marquee-track {
             animation-play-state: paused;
         }
@@ -101,6 +167,7 @@
             flex-direction: column;
             transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
         }
+
         .pi-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 16px 40px rgba(20, 58, 58, .12);
@@ -115,6 +182,7 @@
                 radial-gradient(ellipse at 50% 110%, #c9dede 0 40%, transparent 41%),
                 linear-gradient(135deg, #eef5f5 0%, #d9eaea 100%);
         }
+
         .pi-photo img {
             width: 100%;
             height: 100%;
@@ -122,6 +190,7 @@
             display: block;
             transition: transform .55s ease;
         }
+
         .pi-card:hover .pi-photo img {
             transform: scale(1.06);
         }
@@ -132,6 +201,7 @@
             flex-direction: column;
             gap: .35rem;
         }
+
         .pi-name {
             margin: 0;
             font-size: 1rem;
@@ -139,6 +209,7 @@
             color: #1a1a1a;
             line-height: 1.3;
         }
+
         .pi-role {
             font-size: .7rem;
             font-weight: 600;
@@ -150,6 +221,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
         .pi-center {
             font-size: .75rem;
             color: #5a6b6b;
@@ -166,8 +238,11 @@
             .pi-name { font-size: .92rem; }
             .pi-center { font-size: .7rem; }
             .marquee-track { animation-duration: 60s; }
+
             .team-marquee::before,
-            .team-marquee::after { width: 60px; }
+            .team-marquee::after {
+                width: 60px;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -212,37 +287,10 @@
             <a href="about.html" class="btn btn-ghost">关于中心</a>
         </div>
         <div class="hero-meta">
-            <div><strong>6</strong>大研究业务中心</div>
             <div><strong>100K+</strong>琴澳前瞻性队列规划</div>
             <div><strong>3</strong>大平台体系</div>
             <div><strong>1</strong>体两翼战略定位</div>
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     Mission Statement / Intro
-===================================================== -->
-<section class="section">
-    <div class="container">
-        <div class="editorial">
-            <div class="label-col">
-                <h5>机构使命</h5>
-                <div class="divider"></div>
-                <p>Mission Statement</p>
-            </div>
-            <div>
-                <p class="lead">
-                    真研中心致力于通过真实世界数据与证据，推动健康干预、公共卫生政策、慢病管理、主动健康服务与康养产业发展的科学化、标准化和可评价化。
-                </p>
-                <p>
-                    我们将真实世界研究前置到社区、企业、康养空间、城市生活场景和跨境人群健康管理之中，重点关注疾病发生之前、健康状态变化之中和干预措施落地之后的全过程证据生成。
-                </p>
-                <blockquote>
-                    什么样的生活方式干预真正有效？什么样的公共卫生政策更具成本效益？什么样的健康服务可以在社区、企业和文旅场景中持续落地？
-                    <cite>— 真研中心的核心命题</cite>
-                </blockquote>
-            </div>
+            <div><strong>∞</strong>真实世界研究场景</div>
         </div>
     </div>
 </section>
@@ -270,6 +318,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card">
                 <div class="pi-photo"><img src="img/team/tao-xiaoyu.jpg" alt="陶晓宇 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -278,6 +327,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-6" class="pi-card">
                 <div class="pi-photo"><img src="img/team/ye-jianing.jpg" alt="叶嘉宁 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -286,6 +336,7 @@
                     <p class="pi-center">人才发展与交流中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-2" class="pi-card">
                 <div class="pi-photo"><img src="img/team/huang-zijian.jpg" alt="黄子健 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -294,6 +345,7 @@
                     <p class="pi-center">健康实施科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-4" class="pi-card">
                 <div class="pi-photo"><img src="img/team/ma-jingwen.jpg" alt="马静雯 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -302,6 +354,7 @@
                     <p class="pi-center">卫生经济学与健康政策评估中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-5" class="pi-card">
                 <div class="pi-photo"><img src="img/team/he-wanlin.jpg" alt="何婉琳 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -310,6 +363,7 @@
                     <p class="pi-center">健康款待学与康养产业转化中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-1" class="pi-card">
                 <div class="pi-photo"><img src="img/team/liang-cheng.jpg" alt="梁澄 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -318,6 +372,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-1" class="pi-card">
                 <div class="pi-photo"><img src="img/team/james-oconnor.jpg" alt="James O'Connor 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -326,6 +381,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card">
                 <div class="pi-photo"><img src="img/team/aisha-rahman.jpg" alt="Aisha Rahman 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -334,6 +390,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card">
                 <div class="pi-photo"><img src="img/team/deng-siqi.jpg" alt="邓思琪 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -342,6 +399,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-5" class="pi-card">
                 <div class="pi-photo"><img src="img/team/maria-silva.jpg" alt="Maria Silva 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -350,6 +408,7 @@
                     <p class="pi-center">健康款待学与康养产业转化中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-4" class="pi-card">
                 <div class="pi-photo"><img src="img/team/zheng-haoran.jpg" alt="郑浩然 博士" loading="lazy"></div>
                 <div class="pi-body">
@@ -368,6 +427,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/tao-xiaoyu.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -376,6 +436,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-6" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/ye-jianing.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -384,6 +445,7 @@
                     <p class="pi-center">人才发展与交流中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-2" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/huang-zijian.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -392,6 +454,7 @@
                     <p class="pi-center">健康实施科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-4" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/ma-jingwen.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -400,6 +463,7 @@
                     <p class="pi-center">卫生经济学与健康政策评估中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-5" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/he-wanlin.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -408,6 +472,7 @@
                     <p class="pi-center">健康款待学与康养产业转化中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-1" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/liang-cheng.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -416,6 +481,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-1" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/james-oconnor.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -424,6 +490,7 @@
                     <p class="pi-center">公众健康与生活方式医学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/aisha-rahman.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -432,6 +499,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-3" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/deng-siqi.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -440,6 +508,7 @@
                     <p class="pi-center">数字流行病学与数据科学中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-5" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/maria-silva.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -448,6 +517,7 @@
                     <p class="pi-center">健康款待学与康养产业转化中心</p>
                 </div>
             </a>
+
             <a href="research.html#center-4" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/zheng-haoran.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
@@ -482,12 +552,14 @@
                 <span class="en">Real-World Research</span>
                 <p>以真实世界研究为核心方法体系，贯穿中心所有科研、转化与服务工作，回答"在真实人群中是否有效、为谁有效、如何持续有效"。</p>
             </div>
+
             <div class="card">
                 <div class="num">PILLAR · 02</div>
                 <h3>两翼</h3>
                 <span class="en">Public Health × Industry Translation</span>
                 <p>一翼服务慢性病防控、主动健康、健康政策与基层公共卫生体系建设；另一翼服务康养文旅、数字健康与高端服务业的科学验证与标准建设。</p>
             </div>
+
             <div class="card">
                 <div class="num">PILLAR · 03</div>
                 <h3>三平台</h3>
@@ -505,84 +577,24 @@
     <div class="container">
         <div class="stats">
             <div class="stat">
-                <div class="figure">6</div>
-                <div class="label">业务中心</div>
-            </div>
-            <div class="stat">
-                <div class="figure">10<sup style="font-size:.5em;">万</sup>+</div>
+                <div class="figure">100K<sup style="font-size:.5em;">+</sup></div>
                 <div class="label">琴澳前瞻性队列规划</div>
             </div>
+
+            <div class="stat">
+                <div class="figure">3</div>
+                <div class="label">平台支撑体系</div>
+            </div>
+
             <div class="stat">
                 <div class="figure">3–5<span style="font-size:.5em;">年</span></div>
                 <div class="label">重点项目建设周期</div>
             </div>
+
             <div class="stat">
                 <div class="figure">∞</div>
                 <div class="label">真实世界研究场景</div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-     Six Research Centers Preview
-===================================================== -->
-<section class="section">
-    <div class="container">
-        <div class="section-head">
-            <span class="eyebrow">Research Framework</span>
-            <h2>六大研究业务中心</h2>
-            <p class="lead">围绕真实世界证据生成与健康科学转化，形成六大核心研究与业务板块，覆盖从数据、方法、评价到产业转化的完整链条。</p>
-        </div>
-
-        <div class="grid grid--3">
-            <article class="center-card">
-                <div class="num">CENTER · 01</div>
-                <h3>公众健康与生活方式医学中心</h3>
-                <span class="en">Public Health & Lifestyle Medicine</span>
-                <p>聚焦慢性病预防、主动健康管理与生活方式干预评价，研究营养、运动、睡眠、心理行为与社会支持对健康结局的长期影响。</p>
-                <a href="research.html#center-1" class="more">查看详情</a>
-            </article>
-
-            <article class="center-card">
-                <div class="num">CENTER · 02</div>
-                <h3>健康实施科学中心</h3>
-                <span class="en">Health Implementation Science</span>
-                <p>关注已被证明有效的健康干预如何在复杂真实世界环境中被接受、被执行、被持续，并最终产生可衡量的健康收益。</p>
-                <a href="research.html#center-2" class="more">查看详情</a>
-            </article>
-
-            <article class="center-card">
-                <div class="num">CENTER · 03</div>
-                <h3>数字流行病学与数据科学中心</h3>
-                <span class="en">Digital Epidemiology & Data Science</span>
-                <p>中心的底层方法与数据能力平台，负责真实世界数据治理、队列建设、数字健康监测、因果推断分析与人工智能辅助研究。</p>
-                <a href="research.html#center-3" class="more">查看详情</a>
-            </article>
-
-            <article class="center-card">
-                <div class="num">CENTER · 04</div>
-                <h3>卫生经济学与健康政策评估中心</h3>
-                <span class="en">Health Economics & Policy Evaluation</span>
-                <p>面向政府、医保、医疗机构与产业方，开展公共卫生政策、健康干预项目与健康服务模式的成本效用与价值评估。</p>
-                <a href="research.html#center-4" class="more">查看详情</a>
-            </article>
-
-            <article class="center-card">
-                <div class="num">CENTER · 05</div>
-                <h3>健康款待学与康养产业转化中心</h3>
-                <span class="en">Health-Hospitality & Wellness Translation</span>
-                <p>中心特色交叉平台，构建"健康款待学"学科框架，为酒店、康养机构、文旅综合体提供健康价值验证与服务标准建设。</p>
-                <a href="research.html#center-5" class="more">查看详情</a>
-            </article>
-
-            <article class="center-card">
-                <div class="num">CENTER · 06</div>
-                <h3>粤澳健康科学人才发展与交流中心</h3>
-                <span class="en">Talent Development & Exchange</span>
-                <p>培养兼具公共卫生素养、真实世界研究能力、数据科学能力、实施科学能力与产业转化能力的复合型人才。</p>
-                <a href="research.html#center-6" class="more">查看详情</a>
-            </article>
         </div>
     </div>
 </section>
@@ -605,30 +617,35 @@
                     <p style="color:#c8d0de;">覆盖横琴、澳门及大湾区重点人群的长期健康队列，形成生活方式、环境暴露、健康行为、慢病风险与健康结局的持续追踪体系。</p>
                 </div>
             </li>
+
             <li style="border-bottom-color:rgba(255,255,255,.12);">
                 <div>
                     <h4 style="color:#fff;">大湾区主动健康示范项目</h4>
                     <p style="color:#c8d0de;">围绕高血压、糖尿病、肥胖、睡眠障碍、心理压力与亚健康状态，开展社区与企业场景下的主动健康干预示范，形成可复制的服务模式。</p>
                 </div>
             </li>
+
             <li style="border-bottom-color:rgba(255,255,255,.12);">
                 <div>
                     <h4 style="color:#fff;">真实世界数据治理与研究平台</h4>
                     <p style="color:#c8d0de;">建设符合伦理、合规与数据安全要求的真实世界数据平台，服务科研课题、政策评估、产业验证与国际合作。</p>
                 </div>
             </li>
+
             <li style="border-bottom-color:rgba(255,255,255,.12);">
                 <div>
                     <h4 style="color:#fff;">健康款待学示范场景</h4>
                     <p style="color:#c8d0de;">联合横琴与澳门酒店、度假区、会展中心与康养机构，打造一批具有科学评价体系的健康款待学示范项目。</p>
                 </div>
             </li>
+
             <li style="border-bottom-color:rgba(255,255,255,.12);">
                 <div>
                     <h4 style="color:#fff;">大湾区公众健康与卫生经济蓝皮书</h4>
                     <p style="color:#c8d0de;">定期发布区域健康趋势、慢病负担、生活方式风险、健康服务价值与卫生经济学评价报告，形成面向政府与产业的高质量智库成果。</p>
                 </div>
             </li>
+
             <li style="border-bottom-color:rgba(255,255,255,.12);">
                 <div>
                     <h4 style="color:#fff;">国际真实世界研究与公众健康论坛</h4>
@@ -636,46 +653,6 @@
                 </div>
             </li>
         </ol>
-    </div>
-</section>
-
-<!-- =====================================================
-     Why Choose Us
-===================================================== -->
-<section class="section section--soft">
-    <div class="container">
-        <div class="section-head">
-            <span class="eyebrow">Why Choose Us</span>
-            <h2>核心优势</h2>
-        </div>
-
-        <div class="grid grid--3">
-            <div class="card">
-                <h3>独特区位与制度优势</h3>
-                <p>横琴粤澳深度合作区连接内地与澳门，兼具制度创新、国际交流、产业集聚与跨境协同优势，为公共卫生、真实世界研究与健康产业转化提供独特土壤。</p>
-            </div>
-            <div class="card">
-                <h3>丰富的真实世界研究场景</h3>
-                <p>琴澳地区拥有跨境通勤人群、社区居民、游客人群、酒店与文旅场景、康养服务场景与大健康产业集群，是人群健康研究的天然实验室。</p>
-            </div>
-            <div class="card">
-                <h3>交叉复合的学科体系</h3>
-                <p>整合流行病学、公共卫生、生活方式医学、实施科学、卫生经济学、数据科学、行为科学、城市空间、酒店管理与康养产业等多学科资源。</p>
-            </div>
-            <div class="card">
-                <h3>从证据到落地的闭环能力</h3>
-                <p>不仅开展数据分析与研究评价，也协助政府、机构与企业完成项目设计、实施优化、效果评估、经济学分析、标准制定与成果传播。</p>
-            </div>
-            <div class="card">
-                <h3>面向未来的产业创新方向</h3>
-                <p>提出并推动"健康款待学"交叉方向，回应全球健康消费、康养文旅、高端服务业与主动健康管理的发展趋势。</p>
-            </div>
-            <div class="card feature-card">
-                <h3>价值主张</h3>
-                <p>让真实世界证据真正转化为健康行动，让健康行动真正带来健康结果。</p>
-                <a href="about.html" class="more" style="color:#7fdada;">阅读机构愿景</a>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -753,14 +730,20 @@
     // Mobile nav toggle
     const toggle = document.querySelector('.nav-toggle');
     const menu   = document.querySelector('.nav-menu');
+
     if (toggle && menu) {
         toggle.addEventListener('click', () => menu.classList.toggle('is-open'));
     }
 
     // Reveal on scroll
     const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+            }
+        });
     }, { threshold: 0.12 });
+
     document.querySelectorAll('.section, .card, .center-card, .stat').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
