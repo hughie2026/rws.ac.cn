@@ -10,20 +10,81 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- =====================================================
-         Global Font Override
-         全站统一使用黑体
+         Global Font & Mission / Vision Enhancement
+         字体系统与使命愿景板块优化
     ===================================================== -->
     <style>
         :root {
-            --font-heiti: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+            /*
+             * 字体策略：
+             * 1. 英文与数字：采用科研机构官网常见的现代无衬线字体栈。
+             * 2. 中文：优先使用黑体体系，保证稳重、清晰、正式。
+             */
+            --font-latin: "Aptos", "IBM Plex Sans", "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            --font-cn-heiti: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+            --font-main: var(--font-latin), var(--font-cn-heiti);
+
+            --zy-accent: #7fdada;
+            --zy-accent-2: #4fb8d7;
+            --zy-ink: #102033;
+            --zy-ink-deep: #0b1524;
+            --zy-card-border: rgba(127, 218, 218, .28);
+            --zy-card-glow: rgba(127, 218, 218, .16);
         }
 
         html,
         body,
-        *,
+        * ,
         *::before,
         *::after {
-            font-family: var(--font-heiti) !important;
+            font-family: var(--font-main) !important;
+            font-kerning: normal;
+            text-rendering: geometricPrecision;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-feature-settings: "liga" 1, "kern" 1, "tnum" 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .nav-menu a,
+        .btn,
+        .tag,
+        .eyebrow,
+        .breadcrumb,
+        .num {
+            font-family: var(--font-main) !important;
+            font-weight: 700;
+            letter-spacing: .015em;
+        }
+
+        .eyebrow,
+        .tag,
+        .num,
+        .breadcrumb,
+        .legal,
+        .footer-grid h5,
+        .mv-kicker,
+        .mv-index,
+        .mv-title-en {
+            font-family: var(--font-latin), var(--font-cn-heiti) !important;
+            font-feature-settings: "liga" 1, "kern" 1, "tnum" 1;
+        }
+
+        p,
+        li,
+        td,
+        th,
+        blockquote,
+        cite {
+            font-family: var(--font-main) !important;
+            line-height: 1.82;
         }
 
         button,
@@ -31,6 +92,219 @@
         textarea,
         select {
             font: inherit;
+        }
+
+        /*
+         * Mission / Vision Section
+         * “使命 / 愿景”板块增强样式
+         */
+        .mv-section {
+            position: relative;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(1.25rem, 2.5vw, 2rem);
+            margin-top: 2.75rem;
+        }
+
+        .mv-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 360px;
+            padding: clamp(1.75rem, 3vw, 2.5rem);
+            border-radius: 28px;
+            border: 1px solid var(--zy-card-border);
+            background:
+                radial-gradient(circle at 16% 8%, rgba(127, 218, 218, .22), transparent 34%),
+                linear-gradient(145deg, rgba(16, 32, 51, .98), rgba(8, 18, 31, .98));
+            box-shadow:
+                0 28px 70px rgba(9, 20, 34, .18),
+                inset 0 1px 0 rgba(255, 255, 255, .08);
+            color: #fff;
+            isolation: isolate;
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+        .mv-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, .08), transparent 38%),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, .035) 0,
+                    rgba(255, 255, 255, .035) 1px,
+                    transparent 1px,
+                    transparent 34px
+                );
+            opacity: .5;
+            z-index: -2;
+        }
+
+        .mv-card::after {
+            content: "";
+            position: absolute;
+            right: -90px;
+            bottom: -100px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 1px solid rgba(127, 218, 218, .28);
+            background:
+                radial-gradient(circle, rgba(127, 218, 218, .18), transparent 62%);
+            z-index: -1;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(127, 218, 218, .55);
+            box-shadow:
+                0 34px 90px rgba(9, 20, 34, .28),
+                0 0 0 1px rgba(127, 218, 218, .08),
+                inset 0 1px 0 rgba(255, 255, 255, .1);
+        }
+
+        .mv-card--mission {
+            background:
+                radial-gradient(circle at 12% 10%, rgba(127, 218, 218, .26), transparent 35%),
+                linear-gradient(145deg, #10243a, #071522 72%);
+        }
+
+        .mv-card--vision {
+            background:
+                radial-gradient(circle at 16% 12%, rgba(79, 184, 215, .28), transparent 35%),
+                linear-gradient(145deg, #0d1f35, #081322 74%);
+        }
+
+        .mv-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .mv-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: .65rem;
+            color: var(--zy-accent);
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .mv-kicker::before {
+            content: "";
+            width: 34px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--zy-accent), transparent);
+        }
+
+        .mv-index {
+            color: rgba(255, 255, 255, .18);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: .8;
+            letter-spacing: -.06em;
+        }
+
+        .mv-title {
+            margin: 0;
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.08;
+            letter-spacing: .02em;
+        }
+
+        .mv-title-en {
+            display: block;
+            margin-top: .85rem;
+            color: rgba(127, 218, 218, .86);
+            font-size: .88rem;
+            font-weight: 800;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .mv-line {
+            width: 72px;
+            height: 3px;
+            margin: 1.6rem 0 1.55rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--zy-accent), var(--zy-accent-2), transparent);
+        }
+
+        .mv-card p {
+            max-width: 95%;
+            margin: 0;
+            color: rgba(238, 246, 250, .9);
+            font-size: clamp(1rem, 1.35vw, 1.12rem);
+            line-height: 1.95;
+            letter-spacing: .02em;
+        }
+
+        .mv-footnote {
+            position: absolute;
+            left: clamp(1.75rem, 3vw, 2.5rem);
+            bottom: clamp(1.4rem, 2.5vw, 2rem);
+            display: inline-flex;
+            align-items: center;
+            gap: .65rem;
+            color: rgba(255, 255, 255, .56);
+            font-size: .78rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .mv-footnote::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: var(--zy-accent);
+            box-shadow: 0 0 18px var(--zy-card-glow);
+        }
+
+        @media (max-width: 860px) {
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-card {
+                min-height: 320px;
+            }
+
+            .mv-card p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .mv-card {
+                border-radius: 22px;
+                padding: 1.5rem;
+            }
+
+            .mv-topline {
+                margin-bottom: 1.65rem;
+            }
+
+            .mv-index {
+                font-size: 3.25rem;
+            }
+
+            .mv-footnote {
+                position: static;
+                margin-top: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -149,7 +423,7 @@
 <!-- =====================================================
      Section: Mission · Vision · Values
 ===================================================== -->
-<section class="section">
+<section class="section mv-section">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Mission · Vision · Values</span>
@@ -157,17 +431,38 @@
             <p class="lead">以真实世界证据为方法，以公众健康改善为目标，让健康证据真正转化为健康行动。</p>
         </div>
 
-        <div class="grid grid--2">
-            <div class="feature-card">
-                <span class="tag tag--accent" style="border-color:#7fdada; color:#7fdada;">MISSION</span>
-                <h3 style="margin-top:1rem;">使命</h3>
-                <p>以真实世界证据和前沿健康科学推动公众健康改善，促进生活方式医学、公共卫生干预与健康产业服务的科学化、可评价化与可持续实施，缩短"科学证据"与"真实改变"之间的距离。</p>
-            </div>
-            <div class="feature-card" style="background:var(--ink-800);">
-                <span class="tag tag--accent" style="border-color:#7fdada; color:#7fdada;">VISION</span>
-                <h3 style="margin-top:1rem;">愿景</h3>
-                <p>建设成为立足横琴、联动澳门、服务大湾区、辐射亚洲的真实世界研究高地、公共卫生数据智库、健康科学转化平台与复合型人才培养基地。</p>
-            </div>
+        <div class="mv-grid">
+            <article class="mv-card mv-card--mission">
+                <div class="mv-topline">
+                    <span class="mv-kicker">Mission</span>
+                    <span class="mv-index">01</span>
+                </div>
+                <h3 class="mv-title">
+                    使命
+                    <span class="mv-title-en">Evidence into Health Action</span>
+                </h3>
+                <div class="mv-line"></div>
+                <p>
+                    以真实世界证据和前沿健康科学推动公众健康改善，促进生活方式医学、公共卫生干预与健康产业服务的科学化、可评价化与可持续实施，缩短"科学证据"与"真实改变"之间的距离。
+                </p>
+                <span class="mv-footnote">Real-World Evidence</span>
+            </article>
+
+            <article class="mv-card mv-card--vision">
+                <div class="mv-topline">
+                    <span class="mv-kicker">Vision</span>
+                    <span class="mv-index">02</span>
+                </div>
+                <h3 class="mv-title">
+                    愿景
+                    <span class="mv-title-en">Regional Hub for Health Science</span>
+                </h3>
+                <div class="mv-line"></div>
+                <p>
+                    建设成为立足横琴、联动澳门、服务大湾区、辐射亚洲的真实世界研究高地、公共卫生数据智库、健康科学转化平台与复合型人才培养基地。
+                </p>
+                <span class="mv-footnote">Public Health Intelligence</span>
+            </article>
         </div>
 
         <div class="mt-4">
@@ -498,7 +793,7 @@
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.section, .card, .center-card').forEach(el => {
+    document.querySelectorAll('.section, .card, .center-card, .mv-card').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
     });
