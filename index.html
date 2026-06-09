@@ -7,12 +7,32 @@
     <meta name="description" content="广东横琴粤澳深度合作区真研健康科学中心 — 立足横琴、联动澳门、服务大湾区、辐射亚洲的真实世界研究高地与公共健康智库。">
     <link rel="icon" href="img/logo-mark.png" type="image/png">
 
-    <!-- Google Fonts: Inter (English) + Noto Sans SC / Noto Serif SC (Chinese) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Global Font Override
+         全站统一使用黑体
+    ===================================================== -->
+    <style>
+        :root {
+            --font-heiti: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+
+        html,
+        body,
+        *,
+        *::before,
+        *::after {
+            font-family: var(--font-heiti) !important;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+    </style>
 
     <!-- =====================================================
          Team Marquee Styles
@@ -339,7 +359,7 @@
                 </div>
             </a>
 
-            <!-- ====== Pass 2 (复制一遍以实现无缝循环) ====== -->
+            <!-- ====== Pass 2 复制一遍以实现无缝循环 ====== -->
             <a href="research.html#center-1" class="pi-card" aria-hidden="true">
                 <div class="pi-photo"><img src="img/team/chen-jiayi.jpg" alt="" loading="lazy"></div>
                 <div class="pi-body">
