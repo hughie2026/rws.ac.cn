@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -14,6 +13,143 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Team Section Styles
+    ===================================================== -->
+    <style>
+        .team-block {
+            margin-top: 3rem;
+            padding-top: 2.25rem;
+            border-top: 1px solid rgba(0, 0, 0, .08);
+        }
+        .team-block-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.6rem;
+        }
+        .team-block-head h3 {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #143a3a;
+            letter-spacing: .01em;
+        }
+        .team-block-head .en {
+            font-size: .78rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #0a8a8a;
+            font-weight: 600;
+        }
+        .team-block-head .line {
+            flex: 1;
+            height: 1px;
+            background: rgba(0, 0, 0, .08);
+            min-width: 40px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.6rem;
+        }
+
+        .team-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, .09);
+            border-color: rgba(10, 138, 138, .4);
+        }
+
+        .team-photo {
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 35%, #c9dede 0 22%, transparent 23%),
+                radial-gradient(ellipse at 50% 110%, #c9dede 0 40%, transparent 41%),
+                linear-gradient(135deg, #eef5f5 0%, #d9eaea 100%);
+        }
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .55s ease;
+        }
+        .team-card:hover .team-photo img {
+            transform: scale(1.05);
+        }
+
+        .team-body {
+            padding: 1rem 1.1rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            flex: 1;
+        }
+        .team-name {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+        .team-role {
+            align-self: flex-start;
+            display: inline-block;
+            font-size: .7rem;
+            font-weight: 600;
+            color: #0a8a8a;
+            background: rgba(10, 138, 138, .08);
+            padding: .2rem .55rem;
+            border-radius: 2px;
+            letter-spacing: .04em;
+            line-height: 1.4;
+        }
+        .team-title {
+            font-size: .82rem;
+            color: #4a4a4a;
+            margin: .1rem 0 0;
+            padding-bottom: .55rem;
+            border-bottom: 1px dashed rgba(0, 0, 0, .12);
+        }
+        .team-research {
+            font-size: .8rem;
+            color: #555;
+            line-height: 1.6;
+            margin: .2rem 0 0;
+        }
+        .team-research::before {
+            content: '研究方向 / ';
+            color: #0a8a8a;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .team-body {
+                padding: .85rem .9rem 1rem;
+                gap: .3rem;
+            }
+            .team-name { font-size: .98rem; }
+            .team-title, .team-research { font-size: .76rem; }
+            .team-role { font-size: .65rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -163,6 +299,48 @@
                 </ol>
             </div>
         </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/liang-cheng.jpg" alt="梁澄 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">梁澄 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">生活方式医学、慢病综合干预、居民健康行为研究</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/chen-jiayi.jpg" alt="陈嘉怡 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">陈嘉怡 博士</h4>
+                        <span class="team-role">学术委员会主任委员暨分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">营养流行病学、代谢综合征、社区人群精准营养干预</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/james-oconnor.jpg" alt="James O'Connor 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">James O'Connor 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">运动流行病学、心血管健康促进、身体活动真实世界干预</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -215,6 +393,48 @@
                         </div>
                     </li>
                 </ol>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/huang-zijian.jpg" alt="黄子健 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">黄子健 博士</h4>
+                        <span class="team-role">分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">临床路径实施、医疗质量改进、真实世界诊疗流程优化</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/zhou-ning.jpg" alt="周宁 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">周宁 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">基层卫生服务实施、社区慢病管理、家庭医生服务模式评估</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/liu-wanting.jpg" alt="刘婉婷 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">刘婉婷 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">患者参与、健康传播、医患共同决策与依从性提升</p>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
@@ -277,6 +497,68 @@
                 </ol>
             </div>
         </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/lin-baiyan.jpg" alt="林柏言 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">林柏言 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">真实世界数据平台建设、多源健康数据整合、健康数据治理</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/tao-xiaoyu.jpg" alt="陶晓宇 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">陶晓宇 博士</h4>
+                        <span class="team-role">真研健康科学中心执行主任暨分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">生物统计、人工智能与公共卫生、健康流行病学</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/deng-siqi.jpg" alt="邓思琪 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">邓思琪 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">生物统计、因果推断、目标试验模拟、真实世界证据方法学</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/aisha-rahman.jpg" alt="Aisha Rahman 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">Aisha Rahman 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">人工智能与公共卫生、机器学习风险预测、健康数据公平性</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/xu-jiayou.jpg" alt="许嘉佑 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">许嘉佑 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">数字流行病学、可穿戴设备数据分析、慢病风险预警模型</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -329,6 +611,48 @@
                         </div>
                     </li>
                 </ol>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/ma-jingwen.jpg" alt="马静雯 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">马静雯 博士</h4>
+                        <span class="team-role">分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">卫生经济学评价、成本效果分析、健康项目预算影响分析</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/song-yuan.jpg" alt="宋远 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">宋远 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">医保支付改革、跨境医疗保障、健康政策评估</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/zheng-haoran.jpg" alt="郑浩然 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">郑浩然 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">公共卫生政策真实世界评价、健康公平、社会决定因素研究</p>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
@@ -385,6 +709,48 @@
                 </ol>
             </div>
         </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/he-wanlin.jpg" alt="何婉琳 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">何婉琳 博士</h4>
+                        <span class="team-role">分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">健康款待学、康养服务体验、健康酒店与疗养服务标准</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/tan-zhuoran.jpg" alt="谭卓然 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">谭卓然 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">康养产业转化、健康旅游、医养结合与康养示范项目</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/maria-silva.jpg" alt="Maria Silva 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">Maria Silva 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">国际康养产业、健康旅游目的地管理、健康服务合作</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -437,6 +803,38 @@
                         </div>
                     </li>
                 </ol>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-block">
+            <div class="team-block-head">
+                <h3>中心团队</h3>
+                <span class="en">Principal Investigators</span>
+                <span class="line"></span>
+            </div>
+            <div class="team-grid">
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/ye-jianing.jpg" alt="叶嘉宁 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">叶嘉宁 博士</h4>
+                        <span class="team-role">战略咨询委员会主任委员暨分中心主任</span>
+                        <p class="team-title">研究员、研究生导师</p>
+                        <p class="team-research">健康科学教育、真实世界研究课程体系</p>
+                    </div>
+                </article>
+                <article class="team-card">
+                    <div class="team-photo">
+                        <img src="img/team/feng-xiao.jpg" alt="冯骁 博士" loading="lazy">
+                    </div>
+                    <div class="team-body">
+                        <h4 class="team-name">冯骁 博士</h4>
+                        <p class="team-title">研究员</p>
+                        <p class="team-research">青年科学家发展、临床研究能力建设</p>
+                    </div>
+                </article>
             </div>
         </div>
     </div>
@@ -666,7 +1064,7 @@
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.section, .card, .center-card').forEach(el => {
+    document.querySelectorAll('.section, .card, .center-card, .team-card').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
     });
