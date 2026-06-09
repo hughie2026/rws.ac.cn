@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务与合作 | 广东横琴粤澳深度合作区真研健康科学中心</title>
     <meta name="description" content="真研健康科学中心面向政府、医疗与公共卫生机构、高校院所、健康企业、文旅康养机构与社会组织提供科研、咨询、评价与转化服务。">
-    <link rel="icon" href="img/logo-mark.png" type="image/png">
+    <link rel="icon" href="img/logo.png" type="image/png">
 
     <!-- Google Fonts: Inter + Noto Sans SC + Noto Serif SC -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +23,9 @@
 <header class="site-header">
     <div class="nav-container">
         <a href="index.html" class="brand">
-            <img src="img/logo-mark.png" alt="横琴真研健康科学中心" class="brand-mark">
-            <span class="brand-text">
-                <strong>广东横琴粤澳深度合作区真研健康科学中心</strong>
-                <small>Health Sciences Center for Real-World Study</small>
-            </span>
+            <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
         </a>
+
         <nav>
             <ul class="nav-menu">
                 <li><a href="index.html">首页</a></li>
@@ -450,11 +448,7 @@
     <div class="footer-grid">
         <div class="footer-brand">
             <div class="brand brand--footer">
-                <img src="img/logo-mark.png" alt="横琴真研健康科学中心" class="brand-mark">
-                <span class="brand-text">
-                    <strong>广东横琴粤澳深度合作区真研健康科学中心</strong>
-                    <small>Health Sciences Center for Real-World Study</small>
-                </span>
+                <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
             </div>
             <p>立足横琴粤澳深度合作区、面向粤港澳大湾区及亚洲区域的创新型健康科学研究机构与真实世界研究智库。</p>
         </div>
@@ -485,9 +479,18 @@
         <div>
             <h5>联络渠道</h5>
             <ul>
-                <li><a href="mailto:info@rws.ac.cn">info@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">一般咨询</span></li>
-                <li style="margin-top:.5rem;"><a href="mailto:partnerships@rws.ac.cn">partnerships@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">合作与课题</span></li>
-                <li style="margin-top:.5rem;"><a href="mailto:media@rws.ac.cn">media@rws.ac.cn</a><br><span style="color:var(--text-soft); font-size:.8rem;">媒体与传播</span></li>
+                <li>
+                    <a href="mailto:info@rws.ac.cn">info@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">一般咨询</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:partnerships@rws.ac.cn">partnerships@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">合作与课题</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:media@rws.ac.cn">media@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">媒体与传播</span>
+                </li>
             </ul>
         </div>
     </div>
@@ -504,13 +507,19 @@
 <script>
     const toggle = document.querySelector('.nav-toggle');
     const menu   = document.querySelector('.nav-menu');
+
     if (toggle && menu) {
         toggle.addEventListener('click', () => menu.classList.toggle('is-open'));
     }
 
     const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+            }
+        });
     }, { threshold: 0.12 });
+
     document.querySelectorAll('.section, .card, .center-card').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
