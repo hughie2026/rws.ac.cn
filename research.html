@@ -120,6 +120,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 2rem 1.5rem;
+            align-items: start;
         }
 
         .team-card {
@@ -160,41 +161,43 @@
             filter: grayscale(0%) contrast(1);
         }
 
+        /* Team body 布局：让所有卡片内的元素垂直对齐 */
         .team-body {
             padding: 1rem 0 0;
             display: flex;
             flex-direction: column;
-            gap: .35rem;
             flex: 1;
         }
 
+        /* 姓名：固定为约 2 行高度，让长短名字都对齐到同一基线 */
         .team-name {
-            margin: 0;
+            margin: 0 0 .55rem;
             font-family: var(--font-cn);
             font-size: 1.05rem;
             font-weight: 700;
             color: #111;
             line-height: 1.4;
             letter-spacing: 0;
+            min-height: 2.8em; /* 2 行 = line-height(1.4) × 2 */
         }
 
-        /* 职务标识：左侧色条 + 强调色文字（无边框） */
+        /* 职务标识：左侧色条 + 强调色文字（无方框） */
         .team-role {
             align-self: flex-start;
             display: inline-flex;
             align-items: center;
             gap: .45rem;
             font-family: var(--font-cn);
-            font-size: .75rem;
+            font-size: .72rem;
             font-weight: 600;
             color: var(--accent, #0b6f6f);
             background: transparent;
             border: none;
             padding: 0;
             border-radius: 0;
-            letter-spacing: .02em;
             line-height: 1.5;
-            margin-top: .15rem;
+            letter-spacing: .02em;
+            margin: 0 0 .55rem;
         }
 
         .team-role::before {
@@ -206,20 +209,29 @@
             flex-shrink: 0;
         }
 
-        .team-title {
-            font-size: .82rem;
-            color: #555;
-            margin: .2rem 0 0;
-            padding-bottom: .65rem;
-            border-bottom: 1px solid rgba(0, 0, 0, .08);
-            line-height: 1.5;
+        /* 关键：没有 .team-role 的卡片，自动补足等高的占位空间 */
+        /* 这样所有卡片下方的"职称""研究方向"都会精准对齐 */
+        .team-body:not(:has(.team-role)) .team-title {
+            margin-top: calc(.72rem * 1.5 + .55rem);
         }
 
-        .team-research {
+        /* 职称：固定最小高度，让分割线在所有卡片同一水平线 */
+        .team-title {
             font-size: .8rem;
             color: #555;
-            line-height: 1.65;
-            margin: .35rem 0 0;
+            margin: 0;
+            padding-bottom: .65rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+            line-height: 1.55;
+            min-height: 2.45em; /* 容纳 1-2 行 */
+        }
+
+        /* 研究方向：字号缩小，行距更紧凑 */
+        .team-research {
+            font-size: .73rem;
+            color: #555;
+            line-height: 1.7;
+            margin: .55rem 0 0;
         }
 
         .team-research::before {
@@ -244,20 +256,28 @@
 
             .team-body {
                 padding: .85rem 0 0;
-                gap: .3rem;
             }
 
             .team-name {
                 font-size: .98rem;
-            }
-
-            .team-title,
-            .team-research {
-                font-size: .76rem;
+                min-height: 2.8em;
             }
 
             .team-role {
-                font-size: .7rem;
+                font-size: .68rem;
+            }
+
+            .team-body:not(:has(.team-role)) .team-title {
+                margin-top: calc(.68rem * 1.5 + .5rem);
+            }
+
+            .team-title {
+                font-size: .74rem;
+                min-height: 2.4em;
+            }
+
+            .team-research {
+                font-size: .68rem;
             }
         }
     </style>
@@ -290,7 +310,7 @@
             <li>研究方向</li>
         </ul>
         <span class="eyebrow">Research Framework</span>
-        <h1>六大研究业务中心</h1>
+        <h1>六大<em>研究业务中心</em></h1>
         <p>围绕真实世界证据生成与健康科学转化，形成六大核心研究与业务板块，覆盖从数据、方法、评价到产业转化的完整链条。</p>
     </div>
 </section>
@@ -468,7 +488,7 @@
 
                 <h2 class="mt-2">健康实施科学中心</h2>
                 <p class="lead">
-                    关注已经被证明有效的健康干预，如何在复杂真实世界环境中被接受、被执行、被持续，并最终产生可衡量的健康收益。
+                    关注一个核心问题：已经被证明有效的健康干预，如何在复杂真实世界环境中被接受、被执行、被持续，并最终产生可衡量的健康收益。
                 </p>
 
                 <div class="team-block">
@@ -688,7 +708,7 @@
 
                 <h2 class="mt-2">卫生经济学与健康政策评估中心</h2>
                 <p class="lead">
-                    面向公共部门、保险、医疗机构与健康产业方，开展公共卫生政策、健康干预项目与健康服务模式的价值评估。
+                    面向政府、医保、医疗机构、公共卫生部门与健康产业方，开展公共卫生政策、健康干预项目与健康服务模式的价值评估。
                 </p>
 
                 <div class="team-block">
