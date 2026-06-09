@@ -13,6 +13,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Partners Section Styles
+    ===================================================== -->
+    <style>
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+            margin-top: 2.5rem;
+        }
+
+        .partner-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 4px;
+            padding: 2.4rem 1.8rem 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .partner-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #0a8a8a;
+            transition: width .4s ease;
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 42px rgba(20, 58, 58, .1);
+            border-color: rgba(10, 138, 138, .35);
+        }
+        .partner-card:hover::after {
+            width: 100%;
+        }
+
+        .partner-logo {
+            width: 100%;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.4rem;
+        }
+        .partner-logo img {
+            max-width: 80%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: .72;
+            transition: filter .4s ease, opacity .4s ease, transform .4s ease;
+        }
+        .partner-card:hover .partner-logo img {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.04);
+        }
+
+        .partner-name {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #143a3a;
+            line-height: 1.45;
+        }
+        .partner-name-en {
+            display: block;
+            margin-top: .45rem;
+            font-size: .72rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #0a8a8a;
+            font-weight: 600;
+        }
+        .partner-meta {
+            margin-top: .9rem;
+            padding-top: .9rem;
+            border-top: 1px dashed rgba(0, 0, 0, .12);
+            font-size: .8rem;
+            color: #5a6b6b;
+            line-height: 1.55;
+            width: 100%;
+        }
+        .partner-visit {
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            margin-top: 1rem;
+            font-size: .78rem;
+            font-weight: 600;
+            color: #0a8a8a;
+            letter-spacing: .04em;
+        }
+        .partner-visit::after {
+            content: '→';
+            transition: transform .35s ease;
+        }
+        .partner-card:hover .partner-visit::after {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .partners-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .partners-grid { grid-template-columns: 1fr; }
+            .partner-card { padding: 2rem 1.4rem 1.6rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -48,7 +167,7 @@
             <li>服务与合作</li>
         </ul>
         <span class="eyebrow">Services & Partnerships</span>
-        <h1>从<color:#7fdada;">证据</em>到行动的<br>合作伙伴网络</h1>
+        <h1>从<em style="font-style:italic; color:#7fdada;">证据</em>到行动的<br>合作伙伴网络</h1>
         <p>中心面向公共部门、医疗与公共卫生机构、高校院所、健康企业、文旅康养机构与社会组织提供科研、咨询、评价与转化服务，构建科研、政策、产业与公众健康的协同生态。</p>
     </div>
 </section>
@@ -314,9 +433,65 @@
 </section>
 
 <!-- =====================================================
-     Section: Think Tank Outputs
+     Section: Strategic Partners
 ===================================================== -->
 <section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Strategic Partners</span>
+            <h2>战略合作机构</h2>
+            <p class="lead">中心与国内外多家学术机构、研究中心建立长期战略合作关系，共同推动真实世界研究、公众健康科学与健康产业转化的国际化发展。</p>
+        </div>
+
+        <div class="partners-grid">
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/partners/us-healthcare-tech-university.png" alt="美国医疗保健技术大学 Logo">
+                </div>
+                <h3 class="partner-name">
+                    美国医疗保健技术大学
+                    <span class="partner-name-en">U.S. Healthcare Technology University</span>
+                </h3>
+                <p class="partner-meta">联合开展真实世界研究方法、健康技术评估与数据科学领域的国际合作。</p>
+                <span class="partner-visit">访问官网</span>
+            </a>
+
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/partners/creston-college.png" alt="克雷斯顿学院 Logo">
+                </div>
+                <h3 class="partner-name">
+                    克雷斯顿学院
+                    <span class="partner-name-en">Creston College</span>
+                </h3>
+                <p class="partner-meta">在生活方式医学、健康教育与跨学科人才培养方面开展深度合作。</p>
+                <span class="partner-visit">访问官网</span>
+            </a>
+
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <div class="partner-logo">
+                    <img src="img/partners/hk-public-health-tech.png" alt="香港公眾健康技術研究中心 Logo">
+                </div>
+                <h3 class="partner-name">
+                    香港公眾健康技術研究中心
+                    <span class="partner-name-en">HK Center for Public Health Technology Research</span>
+                </h3>
+                <p class="partner-meta">在粤港澳大湾区公共卫生协同、跨境健康数据与政策评估领域共建研究网络。</p>
+                <span class="partner-visit">访问官网</span>
+            </a>
+        </div>
+
+        <div class="mt-4 text-center">
+            <p class="text-muted">期待与更多国内外机构建立合作关系。</p>
+            <a href="contact.html" class="btn btn-outline mt-2">建立机构合作</a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Think Tank Outputs
+===================================================== -->
+<section class="section section--soft">
     <div class="container">
         <div class="section-head">
             <span class="eyebrow">Think Tank Outputs</span>
@@ -360,7 +535,7 @@
 <!-- =====================================================
      Section: Engagement Process
 ===================================================== -->
-<section class="section section--soft">
+<section class="section">
     <div class="container">
         <div class="editorial">
             <div class="label-col">
@@ -519,7 +694,7 @@
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.section, .card, .center-card').forEach(el => {
+    document.querySelectorAll('.section, .card, .center-card, .partner-card').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
     });
