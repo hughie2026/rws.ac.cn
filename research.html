@@ -16,8 +16,10 @@
 
     <style>
         :root {
-            --font-cn: "IBM Plex Sans", "Inter", "SimHei", "黑体", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", Arial, sans-serif;
+            /* 中文统一使用黑体系：PingFang / 微软雅黑 / SimHei / Noto Sans SC */
+            --font-cn: "IBM Plex Sans", "Inter", "PingFang SC", "苹方", "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", "Noto Sans SC", Arial, sans-serif;
             --font-en: "IBM Plex Sans", "Inter", Arial, sans-serif;
+            --font-serif-en: "Spectral", "Source Serif Pro", Georgia, serif;
         }
 
         html {
@@ -48,7 +50,7 @@
         .section-head h2,
         .editorial h2 {
             font-family: var(--font-cn);
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .lead,
@@ -58,8 +60,21 @@
         }
 
         /* ============================================
+           Header Navigation — Bold & Refined
+           ============================================ */
+        .site-header .nav-menu > li > a {
+            font-family: var(--font-cn);
+            font-weight: 600;
+            letter-spacing: .04em;
+        }
+
+        .site-header .nav-menu > li > a.is-active {
+            font-weight: 700;
+        }
+
+        /* ============================================
            Team Block — Academic Directory Style
-           参考: LSHTM / Hopkins Bloomberg / Oxford Faculty
+           参考: LSHTM / Hopkins Bloomberg / Imperial College
            ============================================ */
         .team-block {
             margin-top: 2.4rem;
@@ -79,11 +94,11 @@
 
         .team-block-head h3 {
             margin: 0;
-            font-family: var(--font-display, "Spectral", "Source Serif Pro", "Songti SC", "宋体", Georgia, serif);
-            font-size: 1.25rem;
-            font-weight: 500;
+            font-family: var(--font-cn);
+            font-size: 1.2rem;
+            font-weight: 700;
             color: #1a1a1a;
-            letter-spacing: 0;
+            letter-spacing: .02em;
         }
 
         .team-block-head .en {
@@ -126,8 +141,7 @@
         .team-photo {
             aspect-ratio: 3 / 4;
             overflow: hidden;
-            background:
-                linear-gradient(160deg, #ece8dc 0%, #d4ccb6 100%);
+            background: linear-gradient(160deg, #ece8dc 0%, #d4ccb6 100%);
             position: relative;
             box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
         }
@@ -156,29 +170,40 @@
 
         .team-name {
             margin: 0;
-            font-family: var(--font-display, "Spectral", "Source Serif Pro", "Songti SC", "宋体", Georgia, serif);
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-family: var(--font-cn);
+            font-size: 1.05rem;
+            font-weight: 700;
             color: #111;
-            line-height: 1.35;
+            line-height: 1.4;
             letter-spacing: 0;
         }
 
+        /* 职务标识：左侧色条 + 强调色文字（无边框） */
         .team-role {
             align-self: flex-start;
-            display: inline-block;
-            font-family: var(--font-en);
-            font-size: .68rem;
-            font-weight: 500;
-            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            font-family: var(--font-cn);
+            font-size: .75rem;
+            font-weight: 600;
+            color: var(--accent, #0b6f6f);
             background: transparent;
-            border: 1px solid rgba(0, 0, 0, .35);
-            padding: .2rem .55rem;
+            border: none;
+            padding: 0;
             border-radius: 0;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            line-height: 1.4;
+            letter-spacing: .02em;
+            line-height: 1.5;
             margin-top: .15rem;
+        }
+
+        .team-role::before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 2px;
+            background: var(--accent, #0b6f6f);
+            flex-shrink: 0;
         }
 
         .team-title {
@@ -199,7 +224,7 @@
 
         .team-research::before {
             content: 'Research / ';
-            font-family: var(--font-display, "Spectral", "Source Serif Pro", Georgia, serif);
+            font-family: var(--font-serif-en);
             font-style: italic;
             font-weight: 400;
             color: #1a1a1a;
@@ -223,7 +248,7 @@
             }
 
             .team-name {
-                font-size: 1rem;
+                font-size: .98rem;
             }
 
             .team-title,
@@ -232,7 +257,7 @@
             }
 
             .team-role {
-                font-size: .62rem;
+                font-size: .7rem;
             }
         }
     </style>
