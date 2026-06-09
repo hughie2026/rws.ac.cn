@@ -161,27 +161,27 @@
             filter: grayscale(0%) contrast(1);
         }
 
-        /* Team body 布局：让所有卡片内的元素垂直对齐 */
+        /* Team body：缩短照片与文字距离，并保持各卡片内容对齐 */
         .team-body {
-            padding: 1rem 0 0;
+            padding: .68rem 0 0;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
 
-        /* 姓名：固定为约 2 行高度，让长短名字都对齐到同一基线 */
+        /* 姓名：减少原本 2 行固定高度，避免照片下方留白过大 */
         .team-name {
-            margin: 0 0 .55rem;
+            margin: 0 0 .35rem;
             font-family: var(--font-cn);
             font-size: 1.05rem;
             font-weight: 700;
             color: #111;
-            line-height: 1.4;
+            line-height: 1.35;
             letter-spacing: 0;
-            min-height: 2.8em; /* 2 行 = line-height(1.4) × 2 */
+            min-height: 1.35em;
         }
 
-        /* 职务标识：左侧色条 + 强调色文字（无方框） */
+        /* 职务标识：统一占位高度，让有职务和无职务的 PI 下方职称保持同一水平线 */
         .team-role {
             align-self: flex-start;
             display: inline-flex;
@@ -195,9 +195,10 @@
             border: none;
             padding: 0;
             border-radius: 0;
-            line-height: 1.5;
+            line-height: 1.45;
             letter-spacing: .02em;
-            margin: 0 0 .55rem;
+            margin: 0 0 .4rem;
+            min-height: 2.1em;
         }
 
         .team-role::before {
@@ -209,36 +210,35 @@
             flex-shrink: 0;
         }
 
-        /* 关键：没有 .team-role 的卡片，自动补足等高的占位空间 */
-        /* 这样所有卡片下方的"职称""研究方向"都会精准对齐 */
+        /* 没有 .team-role 的卡片自动补足同样高度，确保职称横向对齐 */
         .team-body:not(:has(.team-role)) .team-title {
-            margin-top: calc(.72rem * 1.5 + .55rem);
+            margin-top: calc(2.1em + .4rem);
         }
 
-        /* 职称：固定最小高度，让分割线在所有卡片同一水平线 */
+        /* 职称：统一高度，让研究方向起点也更整齐 */
         .team-title {
             font-size: .8rem;
             color: #555;
             margin: 0;
-            padding-bottom: .65rem;
+            padding-bottom: .55rem;
             border-bottom: 1px solid rgba(0, 0, 0, .08);
-            line-height: 1.55;
-            min-height: 2.45em; /* 容纳 1-2 行 */
+            line-height: 1.5;
+            min-height: 2.25em;
         }
 
-        /* 研究方向：字号缩小，行距更紧凑 */
+        /* 研究方向：字号缩小，整体更轻、更紧凑 */
         .team-research {
-            font-size: .73rem;
+            font-size: .66rem;
             color: #555;
-            line-height: 1.7;
-            margin: .55rem 0 0;
+            line-height: 1.65;
+            margin: .5rem 0 0;
         }
 
         .team-research::before {
-            content: 'Research / ';
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 400;
+            content: '研究方向 / ';
+            font-family: var(--font-cn);
+            font-style: normal;
+            font-weight: 600;
             color: #1a1a1a;
         }
 
@@ -255,29 +255,37 @@
             }
 
             .team-body {
-                padding: .85rem 0 0;
+                padding: .6rem 0 0;
             }
 
             .team-name {
                 font-size: .98rem;
-                min-height: 2.8em;
+                line-height: 1.35;
+                min-height: 1.35em;
+                margin-bottom: .32rem;
             }
 
             .team-role {
-                font-size: .68rem;
+                font-size: .66rem;
+                line-height: 1.45;
+                min-height: 2.1em;
+                margin-bottom: .36rem;
             }
 
             .team-body:not(:has(.team-role)) .team-title {
-                margin-top: calc(.68rem * 1.5 + .5rem);
+                margin-top: calc(2.1em + .36rem);
             }
 
             .team-title {
-                font-size: .74rem;
-                min-height: 2.4em;
+                font-size: .72rem;
+                line-height: 1.45;
+                min-height: 2.15em;
+                padding-bottom: .5rem;
             }
 
             .team-research {
-                font-size: .68rem;
+                font-size: .62rem;
+                line-height: 1.6;
             }
         }
     </style>
@@ -439,7 +447,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -535,7 +543,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -653,7 +661,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -755,7 +763,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -851,7 +859,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -936,7 +944,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4">主要方向 / Research Directions</h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
