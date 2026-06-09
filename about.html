@@ -7,12 +7,32 @@
     <meta name="description" content="广东横琴粤澳深度合作区真研健康科学中心 — 机构简介、愿景使命、战略定位、治理体系与核心优势。">
     <link rel="icon" href="img/logo.png" type="image/png">
 
-    <!-- Google Fonts: Inter + Noto Sans SC + Noto Serif SC -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Global Font Override
+         全站统一使用黑体
+    ===================================================== -->
+    <style>
+        :root {
+            --font-heiti: SimHei, "黑体", "Heiti SC", "STHeiti", "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+
+        html,
+        body,
+        *,
+        *::before,
+        *::after {
+            font-family: var(--font-heiti) !important;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+    </style>
 </head>
 <body>
 
@@ -48,7 +68,7 @@
             <li>关于中心</li>
         </ul>
         <span class="eyebrow">About the Center</span>
-        <h1>关于<color:#7fdada;">真研</em>健康科学中心</h1>
+        <h1>关于<em style="font-style:italic; color:#7fdada;">真研</em>健康科学中心</h1>
         <p>立足横琴粤澳深度合作区，连接粤港澳大湾区与亚洲区域的创新型健康科学研究机构与真实世界研究智库。我们以真实世界证据，缩短"科学证据"与"真实改变"之间的距离。</p>
     </div>
 </section>
