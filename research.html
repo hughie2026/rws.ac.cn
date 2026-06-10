@@ -7,530 +7,80 @@
     <meta name="description" content="真研健康科学中心六大研究业务中心 — 公众健康与生活方式医学、健康实施科学、数字流行病学、卫生经济学、健康款待学与人才发展。">
     <link rel="icon" href="img/logo.png" type="image/png">
 
+    <!-- Scientific Website Font Stack: IBM Plex Sans + Inter + 黑体中文体系 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 
     <style>
         :root {
-            /* —— Academic Type System —— */
-            --font-serif-en: "Spectral", "Source Serif Pro", Georgia, "Times New Roman", serif;
-            --font-serif-cn: "Noto Serif SC", "Songti SC", "宋体", "STSong", serif;
-            --font-sans-en: "IBM Plex Sans", "Inter", Arial, sans-serif;
-            --font-sans-cn: "PingFang SC", "苹方", "Microsoft YaHei", "微软雅黑", "Noto Sans SC", sans-serif;
-            --font-display: var(--font-serif-cn), var(--font-serif-en);
-            --font-body: var(--font-sans-cn), var(--font-sans-en);
-
-            /* —— Academic Palette —— */
-            --ink: #14181f;
-            --ink-soft: #2c3340;
-            --paper: #faf7f0;
-            --paper-soft: #f3efe5;
-            --paper-line: rgba(20, 24, 31, .14);
-            --paper-rule: rgba(20, 24, 31, .28);
-            --muted: #6b6f78;
-            --accent: #7a2630;       /* deep oxblood / 深酒红 */
-            --accent-soft: #a04752;
+            /* 中文统一使用黑体系：PingFang / 微软雅黑 / SimHei / Noto Sans SC */
+            --font-cn: "IBM Plex Sans", "Inter", "PingFang SC", "苹方", "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", "Noto Sans SC", Arial, sans-serif;
+            --font-en: "IBM Plex Sans", "Inter", Arial, sans-serif;
+            --font-serif-en: "Spectral", "Source Serif Pro", Georgia, serif;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: var(--font-body);
+            font-family: var(--font-cn);
             font-feature-settings: "kern" 1, "liga" 1;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
-            color: var(--ink-soft);
-            background: var(--paper);
         }
 
-        /* —— Typography Reset for Academic Feel —— */
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-            color: var(--ink);
-            letter-spacing: 0;
-            font-weight: 600;
-        }
-
-        .en, .num, .breadcrumb, .legal span {
-            font-family: var(--font-sans-en);
+        .en,
+        .eyebrow,
+        .num,
+        .tag,
+        .btn,
+        .more,
+        .label-col h5,
+        .breadcrumb,
+        .legal span {
+            font-family: var(--font-en);
             font-variant-numeric: lining-nums tabular-nums;
         }
 
+        h1, h2, h3, h4, h5,
+        .section-head h2,
+        .editorial h2 {
+            font-family: var(--font-cn);
+            letter-spacing: 0;
+        }
+
+        .lead,
+        p,
+        li {
+            font-family: var(--font-cn);
+        }
+
         /* ============================================
-           Page Header — Editorial Frontispiece
+           Header Navigation — Bold & Refined
            ============================================ */
-        .page-header {
-            background: var(--paper);
-            padding: 6rem 0 3rem;
-            position: relative;
-            border-bottom: 1px solid var(--paper-line);
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--ink);
-        }
-
-        .page-header .container {
-            max-width: 1100px;
-        }
-
-        .breadcrumb {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 3rem;
-            display: flex;
-            gap: .8rem;
-            font-size: .72rem;
-            letter-spacing: .22em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .breadcrumb li:not(:last-child)::after {
-            content: '/';
-            margin-left: .8rem;
-            color: var(--paper-rule);
-        }
-        .breadcrumb a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: color .2s;
-        }
-        .breadcrumb a:hover { color: var(--accent); }
-
-        .page-header .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: var(--font-sans-en);
-            font-size: .72rem;
-            letter-spacing: .32em;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 1.6rem;
-        }
-        .page-header .eyebrow::before {
-            content: '';
-            width: 36px;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        .page-header h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            line-height: 1.18;
+        .site-header .nav-menu > li > a {
+            font-family: var(--font-cn);
             font-weight: 600;
-            color: var(--ink);
-            margin: 0 0 1.4rem;
-            max-width: 16ch;
-        }
-
-        .page-header h1 .h1-en {
-            display: block;
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 400;
-            font-size: .42em;
-            color: var(--muted);
-            letter-spacing: .01em;
-            margin-top: .8rem;
-        }
-
-        .page-header > .container > p {
-            font-family: var(--font-body);
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--ink-soft);
-            max-width: 62ch;
-            margin: 0;
-            padding-top: 1.6rem;
-            border-top: 1px solid var(--paper-line);
-        }
-
-        /* ============================================
-           Section Layout
-           ============================================ */
-        .section {
-            padding: 5rem 0;
-            background: var(--paper);
-        }
-        .section--soft {
-            background: var(--paper-soft);
-        }
-        .section--ink {
-            background: var(--ink);
-            color: rgba(255, 255, 255, .82);
-        }
-        .section--ink h2,
-        .section--ink h3,
-        .section--ink h4 { color: #fff; }
-        .section--ink .eyebrow { color: var(--accent-soft); }
-        .section--ink .eyebrow::before { background: var(--accent-soft); }
-
-        .section-head {
-            max-width: 760px;
-            margin: 0 auto 3.2rem;
-            text-align: center;
-        }
-        .section-head .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: var(--font-sans-en);
-            font-size: .7rem;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-        }
-        .section-head .eyebrow::before,
-        .section-head .eyebrow::after {
-            content: '';
-            width: 28px;
-            height: 1px;
-            background: currentColor;
-            opacity: .6;
-        }
-        .section-head h2 {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-            font-weight: 600;
-            margin: 0 0 1rem;
-            line-height: 1.25;
-        }
-        .section-head .lead {
-            font-size: 1rem;
-            line-height: 1.85;
-            color: var(--muted);
-            margin: 0;
-        }
-
-        /* ============================================
-           Quick Index — Table of Contents Style
-           ============================================ */
-        .toc {
-            max-width: 920px;
-            margin: 0 auto;
-            border-top: 2px solid var(--ink);
-            border-bottom: 2px solid var(--ink);
-            padding: .4rem 0;
-        }
-
-        .toc-item {
-            display: grid;
-            grid-template-columns: 64px 1fr auto;
-            align-items: baseline;
-            gap: 1.6rem;
-            padding: 1.6rem .4rem;
-            text-decoration: none;
-            color: var(--ink);
-            border-bottom: 1px solid var(--paper-line);
-            transition: background .25s ease, padding .25s ease;
-        }
-        .toc-item:last-child { border-bottom: none; }
-
-        .toc-item:hover {
-            background: var(--paper-soft);
-            padding-left: 1.2rem;
-        }
-
-        .toc-num {
-            font-family: var(--font-serif-en);
-            font-size: 1.15rem;
-            font-style: italic;
-            font-weight: 500;
-            color: var(--accent);
             letter-spacing: .04em;
         }
 
-        .toc-text h3 {
-            font-family: var(--font-display);
-            font-size: 1.32rem;
-            font-weight: 600;
-            color: var(--ink);
-            margin: 0 0 .35rem;
-            line-height: 1.4;
-        }
-        .toc-text .toc-en {
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 400;
-            font-size: .92rem;
-            color: var(--muted);
-            display: block;
-            margin-bottom: .55rem;
-        }
-        .toc-text p {
-            font-size: .9rem;
-            color: var(--ink-soft);
-            line-height: 1.7;
-            margin: 0;
-            max-width: 56ch;
-        }
-
-        .toc-go {
-            font-family: var(--font-sans-en);
-            font-size: .7rem;
-            letter-spacing: .22em;
-            text-transform: uppercase;
-            color: var(--muted);
-            white-space: nowrap;
-            transition: color .2s, transform .25s;
-        }
-        .toc-item:hover .toc-go {
-            color: var(--accent);
-            transform: translateX(4px);
-        }
-        .toc-go::after {
-            content: ' →';
-            font-family: var(--font-sans-en);
-        }
-
-        @media (max-width: 700px) {
-            .toc-item {
-                grid-template-columns: 48px 1fr;
-                gap: 1rem;
-                padding: 1.4rem .2rem;
-            }
-            .toc-go { display: none; }
-            .toc-num { font-size: 1rem; }
-            .toc-text h3 { font-size: 1.1rem; }
+        .site-header .nav-menu > li > a.is-active {
+            font-weight: 700;
         }
 
         /* ============================================
-           Editorial Section — Per Center
-           ============================================ */
-        .editorial {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 4rem;
-            max-width: 1180px;
-            margin: 0 auto;
-        }
-
-        .label-col {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-            border-top: 2px solid var(--ink);
-            padding-top: 1.2rem;
-        }
-        .section--soft .label-col { border-top-color: var(--ink); }
-
-        .label-col h5 {
-            font-family: var(--font-sans-en);
-            font-size: .68rem;
-            font-weight: 600;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin: 0 0 .8rem;
-        }
-
-        .label-col .part-num {
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 500;
-            font-size: 3.2rem;
-            line-height: 1;
-            color: var(--ink);
-            margin: 0 0 1.2rem;
-            letter-spacing: -.02em;
-        }
-
-        .label-col .divider {
-            display: none;
-        }
-
-        .label-col p {
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.4;
-            color: var(--ink);
-            margin: 0 0 .6rem;
-        }
-        .label-col .text-muted {
-            font-family: var(--font-display);
-            font-style: normal;
-            font-size: .92rem;
-            color: var(--muted);
-            margin-top: .4rem !important;
-        }
-
-        /* —— Tag (keyword) refinement —— */
-        .tag,
-        .tag--accent {
-            display: inline-block;
-            font-family: var(--font-sans-en);
-            font-size: .68rem;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: var(--accent);
-            background: transparent !important;
-            border: none !important;
-            padding: 0 1rem 0 0 !important;
-            margin: 0 !important;
-            font-weight: 500;
-            position: relative;
-        }
-        .tag::before {
-            content: '/ ';
-            color: var(--paper-rule);
-            margin-right: .35rem;
-        }
-        .tag:first-of-type::before { content: ''; margin: 0; }
-
-        .editorial > div:last-child > .tag:first-of-type {
-            margin-bottom: 1.4rem !important;
-        }
-
-        .editorial h2 {
-            font-family: var(--font-display);
-            font-size: clamp(1.7rem, 3vw, 2.2rem);
-            font-weight: 600;
-            color: var(--ink);
-            margin: 1.2rem 0 1.4rem !important;
-            line-height: 1.3;
-            max-width: 22ch;
-        }
-
-        .editorial > div:last-child > .lead {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            line-height: 1.85;
-            color: var(--ink);
-            font-weight: 400;
-            border-left: 2px solid var(--accent);
-            padding: .2rem 0 .2rem 1.4rem;
-            margin: 0 0 2.2rem;
-            max-width: 60ch;
-        }
-
-        .editorial h5.mt-4 {
-            font-family: var(--font-sans-en);
-            font-size: .72rem;
-            font-weight: 600;
-            letter-spacing: .28em;
-            text-transform: uppercase;
-            color: var(--ink);
-            margin: 3rem 0 1.6rem;
-            padding-bottom: .8rem;
-            border-bottom: 1px solid var(--ink);
-            position: relative;
-        }
-        .editorial h5.mt-4::before {
-            content: '§';
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            color: var(--accent);
-            margin-right: .6rem;
-            font-weight: 400;
-        }
-        .editorial h5.mt-4::after {
-            content: ' / 主要研究方向';
-            font-family: var(--font-display);
-            text-transform: none;
-            letter-spacing: 0;
-            font-weight: 600;
-            color: var(--ink);
-            font-size: 1rem;
-            margin-left: .4rem;
-        }
-        .editorial h5.mt-4 {
-            text-indent: 0;
-        }
-
-        /* Hide the original "主要研究方向" text by replacing with custom */
-        .editorial h5.mt-4 {
-            font-size: 0;
-            line-height: 1;
-        }
-        .editorial h5.mt-4::before { font-size: 1.2rem; }
-        .editorial h5.mt-4::after { font-size: 1rem; }
-
-        /* —— Numbered list with hanging indent (academic style) —— */
-        .bullets {
-            list-style: none;
-            counter-reset: bullets;
-            padding: 0;
-            margin: 0;
-            max-width: 64ch;
-        }
-        .bullets > li {
-            counter-increment: bullets;
-            display: grid;
-            grid-template-columns: 56px 1fr;
-            gap: 1.2rem;
-            padding: 1.6rem 0;
-            border-bottom: 1px solid var(--paper-line);
-            position: relative;
-        }
-        .bullets > li::before {
-            content: counter(bullets, decimal-leading-zero);
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 500;
-            font-size: 1.4rem;
-            color: var(--accent);
-            line-height: 1.4;
-            letter-spacing: .02em;
-        }
-        .bullets > li:last-child { border-bottom: none; }
-
-        .bullets h4 {
-            font-family: var(--font-display);
-            font-size: 1.08rem;
-            font-weight: 600;
-            color: var(--ink);
-            margin: 0 0 .6rem;
-            line-height: 1.45;
-        }
-        .bullets p {
-            font-size: .95rem;
-            line-height: 1.85;
-            color: var(--ink-soft);
-            margin: 0;
-        }
-
-        @media (max-width: 900px) {
-            .editorial {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .label-col {
-                position: static;
-                padding-top: .8rem;
-            }
-            .label-col .part-num {
-                font-size: 2.4rem;
-                margin-bottom: .8rem;
-            }
-            .bullets > li {
-                grid-template-columns: 44px 1fr;
-                gap: .8rem;
-            }
-            .bullets > li::before { font-size: 1.15rem; }
-        }
-
-        /* ============================================
-           Team Block — Academic Directory
+           Team Block — Academic Directory Style
+           参考: LSHTM / Hopkins Bloomberg / Imperial College
            ============================================ */
         .team-block {
-            margin-top: 3rem;
-            margin-bottom: 3.4rem;
-            padding-top: 1.8rem;
-            border-top: 1px solid var(--paper-rule);
+            margin-top: 2.4rem;
+            margin-bottom: 2.8rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid rgba(0, 0, 0, .14);
             background: transparent;
         }
 
@@ -539,36 +89,37 @@
             align-items: baseline;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 1.6rem;
         }
+
         .team-block-head h3 {
             margin: 0;
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--ink);
-            letter-spacing: 0;
-        }
-        .team-block-head .en {
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-size: .92rem;
+            font-family: var(--font-cn);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
             letter-spacing: .02em;
-            text-transform: none;
-            color: var(--muted);
-            font-weight: 400;
         }
+
+        .team-block-head .en {
+            font-size: .72rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #6b6b6b;
+            font-weight: 500;
+        }
+
         .team-block-head .line {
             flex: 1;
             height: 1px;
-            background: var(--paper-line);
+            background: rgba(0, 0, 0, .12);
             min-width: 40px;
         }
 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 2.4rem 1.6rem;
+            gap: 2rem 1.5rem;
             align-items: start;
         }
 
@@ -581,6 +132,7 @@
             flex-direction: column;
             transition: none;
         }
+
         .team-card:hover {
             transform: none;
             box-shadow: none;
@@ -592,290 +144,149 @@
             overflow: hidden;
             background: linear-gradient(160deg, #ece8dc 0%, #d4ccb6 100%);
             position: relative;
-            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08);
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06);
         }
+
         .team-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: grayscale(20%) contrast(1.02);
+            filter: grayscale(15%) contrast(1.02);
             transition: transform .6s ease, filter .6s ease;
         }
+
         .team-card:hover .team-photo img {
             transform: scale(1.04);
             filter: grayscale(0%) contrast(1);
         }
 
+        /* Team body：缩短照片与文字距离，并保持各卡片内容对齐 */
         .team-body {
-            padding: .8rem 0 0;
+            padding: .68rem 0 0;
             display: flex;
             flex-direction: column;
             flex: 1;
         }
+
+        /* 姓名：减少原本 2 行固定高度，避免照片下方留白过大 */
         .team-name {
             margin: 0 0 .35rem;
-            font-family: var(--font-display);
+            font-family: var(--font-cn);
             font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--ink);
+            font-weight: 700;
+            color: #111;
             line-height: 1.35;
+            letter-spacing: 0;
             min-height: 1.35em;
         }
+
+        /* 职务标识：统一占位高度，让有职务和无职务的 PI 下方职称保持同一水平线 */
         .team-role {
             align-self: flex-start;
             display: inline-flex;
             align-items: center;
             gap: .45rem;
-            font-family: var(--font-sans-en);
-            font-size: .68rem;
+            font-family: var(--font-cn);
+            font-size: .72rem;
             font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: var(--accent);
+            color: var(--accent, #0b6f6f);
+            background: transparent;
+            border: none;
+            padding: 0;
+            border-radius: 0;
             line-height: 1.45;
-            margin: 0 0 .45rem;
+            letter-spacing: .02em;
+            margin: 0 0 .4rem;
             min-height: 2.1em;
         }
+
         .team-role::before {
             content: '';
             display: inline-block;
             width: 14px;
             height: 2px;
-            background: var(--accent);
+            background: var(--accent, #0b6f6f);
             flex-shrink: 0;
         }
+
+        /* 没有 .team-role 的卡片自动补足同样高度，确保职称横向对齐 */
         .team-body:not(:has(.team-role)) .team-title {
-            margin-top: calc(2.1em + .45rem);
+            margin-top: calc(2.1em + .4rem);
         }
+
+        /* 职称：统一高度，让研究方向起点也更整齐 */
         .team-title {
-            font-family: var(--font-body);
             font-size: .8rem;
-            color: var(--muted);
+            color: #555;
             margin: 0;
             padding-bottom: .55rem;
-            border-bottom: 1px solid var(--paper-line);
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
             line-height: 1.5;
             min-height: 2.25em;
         }
+
+        /* 研究方向：字号缩小，整体更轻、更紧凑 */
         .team-research {
-            font-family: var(--font-body);
-            font-size: .72rem;
-            color: var(--ink-soft);
-            line-height: 1.7;
-            margin: .6rem 0 0;
+            font-size: .66rem;
+            color: #555;
+            line-height: 1.65;
+            margin: .5rem 0 0;
         }
+
         .team-research::before {
-            content: 'RES. / ';
-            font-family: var(--font-sans-en);
+            content: '研究方向 / ';
+            font-family: var(--font-cn);
             font-style: normal;
             font-weight: 600;
-            font-size: .68rem;
-            letter-spacing: .14em;
-            color: var(--accent);
+            color: #1a1a1a;
         }
 
         @media (max-width: 600px) {
             .team-block {
-                padding-top: 1.4rem;
-                margin-top: 2rem;
-                margin-bottom: 2.4rem;
+                padding-top: 1.2rem;
+                margin-top: 1.8rem;
+                margin-bottom: 2.2rem;
             }
+
             .team-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.6rem 1rem;
+                gap: 1.5rem 1rem;
             }
-            .team-name { font-size: .98rem; min-height: 1.35em; }
-            .team-role { font-size: .62rem; min-height: 2.1em; }
+
+            .team-body {
+                padding: .6rem 0 0;
+            }
+
+            .team-name {
+                font-size: .98rem;
+                line-height: 1.35;
+                min-height: 1.35em;
+                margin-bottom: .32rem;
+            }
+
+            .team-role {
+                font-size: .66rem;
+                line-height: 1.45;
+                min-height: 2.1em;
+                margin-bottom: .36rem;
+            }
+
             .team-body:not(:has(.team-role)) .team-title {
                 margin-top: calc(2.1em + .36rem);
             }
-            .team-title { font-size: .72rem; min-height: 2.15em; }
-            .team-research { font-size: .66rem; }
-        }
 
-        /* ============================================
-           Core Capabilities — Numbered Matrix
-           ============================================ */
-        .section--ink {
-            position: relative;
-        }
-        .section--ink::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: rgba(255,255,255,.14);
-        }
-
-        .section--ink .grid--3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0;
-            max-width: 1180px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255,255,255,.18);
-        }
-        .section--ink .feature-card {
-            background: transparent !important;
-            border: none !important;
-            border-bottom: 1px solid rgba(255,255,255,.18) !important;
-            border-right: 1px solid rgba(255,255,255,.18) !important;
-            border-radius: 0 !important;
-            padding: 2.4rem 2rem !important;
-            box-shadow: none !important;
-            transition: background .3s;
-        }
-        .section--ink .feature-card:hover {
-            background: rgba(255,255,255,.04) !important;
-            transform: none !important;
-        }
-        .section--ink .feature-card:nth-child(3n) {
-            border-right: none !important;
-        }
-
-        .section--ink .feature-card .num {
-            font-family: var(--font-serif-en);
-            font-style: italic;
-            font-weight: 500;
-            font-size: .82rem;
-            letter-spacing: .12em;
-            color: var(--accent-soft);
-            margin-bottom: 1rem;
-            display: block;
-        }
-        .section--ink .feature-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #fff;
-            margin: 0 0 .9rem;
-            line-height: 1.4;
-        }
-        .section--ink .feature-card p {
-            font-family: var(--font-body);
-            font-size: .9rem;
-            line-height: 1.85;
-            color: rgba(255,255,255,.72);
-            margin: 0;
-        }
-
-        @media (max-width: 900px) {
-            .section--ink .grid--3 { grid-template-columns: repeat(2, 1fr); }
-            .section--ink .feature-card:nth-child(3n) {
-                border-right: 1px solid rgba(255,255,255,.18) !important;
+            .team-title {
+                font-size: .72rem;
+                line-height: 1.45;
+                min-height: 2.15em;
+                padding-bottom: .5rem;
             }
-            .section--ink .feature-card:nth-child(2n) {
-                border-right: none !important;
+
+            .team-research {
+                font-size: .62rem;
+                line-height: 1.6;
             }
-        }
-        @media (max-width: 600px) {
-            .section--ink .grid--3 { grid-template-columns: 1fr; }
-            .section--ink .feature-card {
-                border-right: none !important;
-                padding: 2rem 1.4rem !important;
-            }
-        }
-
-        /* ============================================
-           CTA — Editorial closing
-           ============================================ */
-        .cta {
-            background: var(--paper);
-            padding: 6rem 0;
-            text-align: center;
-            border-top: 1px solid var(--paper-line);
-            border-bottom: 1px solid var(--paper-line);
-        }
-        .cta .container { max-width: 720px; }
-        .cta .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: var(--font-sans-en);
-            font-size: .7rem;
-            letter-spacing: .3em;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-        }
-        .cta .eyebrow::before,
-        .cta .eyebrow::after {
-            content: '';
-            width: 28px;
-            height: 1px;
-            background: currentColor;
-            opacity: .6;
-        }
-        .cta h2 {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 3.4vw, 2.4rem);
-            font-weight: 600;
-            color: var(--ink);
-            margin: 0 0 1rem;
-            line-height: 1.3;
-        }
-        .cta p {
-            font-size: 1rem;
-            line-height: 1.85;
-            color: var(--muted);
-            max-width: 52ch;
-            margin: 0 auto 2rem;
-        }
-        .cta .btn {
-            font-family: var(--font-sans-en);
-            font-size: .78rem;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 0;
-            transition: all .25s;
-        }
-        .cta .btn-primary {
-            background: var(--ink);
-            color: #fff;
-            border: 1px solid var(--ink);
-        }
-        .cta .btn-primary:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-        .cta .btn-ghost {
-            background: transparent;
-            color: var(--ink);
-            border: 1px solid var(--ink);
-        }
-        .cta .btn-ghost:hover {
-            background: var(--ink);
-            color: #fff;
-        }
-
-        /* ============================================
-           Header navigation refinement
-           ============================================ */
-        .site-header .nav-menu > li > a {
-            font-family: var(--font-sans-cn);
-            font-weight: 500;
-            letter-spacing: .04em;
-        }
-        .site-header .nav-menu > li > a.is-active {
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        /* ============================================
-           Reveal animation (subtle)
-           ============================================ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(16px);
-            transition: opacity .8s ease, transform .8s ease;
-        }
-        .reveal.is-in {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -906,11 +317,8 @@
             <li><a href="index.html">首页</a></li>
             <li>研究方向</li>
         </ul>
-        <span class="eyebrow">Research Framework / 研究框架</span>
-        <h1>
-            六大研究业务中心
-            <span class="h1-en">Six Research Centers in Real-World Health Sciences</span>
-        </h1>
+        <span class="eyebrow">Research Framework</span>
+        <h1>六大研究业务中心</h1>
         <p>围绕真实世界证据生成与健康科学转化，形成六大核心研究与业务板块，覆盖从数据、方法、评价到产业转化的完整链条。</p>
     </div>
 </section>
@@ -918,72 +326,60 @@
 <section class="section">
     <div class="container">
         <div class="section-head">
-            <span class="eyebrow">Table of Contents</span>
-            <h2>研究中心目次</h2>
-            <p class="lead">点击任一中心条目，跳转至对应研究方向的详细介绍。</p>
+            <span class="eyebrow">Quick Index</span>
+            <h2>研究中心导览</h2>
+            <p class="lead">点击下方任一中心，跳转至对应研究方向的详细介绍。</p>
         </div>
 
-        <nav class="toc" aria-label="研究中心目录">
-            <a href="#center-1" class="toc-item">
-                <span class="toc-num">I.</span>
-                <div class="toc-text">
-                    <h3>公众健康与生活方式医学</h3>
-                    <span class="toc-en">Public Health &amp; Lifestyle Medicine</span>
-                    <p>慢性病预防、主动健康管理与生活方式干预评价。</p>
-                </div>
-                <span class="toc-go">详读</span>
+        <div class="grid grid--3">
+            <a href="#center-1" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 01</div>
+                <h3>公众健康与生活方式医学</h3>
+                <span class="en">Public Health & Lifestyle Medicine</span>
+                <p>慢性病预防、主动健康管理与生活方式干预评价。</p>
+                <span class="more">查看详情</span>
             </a>
 
-            <a href="#center-2" class="toc-item">
-                <span class="toc-num">II.</span>
-                <div class="toc-text">
-                    <h3>健康实施科学</h3>
-                    <span class="toc-en">Health Implementation Science</span>
-                    <p>有效干预如何在真实世界中被接受、被执行、被持续。</p>
-                </div>
-                <span class="toc-go">详读</span>
+            <a href="#center-2" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 02</div>
+                <h3>健康实施科学</h3>
+                <span class="en">Health Implementation Science</span>
+                <p>有效干预如何在真实世界中被接受、被执行、被持续。</p>
+                <span class="more">查看详情</span>
             </a>
 
-            <a href="#center-3" class="toc-item">
-                <span class="toc-num">III.</span>
-                <div class="toc-text">
-                    <h3>数字流行病学与数据科学</h3>
-                    <span class="toc-en">Digital Epidemiology &amp; Data Science</span>
-                    <p>真实世界数据治理、队列建设与因果推断分析。</p>
-                </div>
-                <span class="toc-go">详读</span>
+            <a href="#center-3" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 03</div>
+                <h3>数字流行病学与数据科学</h3>
+                <span class="en">Digital Epidemiology & Data Science</span>
+                <p>真实世界数据治理、队列建设与因果推断分析。</p>
+                <span class="more">查看详情</span>
             </a>
 
-            <a href="#center-4" class="toc-item">
-                <span class="toc-num">IV.</span>
-                <div class="toc-text">
-                    <h3>卫生经济学与健康政策评估</h3>
-                    <span class="toc-en">Health Economics &amp; Policy Evaluation</span>
-                    <p>公共卫生政策、健康干预与服务模式的价值评估。</p>
-                </div>
-                <span class="toc-go">详读</span>
+            <a href="#center-4" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 04</div>
+                <h3>卫生经济学与健康政策评估</h3>
+                <span class="en">Health Economics & Policy Evaluation</span>
+                <p>公共卫生政策、健康干预与服务模式的价值评估。</p>
+                <span class="more">查看详情</span>
             </a>
 
-            <a href="#center-5" class="toc-item">
-                <span class="toc-num">V.</span>
-                <div class="toc-text">
-                    <h3>健康款待学与康养产业转化</h3>
-                    <span class="toc-en">Health-Hospitality &amp; Wellness Translation</span>
-                    <p>构建健康款待学学科框架，推动康养产业证据驱动。</p>
-                </div>
-                <span class="toc-go">详读</span>
+            <a href="#center-5" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 05</div>
+                <h3>健康款待学与康养产业转化</h3>
+                <span class="en">Health-Hospitality & Wellness Translation</span>
+                <p>构建健康款待学学科框架，推动康养产业证据驱动。</p>
+                <span class="more">查看详情</span>
             </a>
 
-            <a href="#center-6" class="toc-item">
-                <span class="toc-num">VI.</span>
-                <div class="toc-text">
-                    <h3>粤澳健康科学人才发展与交流</h3>
-                    <span class="toc-en">Talent Development &amp; Exchange</span>
-                    <p>培养兼具公共卫生、研究、数据与转化能力的复合人才。</p>
-                </div>
-                <span class="toc-go">详读</span>
+            <a href="#center-6" class="card" style="text-decoration:none;">
+                <div class="num">CENTER · 06</div>
+                <h3>粤澳健康科学人才发展与交流</h3>
+                <span class="en">Talent Development & Exchange</span>
+                <p>培养兼具公共卫生、研究、数据与转化能力的复合人才。</p>
+                <span class="more">查看详情</span>
             </a>
-        </nav>
+        </div>
     </div>
 </section>
 
@@ -991,10 +387,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part I</h5>
-                <div class="part-num">I</div>
-                <p>Public Health &amp;<br>Lifestyle Medicine</p>
-                <p class="text-muted">公众健康与生活方式医学中心</p>
+                <h5>Center · 01</h5>
+                <div class="divider"></div>
+                <p>Public Health &<br>Lifestyle Medicine</p>
+                <p class="text-muted mt-2">公众健康与生活方式医学中心</p>
             </div>
 
             <div>
@@ -1002,7 +398,7 @@
                 <span class="tag tag--accent">Active Health</span>
                 <span class="tag tag--accent">Lifestyle Intervention</span>
 
-                <h2>公众健康与生活方式医学中心</h2>
+                <h2 class="mt-2">公众健康与生活方式医学中心</h2>
                 <p class="lead">
                     聚焦慢性病预防、主动健康管理和生活方式干预评价，重点研究营养、运动、睡眠、压力管理、戒烟限酒、心理行为与社会支持等因素对健康结局的长期影响。
                 </p>
@@ -1051,7 +447,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1087,10 +483,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part II</h5>
-                <div class="part-num">II</div>
+                <h5>Center · 02</h5>
+                <div class="divider"></div>
                 <p>Health<br>Implementation Science</p>
-                <p class="text-muted">健康实施科学中心</p>
+                <p class="text-muted mt-2">健康实施科学中心</p>
             </div>
 
             <div>
@@ -1098,7 +494,7 @@
                 <span class="tag tag--accent">Mixed Methods</span>
                 <span class="tag tag--accent">Scale-Up</span>
 
-                <h2>健康实施科学中心</h2>
+                <h2 class="mt-2">健康实施科学中心</h2>
                 <p class="lead">
                     关注一个核心问题：已经被证明有效的健康干预，如何在复杂真实世界环境中被接受、被执行、被持续，并最终产生可衡量的健康收益。
                 </p>
@@ -1147,7 +543,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1183,10 +579,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part III</h5>
-                <div class="part-num">III</div>
-                <p>Digital Epidemiology<br>&amp; Data Science</p>
-                <p class="text-muted">数字流行病学与数据科学中心</p>
+                <h5>Center · 03</h5>
+                <div class="divider"></div>
+                <p>Digital Epidemiology<br>& Data Science</p>
+                <p class="text-muted mt-2">数字流行病学与数据科学中心</p>
             </div>
 
             <div>
@@ -1194,7 +590,7 @@
                 <span class="tag tag--accent">Causal Inference</span>
                 <span class="tag tag--accent">Privacy Computing</span>
 
-                <h2>数字流行病学与数据科学中心</h2>
+                <h2 class="mt-2">数字流行病学与数据科学中心</h2>
                 <p class="lead">
                     中心的底层方法与数据能力平台，负责真实世界数据治理、队列建设、数字健康监测、因果推断分析与人工智能辅助研究。
                 </p>
@@ -1265,7 +661,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1307,10 +703,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part IV</h5>
-                <div class="part-num">IV</div>
-                <p>Health Economics<br>&amp; Policy Evaluation</p>
-                <p class="text-muted">卫生经济学与健康政策评估中心</p>
+                <h5>Center · 04</h5>
+                <div class="divider"></div>
+                <p>Health Economics<br>& Policy Evaluation</p>
+                <p class="text-muted mt-2">卫生经济学与健康政策评估中心</p>
             </div>
 
             <div>
@@ -1318,7 +714,7 @@
                 <span class="tag tag--accent">Policy Evaluation</span>
                 <span class="tag tag--accent">HTA</span>
 
-                <h2>卫生经济学与健康政策评估中心</h2>
+                <h2 class="mt-2">卫生经济学与健康政策评估中心</h2>
                 <p class="lead">
                     面向政府、医保、医疗机构、公共卫生部门与健康产业方，开展公共卫生政策、健康干预项目与健康服务模式的价值评估。
                 </p>
@@ -1367,7 +763,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1403,10 +799,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part V</h5>
-                <div class="part-num">V</div>
-                <p>Health-Hospitality<br>&amp; Wellness Translation</p>
-                <p class="text-muted">健康款待学与康养产业转化中心</p>
+                <h5>Center · 05</h5>
+                <div class="divider"></div>
+                <p>Health-Hospitality<br>& Wellness Translation</p>
+                <p class="text-muted mt-2">健康款待学与康养产业转化中心</p>
             </div>
 
             <div>
@@ -1414,7 +810,7 @@
                 <span class="tag tag--accent">Wellness</span>
                 <span class="tag tag--accent">Spatial Health</span>
 
-                <h2>健康款待学与康养产业转化中心</h2>
+                <h2 class="mt-2">健康款待学与康养产业转化中心</h2>
                 <p class="lead">
                     中心的特色交叉平台，面向酒店、度假区、康养机构、会展空间、文旅综合体、中医药康养项目与高端服务业，开展健康价值验证、服务标准建设与产业转化研究。
                 </p>
@@ -1463,7 +859,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1499,10 +895,10 @@
     <div class="container">
         <div class="editorial">
             <div class="label-col">
-                <h5>Part VI</h5>
-                <div class="part-num">VI</div>
-                <p>Talent Development<br>&amp; Exchange</p>
-                <p class="text-muted">粤澳健康科学人才发展与交流中心</p>
+                <h5>Center · 06</h5>
+                <div class="divider"></div>
+                <p>Talent Development<br>& Exchange</p>
+                <p class="text-muted mt-2">粤澳健康科学人才发展与交流中心</p>
             </div>
 
             <div>
@@ -1510,7 +906,7 @@
                 <span class="tag tag--accent">Cross-Disciplinary</span>
                 <span class="tag tag--accent">International Exchange</span>
 
-                <h2>粤澳健康科学人才发展与交流中心</h2>
+                <h2 class="mt-2">粤澳健康科学人才发展与交流中心</h2>
                 <p class="lead">
                     致力于培养兼具公共卫生素养、真实世界研究能力、数据科学能力、实施科学能力与产业转化能力的复合型人才。
                 </p>
@@ -1548,7 +944,7 @@
                     </div>
                 </div>
 
-                <h5 class="mt-4"></h5>
+                <h5 class="mt-4">主要研究方向</h5>
                 <ol class="bullets">
                     <li>
                         <div>
@@ -1585,42 +981,42 @@
         <div class="section-head">
             <span class="eyebrow">Core Capabilities</span>
             <h2>中心核心能力</h2>
-            <p class="lead" style="color: rgba(255,255,255,.65);">围绕真实世界研究全链条，形成方法、数据、分析、实施、政策与产业转化的六项核心能力。</p>
+            <p class="lead">围绕真实世界研究全链条，形成方法、数据、分析、实施、政策与产业转化的六项核心能力。</p>
         </div>
 
         <div class="grid grid--3">
             <div class="card feature-card">
-                <span class="num">Capability i.</span>
+                <div class="num">CAPABILITY · 01</div>
                 <h3>真实世界研究设计</h3>
                 <p>能够根据不同研究问题，设计队列研究、病例对照研究、横断面研究、自然实验研究、务实性试验、目标试验模拟、混合方法研究与实施科学研究方案。</p>
             </div>
 
             <div class="card feature-card">
-                <span class="num">Capability ii.</span>
+                <div class="num">CAPABILITY · 02</div>
                 <h3>多源健康数据治理</h3>
                 <p>能够整合体检数据、医疗数据、公共卫生数据、问卷数据、可穿戴设备数据、环境暴露数据、消费场景数据与随访数据，并进行标准化、质控、脱敏与合规管理。</p>
             </div>
 
             <div class="card feature-card">
-                <span class="num">Capability iii.</span>
+                <div class="num">CAPABILITY · 03</div>
                 <h3>因果推断与统计分析</h3>
                 <p>能够运用现代流行病学与统计方法，提高真实世界研究的科学解释力，减少混杂偏倚、选择偏倚与信息偏倚对研究结论的影响。</p>
             </div>
 
             <div class="card feature-card">
-                <span class="num">Capability iv.</span>
+                <div class="num">CAPABILITY · 04</div>
                 <h3>健康干预实施与评价</h3>
                 <p>能够围绕社区、企业、学校、酒店、康养机构等真实场景，开展干预设计、过程评价、效果评价、成本评价与推广路径研究。</p>
             </div>
 
             <div class="card feature-card">
-                <span class="num">Capability v.</span>
+                <div class="num">CAPABILITY · 05</div>
                 <h3>政策研究与智库转化</h3>
                 <p>能够将复杂科研结果转化为政府可读、产业可用、公众可理解的政策建议、标准文件、白皮书、蓝皮书与决策简报。</p>
             </div>
 
             <div class="card feature-card">
-                <span class="num">Capability vi.</span>
+                <div class="num">CAPABILITY · 06</div>
                 <h3>健康产业科学验证</h3>
                 <p>能够为康养服务、数字健康产品、酒店健康体验、企业健康项目与城市健康空间提供独立、规范、可信的科学评价与证据支持。</p>
             </div>
@@ -1633,7 +1029,7 @@
         <span class="eyebrow">Collaborate With Us</span>
         <h2>共建真实世界研究课题</h2>
         <p>欢迎与中心开展课题合作、队列共建、产业评价、人才培养与国际交流。</p>
-        <div class="hero-actions" style="justify-content:center; display:flex; gap:1rem; flex-wrap:wrap;">
+        <div class="hero-actions" style="justify-content:center;">
             <a href="services.html" class="btn btn-primary">查看合作方向</a>
             <a href="contact.html" class="btn btn-ghost">联系我们</a>
         </div>
@@ -1713,7 +1109,7 @@
         });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.section, .toc-item, .team-card, .bullets > li').forEach(el => {
+    document.querySelectorAll('.section, .card, .center-card, .team-card').forEach(el => {
         el.classList.add('reveal');
         io.observe(el);
     });
