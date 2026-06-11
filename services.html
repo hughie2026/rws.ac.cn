@@ -200,6 +200,45 @@
             transform: translateX(4px);
         }
 
+        /* =====================================================
+           Partner Sub-Link (Program Entry)
+        ===================================================== */
+        .partner-sublink {
+            display: block;
+            text-align: center;
+            margin-top: .7rem;
+            padding: .55rem .8rem;
+            font-size: .78rem;
+            font-weight: 700;
+            color: #0a8a8a;
+            letter-spacing: .04em;
+            background: rgba(10, 138, 138, .06);
+            border: 1px dashed rgba(10, 138, 138, .35);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background .3s ease, border-color .3s ease, transform .3s ease;
+        }
+
+        .partner-sublink:hover {
+            background: rgba(10, 138, 138, .12);
+            border-color: rgba(10, 138, 138, .6);
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           Inline Highlight Link (within checklist)
+        ===================================================== */
+        .inline-link {
+            color: #0a8a8a;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .inline-link:hover {
+            color: #066b6b;
+        }
+
         @media (max-width: 900px) {
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -268,17 +307,22 @@
         </div>
 
         <div class="partners-grid">
-            <a href="https://auht.edu.gl/" target="_blank" rel="noopener noreferrer" class="partner-card" aria-label="访问 American University of Healthcare Technology 官网">
-                <div class="partner-logo">
-                    <img src="img/partners/us-healthcare-tech-university.png" alt="American University of Healthcare Technology Logo">
-                </div>
-                <h3 class="partner-name">
-                    American University of Healthcare Technology
-                    <span class="partner-name-en">International Strategic Academic Partner</span>
-                </h3>
-                <p class="partner-meta">联合开展真实世界研究方法、健康技术评估、数据科学与健康科技教育领域的国际合作。</p>
-                <span class="partner-visit">访问官网</span>
-            </a>
+            <div>
+                <a href="https://auht.edu.gl/" target="_blank" rel="noopener noreferrer" class="partner-card" aria-label="访问 American University of Healthcare Technology 官网">
+                    <div class="partner-logo">
+                        <img src="img/partners/us-healthcare-tech-university.png" alt="American University of Healthcare Technology Logo">
+                    </div>
+                    <h3 class="partner-name">
+                        American University of Healthcare Technology
+                        <span class="partner-name-en">International Strategic Academic Partner</span>
+                    </h3>
+                    <p class="partner-meta">联合开展真实世界研究方法、健康技术评估、数据科学与健康科技教育领域的国际合作。</p>
+                    <span class="partner-visit">访问官网</span>
+                </a>
+                <a href="postdoc-auht.html" class="partner-sublink" aria-label="查看美利坚健康科技大学自筹经费博士后研究学者项目招生简章">
+                    查看 AUHT 自筹经费博士后项目招生简章 →
+                </a>
+            </div>
 
             <a href="https://tcc.edu.gl/" target="_blank" rel="noopener noreferrer" class="partner-card" aria-label="访问 The Crestone College 官网">
                 <div class="partner-logo">
@@ -404,7 +448,7 @@
                 <ul class="checklist mt-2" style="font-size:.92rem;">
                     <li>联合课题与数据合作</li>
                     <li>研究生联合培养</li>
-                    <li>博士后与青年科学家项目</li>
+                    <li><a href="postdoc-auht.html" class="inline-link">博士后与青年科学家项目（AUHT 联合培养）</a></li>
                     <li>国际会议与学术平台共建</li>
                 </ul>
             </article>
