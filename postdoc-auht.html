@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美利坚健康科技大学自筹经费博士后研究学者项目 | 广东横琴粤澳深度合作区真研健康科学中心</title>
+    <meta name="description" content="美利坚健康科技大学(AUHT)与广东横琴粤澳深度合作区真研健康科学中心联合开展的自筹经费、线上、非学位博士后研究学者项目招生简章。">
+    <link rel="icon" href="img/logo.png" type="image/png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Typography & Program-Page-Specific Styles
+         （与 services.html 完全一致的排版基调）
+    ===================================================== -->
+    <style>
+        :root {
+            --font-latin: "Inter", "Helvetica Neue", Arial, sans-serif;
+            --font-cjk: "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+            --font-main: "Inter", "Helvetica Neue", Arial, "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+        }
+
+        html,
+        body {
+            font-family: var(--font-main);
+            font-feature-settings: "liga" 1, "kern" 1, "tnum" 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        p, li, a, span, td, th, blockquote, button {
+            font-family: var(--font-main);
+        }
+
+        .eyebrow,
+        .num,
+        .en,
+        .tag,
+        .btn,
+        .breadcrumb,
+        .legal {
+            font-family: var(--font-latin), var(--font-cjk);
+            letter-spacing: .06em;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .site-header .nav-menu a {
+            font-family: var(--font-main);
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .site-header .nav-menu a.is-active {
+            font-weight: 900;
+        }
+
+        .site-header .nav-toggle {
+            font-family: var(--font-main);
+            font-weight: 800;
+        }
+
+        .page-header h1 {
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .lead {
+            font-weight: 400;
+            line-height: 1.85;
+        }
+
+        /* ===== Program-specific elements ===== */
+        .program-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .program-meta .meta-item {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 6px;
+            padding: 1.4rem 1.2rem;
+            text-align: left;
+        }
+
+        .program-meta .meta-label {
+            font-size: .72rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #0a8a8a;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        .program-meta .meta-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #143a3a;
+            line-height: 1.5;
+        }
+
+        .institute-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 6px;
+            padding: 2rem 1.8rem;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .institute-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #0a8a8a;
+            transition: width .4s ease;
+        }
+
+        .institute-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 42px rgba(20, 58, 58, .1);
+            border-color: rgba(10, 138, 138, .35);
+        }
+
+        .institute-card:hover::after {
+            width: 100%;
+        }
+
+        .institute-card .num {
+            color: #0a8a8a;
+            font-weight: 700;
+        }
+
+        .institute-card h3 {
+            color: #143a3a;
+            margin: .5rem 0 .3rem;
+        }
+
+        .institute-card .en {
+            display: block;
+            font-size: .78rem;
+            color: #5a6b6b;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .institute-card ul {
+            padding-left: 1.1rem;
+            margin: .8rem 0 0;
+        }
+
+        .institute-card ul li {
+            font-size: .92rem;
+            line-height: 1.75;
+            color: #2c3e3e;
+            margin-bottom: .25rem;
+        }
+
+        .institute-card .audience {
+            margin-top: 1.2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(0, 0, 0, .12);
+            font-size: .82rem;
+            color: #5a6b6b;
+            line-height: 1.7;
+        }
+
+        .notice-box {
+            background: #fffaf0;
+            border-left: 4px solid #d49a2b;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 0;
+            border-radius: 0 6px 6px 0;
+            font-size: .92rem;
+            line-height: 1.8;
+            color: #5a4a1f;
+        }
+
+        .notice-box strong {
+            color: #8a6418;
+        }
+
+        .req-list {
+            counter-reset: req;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .req-list li {
+            counter-increment: req;
+            position: relative;
+            padding: 1rem 0 1rem 3.2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .06);
+            font-size: .96rem;
+            line-height: 1.75;
+            color: #2c3e3e;
+        }
+
+        .req-list li::before {
+            content: counter(req, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            font-family: var(--font-latin);
+            font-size: .78rem;
+            font-weight: 800;
+            color: #0a8a8a;
+            letter-spacing: .08em;
+            background: rgba(10, 138, 138, .08);
+            padding: .25rem .55rem;
+            border-radius: 3px;
+        }
+
+        .req-list li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 900px) {
+            .program-meta {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .program-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =====================================================
+     Header / Navigation
+===================================================== -->
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="brand">
+            <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
+        </a>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="services.html" class="is-active">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="菜单">菜单</button>
+        </nav>
+    </div>
+</header>
+
+<!-- =====================================================
+     Page Header
+===================================================== -->
+<section class="page-header">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="services.html">服务与合作</a></li>
+            <li>AUHT 自筹经费博士后研究学者项目</li>
+        </ul>
+        <span class="eyebrow">AUHT × Hengqin · Postdoctoral Research Scholar Program</span>
+        <h1>美利坚健康科技大学<br>自筹经费博士后研究学者项目</h1>
+        <p>美利坚健康科技大学（American University of Healthcare Technology, AUHT）面向全球招募自筹经费博士后研究学者。本项目培养工作由 AUHT 大学研究中心委托广东横琴粤澳深度合作区真研健康科学中心组织开展，依托中心的导师资源、研究平台与学术网络，提供线上、远程、非学位的博士后层级研究训练与学术指导。</p>
+
+        <div class="program-meta">
+            <div class="meta-item">
+                <div class="meta-label">Mode</div>
+                <div class="meta-value">线上远程<br>非赴美</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Nature</div>
+                <div class="meta-value">非学位 · 非学分<br>非雇佣 · 非签证</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tuition</div>
+                <div class="meta-value">USD 8,000<br>每人每年</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Output</div>
+                <div class="meta-value">JCR Q3 及以上<br>同行评审论文</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Program Overview
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Program Overview</span>
+            <h2>项目简介</h2>
+            <p class="lead">本项目面向已取得博士学位、希望在医疗健康、公共卫生、价值评价、可持续福祉及跨学科健康研究领域继续开展高水平研究的学者与专业人士。</p>
+        </div>
+
+        <div class="grid grid--2">
+            <div class="card">
+                <div class="num">FRAMEWORK · 01</div>
+                <h3>合作框架</h3>
+                <p>项目由美利坚健康科技大学（AUHT）大学研究中心主办，培养工作委托广东横琴粤澳深度合作区真研健康科学中心组织开展。中心负责导师匹配、研究指导、过程管理、学术支持与成果产出辅导，并与 AUHT 大学研究中心保持协同。</p>
+                <p style="margin-top:.8rem;">AUHT 大学研究中心信息可访问：<a href="https://auht.edu.gl/research.html" target="_blank" rel="noopener noreferrer" style="color:#0a8a8a; font-weight:700;">auht.edu.gl/research.html</a></p>
+            </div>
+            <div class="card">
+                <div class="num">FRAMEWORK · 02</div>
+                <h3>项目性质</h3>
+                <p>本项目为<strong>自筹经费、线上、非学位、非学分、非签证</strong>性质的博士后层级研究培训与学术指导项目。</p>
+                <p style="margin-top:.8rem;">项目不构成美国境内雇佣关系，不提供薪资、员工福利、美国工作授权或移民签证担保。参与者在所在国家或地区通过线上方式完成项目活动，无需赴美。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Research Institutes
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Research Institutes</span>
+            <h2>研究中心与分设机构</h2>
+            <p class="lead">AUHT 大学研究中心设有四个分设机构。录取后，参与者将根据博士专业、研究背景、职业经历、研究兴趣、导师资源及项目容量，分流至前三个研究院之一开展线上研究训练；伦理委员会负责伦理审查与学术诚信支持，不作为分流培养单位。</p>
+        </div>
+
+        <div class="grid grid--2">
+            <article class="institute-card">
+                <div class="num">INSTITUTE · 01</div>
+                <h3>医疗大数据与计算健康研究院</h3>
+                <span class="en">Institute for Medical Big Data and Computational Health</span>
+                <p>聚焦临床场景中的医疗数据、人工智能、计算健康、临床决策支持与医疗质量改进，将临床经验、医疗数据和研究方法相结合，探索改善诊断、治疗、护理、预后、患者安全与医疗服务质量的研究路径。</p>
+                <ul>
+                    <li>临床大数据与真实世界临床研究</li>
+                    <li>人工智能辅助诊断与临床决策支持</li>
+                    <li>临床预测模型与风险评估工具开发</li>
+                    <li>智慧护理与护理数据科学</li>
+                    <li>临床质量改进与患者安全研究</li>
+                    <li>医学影像、病理与多模态临床数据研究</li>
+                    <li>临床文本挖掘与自然语言处理</li>
+                    <li>数字医疗工具在临床管理中的应用评价</li>
+                </ul>
+                <p class="audience"><strong>适合申请人：</strong>临床医生、护士、护理管理者、临床研究人员、医院信息化人员、医疗质量管理人员、药师、康复治疗师、检验技师、影像与病理相关专业人员。</p>
+            </article>
+
+            <article class="institute-card">
+                <div class="num">INSTITUTE · 02</div>
+                <h3>应用流行病学与生活方式医学研究院</h3>
+                <span class="en">Institute for Applied Epidemiology and Lifestyle Medicine</span>
+                <p>聚焦人群健康、疾病预防、健康行为、生活方式干预、慢病管理与公共卫生实践，鼓励围绕社区、学校、职场、家庭、医疗机构和特定人群开展应用型研究，将流行病学方法与实际健康干预相结合。</p>
+                <ul>
+                    <li>应用流行病学与人群健康研究</li>
+                    <li>慢性病预防与生活方式干预</li>
+                    <li>社区健康与基层公共卫生实践</li>
+                    <li>护理与公共卫生交叉研究</li>
+                    <li>生活方式医学与健康行为改变</li>
+                    <li>营养、运动与心理健康研究</li>
+                    <li>职场、学校与特殊人群健康促进</li>
+                    <li>公共卫生项目评价与实施科学</li>
+                </ul>
+                <p class="audience"><strong>适合申请人：</strong>公共卫生工作者、疾控与卫生行政人员、护士、护理教育者、健康管理师、营养师、运动健康专业人士、心理健康从业者、社区健康工作者、学校健康教育人员、职业健康人员、康复与慢病管理从业者。</p>
+            </article>
+
+            <article class="institute-card">
+                <div class="num">INSTITUTE · 03</div>
+                <h3>全人健康与永续福祉研究院</h3>
+                <span class="en">Institute of Holistic Health and Sustainable Wellbeing</span>
+                <p>关注健康不仅是医疗问题，更是社会、文化、经济、环境、制度、技术、服务体验和个体生活方式共同作用的结果，鼓励不同学科背景的研究者从各自专业出发研究健康、福祉、公平、价值、可持续性、服务体验与社会变迁。</p>
+                <ul>
+                    <li>健康生态与社会决定因素</li>
+                    <li>健康公平、弱势群体与社会照护</li>
+                    <li>健康政策、医疗制度与公共治理</li>
+                    <li>健康经济学与医疗价值评价</li>
+                    <li>可持续福祉与生活质量研究</li>
+                    <li>健康传播、健康素养与公众理解</li>
+                    <li>医学人文、生命伦理与健康文化</li>
+                    <li>健康与法律、权利及合规治理</li>
+                    <li>环境、城市与可持续健康</li>
+                    <li>健康服务设计与社会创新</li>
+                    <li>健康旅游、康养酒店与款待服务研究</li>
+                </ul>
+                <p class="audience"><strong>适合申请人：</strong>公共管理、公共政策、社会学、心理学、教育学、经济学、管理学、法学、哲学、伦理学、传播学、语言学、文学、历史、文化研究、环境与城市研究、设计、艺术、社会工作、老年学、可持续发展、旅游/酒店/款待管理、休闲研究、健康经济学与医疗管理等跨学科背景。</p>
+            </article>
+
+            <article class="institute-card">
+                <div class="num">INSTITUTE · 04</div>
+                <h3>伦理委员会</h3>
+                <span class="en">Ethics Committee</span>
+                <p>大学研究中心的研究伦理与学术合规支持机构，为涉及人体受试者、健康数据、临床资料、问卷调查、访谈、敏感个人信息、人工智能医疗应用、公共卫生干预或其他伦理风险的研究提供伦理审查、合规指导与学术诚信支持。</p>
+                <ul>
+                    <li>研究伦理审查与合规指导</li>
+                    <li>受试者保护与知情同意</li>
+                    <li>健康数据与隐私合规</li>
+                    <li>学术诚信支持</li>
+                </ul>
+                <p class="audience"><strong>说明：</strong>伦理委员会不作为参与者分流培养单位。参与者将主要分流至前三个研究院，并在研究需要时接受伦理委员会的指导。</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Program Content
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Program Content</span>
+            <h2>项目培养内容</h2>
+            <p class="lead">参与者在项目期间将由真研健康科学中心组织安排，并在 AUHT 分设研究院导师或研究团队的指导下，接受以下方面的线上研究指导与学术支持。</p>
+        </div>
+
+        <div class="grid grid--3">
+            <div class="card">
+                <div class="num">SUPPORT · 01</div>
+                <h3>研究方向与课题设计</h3>
+                <p>研究方向评估、课题设计、文献检索、文献综述与研究空白分析。</p>
+            </div>
+            <div class="card">
+                <div class="num">SUPPORT · 02</div>
+                <h3>研究方法与设计优化</h3>
+                <p>研究方法与研究计划制定、数据分析思路、研究设计优化建议。</p>
+            </div>
+            <div class="card">
+                <div class="num">SUPPORT · 03</div>
+                <h3>英文学术写作</h3>
+                <p>英文学术论文结构与写作指导、初稿与修改稿审阅、投稿前建议。</p>
+            </div>
+            <div class="card">
+                <div class="num">SUPPORT · 04</div>
+                <h3>期刊与投稿策略</h3>
+                <p>期刊选择策略、投稿流程支持、回复审稿意见辅导。</p>
+            </div>
+            <div class="card">
+                <div class="num">SUPPORT · 05</div>
+                <h3>导师会议与进度汇报</h3>
+                <p>定期线上导师会议、研究小组讨论、阶段性进展汇报、学术简报。</p>
+            </div>
+            <div class="card">
+                <div class="num">SUPPORT · 06</div>
+                <h3>伦理与学术诚信</h3>
+                <p>研究伦理培训、数据合规支持、学术诚信教育、项目结题与成果总结。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Completion Requirements
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Completion Standards</span>
+            <h2>项目完成标准</h2>
+            <p class="lead">本项目以高质量研究成果为核心导向。参与者通常需要在项目期间完成以下要求。</p>
+        </div>
+
+        <ol class="req-list">
+            <li>完成由所属研究院导师或研究团队确认的研究计划。</li>
+            <li>如期参加线上研究指导、研究讨论与进度汇报。</li>
+            <li>按要求完成文献综述、研究设计、数据分析、理论研究或其他核心研究任务。</li>
+            <li>完成至少一篇符合学术发表标准的英文或国际期刊论文。</li>
+            <li>在项目期间或项目结束后规定期限内，至少有一篇与项目研究方向相关的论文被 <strong>JCR Q3 或以上</strong>级别期刊接收或发表（指被 Journal Citation Reports 收录、且在相关学科分区中属于 Q1、Q2 或 Q3 的同行评审学术期刊）。</li>
+        </ol>
+
+        <div class="notice-box">
+            <strong>关于论文发表的重要说明：</strong>论文是否被期刊接收或发表，取决于研究质量、作者实际贡献、期刊选题、同行评审、编辑决定及出版流程。本项目提供研究指导与学术支持，但不保证任何论文一定被录用、发表或收录于特定期刊分区。
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Eligibility & Application
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Eligibility & Application</span>
+            <h2>申请对象与申请条件</h2>
+            <p class="lead">本项目面向已取得博士学位、希望接受国际化博士后层级研究训练并提升国际期刊论文写作与发表能力的研究者。</p>
+        </div>
+
+        <div class="grid grid--2">
+            <article class="card">
+                <div class="num">ELIGIBILITY · 01</div>
+                <h3>申请对象</h3>
+                <ul class="checklist mt-2" style="font-size:.92rem;">
+                    <li>已取得博士学位、希望继续接受博士后层级研究训练的学者</li>
+                    <li>高校、医院、科研机构、企业研发部门、公共卫生机构或健康产业机构研究人员</li>
+                    <li>临床医生、护士、公共卫生工作者、健康管理人员、营养师、运动健康专业人士、心理健康及康复与慢病管理从业者</li>
+                    <li>医疗管理、公共政策、健康经济、社会科学、人文学科、法学、教育、传播、旅游/酒店/款待管理及可持续发展等跨学科研究者</li>
+                    <li>希望提升国际期刊论文写作与发表能力的博士毕业生</li>
+                    <li>希望通过远程方式接受国际化研究指导与学术交流的研究者</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <div class="num">ELIGIBILITY · 02</div>
+                <h3>申请条件</h3>
+                <ul class="checklist mt-2" style="font-size:.92rem;">
+                    <li>已取得博士学位或同等研究型最高学位</li>
+                    <li>具备与申请研究方向相关的学术或专业背景</li>
+                    <li>具备基本英文文献阅读与学术写作能力</li>
+                    <li>能按项目要求参加线上会议、提交研究进展并完成研究任务</li>
+                    <li>愿意遵守研究伦理、数据合规与学术诚信要求</li>
+                    <li>理解并接受项目为自费、远程、非雇佣、非学位、非学分性质</li>
+                    <li>理解论文发表须经第三方期刊同行评审，项目不保证录用或发表结果</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Application Materials
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Application Materials</span>
+            <h2>申请材料</h2>
+            <p class="lead">申请人一般需提交以下材料。所有材料请通过电子方式提交至中心招生联络邮箱。</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:18%;">序号</th>
+                    <th style="width:32%;">材料</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>01</strong></td>
+                    <td>个人简历</td>
+                    <td>包含教育背景、研究经历、工作经历、学术成果与获奖情况。</td>
+                </tr>
+                <tr>
+                    <td><strong>02</strong></td>
+                    <td>博士学位证明</td>
+                    <td>博士学位证书或相关学历证明文件副本。</td>
+                </tr>
+                <tr>
+                    <td><strong>03</strong></td>
+                    <td>研究兴趣说明 / 初步研究计划</td>
+                    <td>说明拟申请研究方向、初步研究问题、可能的研究方法与预期成果。</td>
+                </tr>
+                <tr>
+                    <td><strong>04</strong></td>
+                    <td>代表性学术成果或出版物列表</td>
+                    <td>如有，可包括期刊论文、会议论文、专著、专利、研究报告等。</td>
+                </tr>
+                <tr>
+                    <td><strong>05</strong></td>
+                    <td>英文写作样本</td>
+                    <td>如有，可提交一篇代表性英文论文或英文写作样本。</td>
+                </tr>
+                <tr>
+                    <td><strong>06</strong></td>
+                    <td>身份证明文件副本</td>
+                    <td>身份证或护照等有效身份证明文件副本。</td>
+                </tr>
+                <tr>
+                    <td><strong>07</strong></td>
+                    <td>专家推荐信两封</td>
+                    <td>由申请研究方向领域内具有教授或同等职级水平的专家出具。特别优秀的申请人，可由管理团队依其简历情况决定是否豁免。</td>
+                </tr>
+                <tr>
+                    <td><strong>08</strong></td>
+                    <td>其他补充材料</td>
+                    <td>有助于导师匹配、研究院分流和项目评估的其他材料。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Tuition & Fees
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Tuition & Fees</span>
+            <h2>项目费用</h2>
+            <p class="lead">本项目为自费项目，标准项目费用为 <strong>每人每年 8,000 美元</strong>。项目费用主要用于线上研究指导、导师会议、研究方法培训、学术写作辅导、论文修改建议、项目行政支持、学术资源协调及项目管理服务。</p>
+        </div>
+
+        <div class="notice-box">
+            <strong>费用说明：</strong>项目费用<strong>不是</strong>论文发表费、版面费、作者署名费、推荐信费、职称购买费或机构身份购买费。如论文投稿过程中涉及期刊收取的 article processing charge、open access fee、language editing fee、publication fee 或其他第三方费用，除非另有书面约定，通常由参与者自行承担。
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Disclaimer
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Program Statement</span>
+            <h2>项目声明</h2>
+        </div>
+
+        <div class="grid grid--2">
+            <div class="card">
+                <div class="num">STATEMENT · 01</div>
+                <h3>项目性质</h3>
+                <p>本项目为自费线上研究培训与学术指导项目，<strong>不构成雇佣关系</strong>，不提供薪资、福利、工作授权或美国移民担保。本项目<strong>不授予学位、学分、执照或受监管的专业资格</strong>，也不保证论文发表、期刊录用、推荐信、就业、升学、移民、教职或任何第三方机构的承认。</p>
+            </div>
+            <div class="card">
+                <div class="num">STATEMENT · 02</div>
+                <h3>录取与发表</h3>
+                <p>论文是否被 JCR Q3 或以上期刊接收或发表，取决于期刊独立评审与出版决定。AUHT 及其大学研究中心、各分设研究机构与项目合作方（含真研健康科学中心）均不控制第三方期刊的审稿、录用或发表结果。AUHT 保留根据申请人背景、导师资源、研究方向、研究院容量、项目要求及合规要求决定是否录取和分流安排的权利。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+<section class="cta">
+    <div class="container">
+        <span class="eyebrow" style="color:#7fdada; border-color:#7fdada;">Apply Now</span>
+        <h2>申请咨询与材料投递</h2>
+        <p>如需了解项目详情、提交申请材料或预约线上咨询，请联系中心博士后项目联络组。</p>
+        <div class="hero-actions" style="justify-content:center;">
+            <a href="mailto:postdoc@rws.ac.cn" class="btn btn-primary">投递申请材料</a>
+            <a href="https://auht.edu.gl/research.html" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">访问 AUHT 大学研究中心</a>
+            <a href="services.html" class="btn btn-ghost">返回服务与合作</a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="brand brand--footer">
+                <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
+            </div>
+            <p>立足横琴粤澳深度合作区、面向粤港澳大湾区及亚洲区域的创新型健康科学研究机构与真实世界研究智库。</p>
+        </div>
+
+        <div>
+            <h5>导航</h5>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="services.html">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h5>研究中心</h5>
+            <ul>
+                <li><a href="research.html#center-1">公众健康与生活方式医学</a></li>
+                <li><a href="research.html#center-2">健康实施科学</a></li>
+                <li><a href="research.html#center-3">数字流行病学与数据科学</a></li>
+                <li><a href="research.html#center-4">卫生经济学与政策评估</a></li>
+                <li><a href="research.html#center-5">健康款待学与康养转化</a></li>
+                <li><a href="research.html#center-6">人才发展与交流</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h5>联络渠道</h5>
+            <ul>
+                <li>
+                    <a href="mailto:info@rws.ac.cn">info@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">一般咨询</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:postdoc@rws.ac.cn">postdoc@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">博士后项目</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:partnerships@rws.ac.cn">partnerships@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">合作与课题</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="legal">
+        <span>© 2025 广东横琴粤澳深度合作区真研健康科学中心</span>
+        <span>Health Sciences Center for Real-World Study, Hengqin, Guangdong</span>
+    </div>
+</footer>
+
+<!-- =====================================================
+     Minimal interactivity
+===================================================== -->
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('is-open'));
+    }
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.section, .card, .center-card, .institute-card').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
+    });
+</script>
+
+</body>
+</html>
