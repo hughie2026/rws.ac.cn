@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康管理服务中心 | 广东横琴粤澳深度合作区真研健康科学中心</title>
+    <meta name="description" content="健康管理服务中心是真研健康科学中心面向主动健康、生活方式优化与健康服务转化建设的非诊疗型健康管理服务平台，提供基础健康评估、数据洞察、N-of-1 营养实验、餐后反应分析、HRV 生物反馈、昼夜节律优化与沉浸式感官恢复等服务。">
+    <link rel="icon" href="img/logo-mark.png" type="image/png">
+
+    <!-- Fonts: Latin / Numbers use Inter; Chinese falls back to 黑体体系 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- =====================================================
+         Typography & Page Specific Styles
+    ===================================================== -->
+    <style>
+        :root {
+            --font-latin: "Inter", "Helvetica Neue", Arial, sans-serif;
+            --font-cjk: "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+            --font-main: "Inter", "Helvetica Neue", Arial, "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+        }
+
+        html,
+        body {
+            font-family: var(--font-main);
+            font-feature-settings: "liga" 1, "kern" 1, "tnum" 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6,
+        p, li, a, span, td, th, blockquote, button {
+            font-family: var(--font-main);
+        }
+
+        .eyebrow,
+        .num,
+        .en,
+        .tag,
+        .btn,
+        .breadcrumb,
+        .legal {
+            font-family: var(--font-latin), var(--font-cjk);
+            letter-spacing: .06em;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .site-header .nav-menu a {
+            font-family: var(--font-main);
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .site-header .nav-menu a.is-active {
+            font-weight: 900;
+        }
+
+        .site-header .nav-toggle {
+            font-family: var(--font-main);
+            font-weight: 800;
+        }
+
+        .page-header h1 {
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .lead {
+            font-weight: 400;
+            line-height: 1.85;
+        }
+
+        /* =====================================================
+           Functional Module Card
+        ===================================================== */
+        .module-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 6px;
+            padding: 2rem 1.8rem;
+            transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .module-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #0a8a8a;
+            transition: width .4s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 42px rgba(20, 58, 58, .1);
+            border-color: rgba(10, 138, 138, .35);
+        }
+
+        .module-card:hover::after {
+            width: 100%;
+        }
+
+        .module-card .num {
+            color: #0a8a8a;
+            font-weight: 800;
+            font-size: .78rem;
+            letter-spacing: .12em;
+        }
+
+        .module-card h3 {
+            margin: .5rem 0 .25rem;
+            font-size: 1.1rem;
+            color: #143a3a;
+            line-height: 1.4;
+        }
+
+        .module-card .en {
+            display: block;
+            font-size: .72rem;
+            color: #0a8a8a;
+            font-weight: 700;
+            margin-bottom: .8rem;
+            letter-spacing: .04em;
+        }
+
+        .module-card p {
+            font-size: .92rem;
+            line-height: 1.75;
+            color: #3a4a4a;
+            margin: 0;
+        }
+
+        /* =====================================================
+           Process Flow
+        ===================================================== */
+        .process-step {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-step .step-num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a8a8a;
+            color: #fff;
+            border-radius: 50%;
+            font-family: var(--font-latin);
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: .02em;
+        }
+
+        .process-step h3 {
+            margin: 0 0 .5rem;
+            font-size: 1.1rem;
+            color: #143a3a;
+        }
+
+        .process-step p {
+            margin: 0;
+            line-height: 1.8;
+            color: #3a4a4a;
+            font-size: .95rem;
+        }
+
+        /* =====================================================
+           Compliance Block
+        ===================================================== */
+        .compliance-block {
+            background: rgba(10, 138, 138, .04);
+            border-left: 3px solid #0a8a8a;
+            padding: 2rem 2.2rem;
+            border-radius: 4px;
+            margin-top: 2.5rem;
+        }
+
+        .compliance-block h4 {
+            margin: 0 0 1rem;
+            color: #143a3a;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .compliance-block p {
+            line-height: 1.85;
+            color: #3a4a4a;
+            margin: 0 0 1rem;
+        }
+
+        .compliance-block ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: #3a4a4a;
+            line-height: 1.85;
+        }
+
+        .compliance-block ul li {
+            margin-bottom: .3rem;
+            font-size: .95rem;
+        }
+
+        /* =====================================================
+           Audience Tag Grid
+        ===================================================== */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .audience-tag {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, .08);
+            border-radius: 4px;
+            padding: 1.1rem 1.3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: .9rem;
+            transition: border-color .3s ease, transform .3s ease;
+        }
+
+        .audience-tag:hover {
+            border-color: rgba(10, 138, 138, .4);
+            transform: translateY(-2px);
+        }
+
+        .audience-tag .tag-num {
+            font-family: var(--font-latin);
+            font-weight: 800;
+            font-size: .85rem;
+            color: #0a8a8a;
+            letter-spacing: .04em;
+            min-width: 1.8rem;
+        }
+
+        .audience-tag p {
+            margin: 0;
+            font-size: .92rem;
+            line-height: 1.7;
+            color: #3a4a4a;
+        }
+
+        @media (max-width: 700px) {
+            .audience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =====================================================
+     Header / Navigation
+===================================================== -->
+<header class="site-header">
+    <div class="nav-container">
+        <a href="index.html" class="brand">
+            <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
+        </a>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="services.html" class="is-active">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="菜单">菜单</button>
+        </nav>
+    </div>
+</header>
+
+<!-- =====================================================
+     Page Header
+===================================================== -->
+<section class="page-header">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="services.html">服务与合作</a></li>
+            <li>健康管理服务中心</li>
+        </ul>
+        <span class="eyebrow">Health Management Service Center</span>
+        <h1>用真实生活数据<br>看见健康变化</h1>
+        <p>健康管理服务中心是真研健康科学中心面向主动健康、生活方式优化与健康服务转化建设的非诊疗型健康管理服务平台，构建从健康状态评估、数据洞察、行为干预到持续追踪的服务闭环。</p>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Positioning
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Center Positioning</span>
+            <h2>健康管理服务中心定位</h2>
+            <p class="lead">中心以"科学评估、数据驱动、真实场景、持续改善"为核心理念，依托真实世界研究、数字健康、生活方式医学、健康款待学与健康数据科学的交叉方法，为关注健康状态、饮食结构、睡眠节律、压力恢复与生活方式优化的人群提供系统化、模块化、可追踪的健康管理服务。</p>
+        </div>
+
+        <div class="grid grid--3">
+            <div class="card">
+                <div class="num">FOCUS · 01</div>
+                <h3>科学评估</h3>
+                <p>从真实生活数据中发现健康行为规律，为生活方式优化提供可解释的依据。</p>
+            </div>
+            <div class="card">
+                <div class="num">FOCUS · 02</div>
+                <h3>数据驱动</h3>
+                <p>整合可穿戴设备、行为记录与主观感受数据，形成多源健康洞察。</p>
+            </div>
+            <div class="card">
+                <div class="num">FOCUS · 03</div>
+                <h3>真实场景</h3>
+                <p>从真实服务场景中验证健康管理路径，让方案贴合日常节奏。</p>
+            </div>
+            <div class="card">
+                <div class="num">FOCUS · 04</div>
+                <h3>持续改善</h3>
+                <p>从连续追踪中形成可持续优化方案，构建长期健康管理闭环。</p>
+            </div>
+            <div class="card">
+                <div class="num">FOCUS · 05</div>
+                <h3>非诊疗边界</h3>
+                <p>聚焦健康管理与生活方式优化，不提供疾病诊断、治疗、处方或医疗服务。</p>
+            </div>
+            <div class="card feature-card">
+                <h3>核心追问</h3>
+                <p>哪些生活方式因素正在影响健康？哪些健康行为更容易被长期坚持？哪些服务模式能在真实生活场景中持续产生价值？</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Goals
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Center Goals</span>
+            <h2>中心目标</h2>
+            <p class="lead">推动健康服务从传统经验型建议走向数据化、证据化与可评价化，形成"评估—洞察—实验—反馈—优化"的持续健康管理闭环。</p>
+        </div>
+
+        <div class="grid grid--2">
+            <article class="card">
+                <div class="num">GOAL · 01</div>
+                <h3>建立健康状态基线</h3>
+                <span class="en">Health Baseline</span>
+                <p>通过生活方式问卷、饮食与睡眠习惯评估、压力与恢复状态评估、体重体脂与心率 HRV 基础记录，形成健康状态基线，为后续服务提供基础依据。</p>
+            </article>
+
+            <article class="card">
+                <div class="num">GOAL · 02</div>
+                <h3>形成健康数据洞察</h3>
+                <span class="en">Health Data Insights</span>
+                <p>整合可穿戴设备、体脂秤、饮食记录、睡眠数据、咖啡因与酒精摄入、主观精力与困倦感等多源数据，形成数据仪表盘与周期性洞察报告。</p>
+            </article>
+
+            <article class="card">
+                <div class="num">GOAL · 03</div>
+                <h3>推动营养行为优化</h3>
+                <span class="en">Nutrition Behavior</span>
+                <p>通过 N-of-1 营养实验与餐后反应分析，观察饮食结构、进餐时间、进餐顺序、主食类型、咖啡因截止时间等因素对身体状态的影响，形成贴合自身节奏的饮食方案。</p>
+            </article>
+
+            <article class="card">
+                <div class="num">GOAL · 04</div>
+                <h3>提升睡眠与恢复能力</h3>
+                <span class="en">Sleep & Recovery</span>
+                <p>基于昼夜节律科学、HRV 生物反馈、呼吸训练、睡前流程设计与沉浸式恢复体验，帮助客户改善睡眠习惯、提升放松能力与日常恢复质量。</p>
+            </article>
+
+            <article class="card">
+                <div class="num">GOAL · 05</div>
+                <h3>建立可持续健康管理路径</h3>
+                <span class="en">Sustainable Path</span>
+                <p>不仅提供单次评估或短期体验，更重视周期性追踪、阶段性复盘与长期行为支持，形成"评估—洞察—实验—反馈—优化"的持续闭环。</p>
+            </article>
+
+            <article class="card feature-card">
+                <h3>价值主张</h3>
+                <p>将前沿健康科学转化为可理解、可执行、可持续的健康行动。</p>
+                <a href="#service-flow" class="more" style="color:#7fdada;">查看服务流程</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Seven Functional Centers
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Functional Centers</span>
+            <h2>七大功能中心</h2>
+            <p class="lead">健康管理服务中心下设七大功能中心，各功能中心既可独立提供服务，也可根据客户需求组合为完整健康管理方案。</p>
+        </div>
+
+        <div class="grid grid--3">
+            <article class="module-card">
+                <div class="num">MODULE · 01</div>
+                <h3>基础健康状态评估中心</h3>
+                <span class="en">Health Baseline Assessment</span>
+                <p>作为入口模块，通过生活方式问卷、饮食与睡眠习惯、压力与恢复状态、体重体脂、静息心率与 HRV 基础记录等，建立健康状态基线，明确健康目标并进行服务分流。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 02</div>
+                <h3>健康数据洞察中心</h3>
+                <span class="en">Health Data Insights</span>
+                <p>对来自不同设备、问卷与生活记录的数据进行整合、可视化与趋势分析，帮助客户看见生活方式与身体状态之间的关系，形成仪表盘与周度、月度洞察报告。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 03</div>
+                <h3>N-of-1 营养实验中心</h3>
+                <span class="en">N-of-1 Nutrition Experiment</span>
+                <p>通过单人、单变量、短周期的营养实验，观察不同饮食行为对身体状态与生活质量的影响，覆盖高蛋白早餐、晚餐提前、含糖饮料控制、高纤维饮食、外卖优化等主题。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 04</div>
+                <h3>餐后反应分析中心</h3>
+                <span class="en">Post-Meal Response Analysis</span>
+                <p>聚焦食物选择、搭配、进餐顺序与时间对身体状态的影响，通过记录饱腹感、困倦感、精力、睡眠状态与 HRV 趋势，形成餐后反应图谱与饮食优化建议。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 05</div>
+                <h3>HRV 生物反馈恢复中心</h3>
+                <span class="en">HRV Biofeedback Recovery</span>
+                <p>以心率变异性、节律呼吸与实时反馈训练为核心，为高压力、恢复不足、睡前紧张人群提供非医疗型恢复训练，覆盖呼吸节律、放松能力与睡前流程训练。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 06</div>
+                <h3>昼夜节律与睡眠优化中心</h3>
+                <span class="en">Circadian & Sleep Optimization</span>
+                <p>从 24 小时生活节律出发，整合光照、饮食、咖啡因、屏幕使用、运动量、压力与睡前行为等因素，形成睡眠习惯优化计划与节律分析报告。</p>
+            </article>
+
+            <article class="module-card">
+                <div class="num">MODULE · 07</div>
+                <h3>沉浸式感官恢复中心</h3>
+                <span class="en">Immersive Sensory Recovery</span>
+                <p>融合声、光、呼吸、环境设计与数字隔离理念的体验型恢复空间，提供柔和光环境、白噪音场景、呼吸引导、冥想音频、午间休息与睡前放松等非医疗型恢复体验。</p>
+            </article>
+
+            <article class="module-card feature-card">
+                <h3>模块联动</h3>
+                <p>七大模块可独立预约，亦可串联为完整的健康管理路径。例如餐后反应分析可衔接 N-of-1 营养实验，HRV 训练可联动沉浸式感官恢复。</p>
+                <a href="#service-flow" class="more" style="color:#7fdada;">查看完整流程</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Core Services Detail
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Core Service Details</span>
+            <h2>核心服务介绍</h2>
+            <p class="lead">每一项核心服务均设定清晰的服务范围、典型场景与交付成果，确保健康管理路径具备可评估、可追踪与可优化能力。</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:22%;">服务模块</th>
+                    <th style="width:36%;">主要服务内容</th>
+                    <th>主要交付成果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>基础健康状态评估</strong><br><span class="text-muted" style="font-size:.85rem;">Baseline Assessment</span></td>
+                    <td>生活方式问卷、饮食与睡眠习惯、压力与恢复状态、体重体脂、腰围、静息心率、HRV 基础记录、咖啡因与酒精摄入、夜宵与作息习惯。</td>
+                    <td>基础健康状态报告、健康数据基线记录、生活方式风险提示、后续服务路径建议、周期性复评建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>健康数据洞察</strong><br><span class="text-muted" style="font-size:.85rem;">Data Insights</span></td>
+                    <td>多源数据整合、可视化与趋势分析，覆盖体重体脂、睡眠时长与规律性、HRV、步数、饮食照片、进餐时间、咖啡因酒精、夜宵、精力、困倦与压力感受。</td>
+                    <td>健康数据仪表盘、周度洞察报告、月度行为趋势报告、数据波动解释、后续实验或优化方向建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>N-of-1 营养实验</strong><br><span class="text-muted" style="font-size:.85rem;">N-of-1 Experiment</span></td>
+                    <td>14 / 28 天单变量营养实验，含高蛋白早餐、晚餐提前、含糖饮料控制、高纤维饮食、外卖优化、咖啡因截止时间、夜宵控制、早餐结构等主题。</td>
+                    <td>营养实验设计方案、执行记录表、饮食行为数据报告、复盘报告、下一阶段饮食优化建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>餐后反应分析</strong><br><span class="text-muted" style="font-size:.85rem;">Post-Meal Analysis</span></td>
+                    <td>记录餐后饱腹感、困倦感、精力、睡眠状态、HRV 与体重趋势，观察主食选择、进餐顺序、晚餐时间、咖啡因与酒精对状态的影响。</td>
+                    <td>餐后反应记录表、餐后反应图谱、食物与进餐方式建议清单、饮食行为优化建议、后续营养实验建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>HRV 生物反馈恢复</strong><br><span class="text-muted" style="font-size:.85rem;">HRV Biofeedback</span></td>
+                    <td>HRV 基础记录、节律呼吸训练、生物反馈可视化训练、放松与专注恢复训练、睡前恢复流程设计、压力恢复趋势记录。</td>
+                    <td>HRV 基础记录、呼吸节律训练方案、恢复训练记录、阶段性恢复趋势报告、居家练习建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>昼夜节律与睡眠优化</strong><br><span class="text-muted" style="font-size:.85rem;">Circadian & Sleep</span></td>
+                    <td>睡眠习惯评估、入睡与起床时间分析、晨间光照方案、夜间光线与屏幕管理、咖啡因截止时间建议、晚餐与夜宵时间管理、睡前流程设计、睡眠趋势追踪。</td>
+                    <td>24 小时节律分析报告、睡眠习惯优化计划、睡前流程建议、睡眠趋势报告、阶段性复盘建议。</td>
+                </tr>
+                <tr>
+                    <td><strong>沉浸式感官恢复</strong><br><span class="text-muted" style="font-size:.85rem;">Sensory Recovery</span></td>
+                    <td>柔和灯光与节律光环境、自然声与白噪音场景、呼吸引导、冥想音频、午间休息体验、睡前放松体验、数字隔离体验、感官恢复场景定制。</td>
+                    <td>单次沉浸式恢复体验、感官恢复场景方案、会员恢复记录、与睡眠或 HRV 模块联动的恢复建议。</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Service Flow
+===================================================== -->
+<section id="service-flow" class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Service Flow</span>
+            <h2>服务流程</h2>
+            <p class="lead">中心采用"评估—洞察—实验—反馈—优化"的服务流程，确保每项服务都有清晰入口、明确目标、数据记录与阶段性复盘。</p>
+        </div>
+
+        <div class="container container--narrow" style="padding-left:0; padding-right:0; margin-top:2rem;">
+            <div class="process-step">
+                <span class="step-num">01</span>
+                <h3>基础健康状态评估</h3>
+                <p>客户首先进入基础健康状态评估中心，完成生活方式问卷、健康目标访谈与基础数据记录，形成健康状态基线。</p>
+            </div>
+
+            <div class="process-step">
+                <span class="step-num">02</span>
+                <h3>健康数据洞察</h3>
+                <p>通过健康数据洞察中心整合饮食、睡眠、HRV、作息、体重体脂、咖啡因与酒精摄入等信息，形成初步生活方式洞察。</p>
+            </div>
+
+            <div class="process-step">
+                <span class="step-num">03</span>
+                <h3>服务模块匹配</h3>
+                <p>根据评估结果与客户目标，进入对应模块：饮食结构与体重管理可进入 N-of-1 营养实验；餐后困倦或饮食反应差异可进入餐后反应分析；压力与睡前紧张可进入 HRV 生物反馈；作息不规律可进入昼夜节律与睡眠优化；放松与短休需求可进入沉浸式感官恢复。</p>
+            </div>
+
+            <div class="process-step">
+                <span class="step-num">04</span>
+                <h3>阶段性报告与复盘</h3>
+                <p>完成单项服务或周期服务后，中心提供阶段性报告，帮助客户理解数据变化、行为执行情况与后续优化方向。</p>
+            </div>
+
+            <div class="process-step">
+                <span class="step-num">05</span>
+                <h3>持续健康管理</h3>
+                <p>对于有长期健康管理需求的客户，可进入会员制追踪服务，通过周期性复评、月度报告、营养实验、睡眠复盘与恢复训练，形成长期健康管理闭环。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Target Audience
+===================================================== -->
+<section class="section section--soft">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Target Audience</span>
+            <h2>适用人群</h2>
+            <p class="lead">健康管理服务中心面向关注主动健康、生活方式优化与日常恢复体验的社会大众，提供可理解、可执行、可持续的健康行动方案。</p>
+        </div>
+
+        <div class="audience-grid">
+            <div class="audience-tag">
+                <span class="tag-num">01</span>
+                <p>希望系统了解健康状态与生活方式问题的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">02</span>
+                <p>希望通过数据方式管理饮食、睡眠、压力与恢复的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">03</span>
+                <p>长期熬夜、睡眠不规律、白天精力不足的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">04</span>
+                <p>饮食结构混乱、外卖频率较高、希望改善饮食习惯的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">05</span>
+                <p>关注体重、体脂、腰围与代谢健康生活方式管理的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">06</span>
+                <p>工作压力较高、恢复不足、需要放松训练的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">07</span>
+                <p>希望通过科学方法探索更适合饮食模式的人群。</p>
+            </div>
+            <div class="audience-tag">
+                <span class="tag-num">08</span>
+                <p>对可穿戴设备、HRV、营养实验、睡眠节律等前沿健康科技感兴趣的人群。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Section: Compliance
+===================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">Compliance Statement</span>
+            <h2>合规声明</h2>
+            <p class="lead">健康管理服务中心提供的是非诊疗型健康管理、生活方式分析、营养行为优化、睡眠习惯改善、压力恢复训练与非医疗型恢复体验。</p>
+        </div>
+
+        <div class="compliance-block">
+            <h4>本中心不提供以下服务：</h4>
+            <ul>
+                <li>疾病诊断；</li>
+                <li>疾病治疗；</li>
+                <li>处方开具；</li>
+                <li>用药调整；</li>
+                <li>医疗康复；</li>
+                <li>医学检验诊断；</li>
+                <li>心理疾病诊断或心理治疗；</li>
+                <li>糖尿病、高血压、高血脂等疾病治疗方案；</li>
+                <li>任何替代医疗机构诊疗行为的服务。</li>
+            </ul>
+        </div>
+
+        <div class="compliance-block" style="background:rgba(20, 58, 58, .04); border-left-color:#143a3a;">
+            <h4>就医建议</h4>
+            <p>如客户存在明显不适、异常指标、既往疾病、正在接受治疗或存在医疗风险，中心将建议其及时前往正规医疗机构就诊，并在医生指导下进行健康管理。中心提供的所有服务均不用于糖尿病诊断、疾病风险判断、用药调整或医疗决策。</p>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Closing Quote
+===================================================== -->
+<section class="section section--ink" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container container--narrow text-center">
+        <span class="eyebrow" style="color:#7fdada; border-color:#7fdada;">Our Promise</span>
+        <blockquote style="border:none; font-style:normal; padding:0; margin:1.5rem 0; color:#fff; text-align:center;">
+            用真实生活数据，看见健康变化；用科学实验方法，优化饮食、睡眠与恢复；用前沿健康科技，让健康管理更可评估、更可执行、更可持续。
+        </blockquote>
+        <div class="divider divider--center" style="background:#7fdada;"></div>
+        <p style="color:#7fdada; font-size:.85rem; letter-spacing:.14em; text-transform:uppercase; margin-top:1.5rem;">
+            健康管理服务中心 · Health Management Service Center
+        </p>
+    </div>
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+<section class="cta">
+    <div class="container">
+        <span class="eyebrow" style="color:#7fdada; border-color:#7fdada;">Get In Touch</span>
+        <h2>预约健康管理服务</h2>
+        <p>如需了解基础健康评估、N-of-1 营养实验、HRV 生物反馈、睡眠优化或沉浸式感官恢复服务，欢迎与我们联系。</p>
+        <div class="hero-actions" style="justify-content:center;">
+            <a href="contact.html" class="btn btn-primary">提交服务咨询</a>
+            <a href="services.html" class="btn btn-ghost">返回服务与合作</a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     Footer
+===================================================== -->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="brand brand--footer">
+                <img src="img/logo.png" alt="横琴真研健康科学中心" class="brand-logo">
+            </div>
+            <p>立足横琴粤澳深度合作区、面向粤港澳大湾区及亚洲区域的创新型健康科学研究机构与真实世界研究智库。</p>
+        </div>
+
+        <div>
+            <h5>导航</h5>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about.html">关于中心</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="services.html">服务与合作</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h5>研究中心</h5>
+            <ul>
+                <li><a href="research.html#center-1">公众健康与生活方式医学</a></li>
+                <li><a href="research.html#center-2">健康实施科学</a></li>
+                <li><a href="research.html#center-3">数字流行病学与数据科学</a></li>
+                <li><a href="research.html#center-4">卫生经济学与政策评估</a></li>
+                <li><a href="research.html#center-5">健康款待学与康养转化</a></li>
+                <li><a href="research.html#center-6">人才发展与交流</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h5>联络渠道</h5>
+            <ul>
+                <li>
+                    <a href="mailto:info@rws.ac.cn">info@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">一般咨询</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:partnerships@rws.ac.cn">partnerships@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">合作与课题</span>
+                </li>
+                <li style="margin-top:.5rem;">
+                    <a href="mailto:media@rws.ac.cn">media@rws.ac.cn</a><br>
+                    <span style="color:var(--text-soft); font-size:.8rem;">媒体与传播</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="legal">
+        <span>© 2025 广东横琴粤澳深度合作区真研健康科学中心</span>
+        <span>Health Sciences Center for Real-World Study, Hengqin, Guangdong</span>
+    </div>
+</footer>
+
+<!-- =====================================================
+     Minimal interactivity
+===================================================== -->
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.querySelector('.nav-menu');
+
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => menu.classList.toggle('is-open'));
+    }
+
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.section, .card, .center-card, .module-card, .audience-tag, .process-step').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
+    });
+</script>
+
+</body>
+</html>
