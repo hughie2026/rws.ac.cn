@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务与合作 | 广东横琴粤澳深度合作区真研健康科学中心</title>
-    <meta name="description" content="真研健康科学中心面向政府、医疗与公共卫生机构、高校院所、健康企业、文旅康养机构与社会组织提供科研、咨询、评价与转化服务。">
+    <meta name="description" content="真研健康科学中心面向政府、医疗与公共卫生机构、高校院所、健康企业、文旅康养机构、社会组织与社会大众提供科研、咨询、评价、转化与健康管理服务。">
     <link rel="icon" href="img/logo-mark.png" type="image/png">
 
     <!-- Fonts: Latin / Numbers use Inter; Chinese falls back to 黑体体系 -->
@@ -239,6 +239,42 @@
             color: #066b6b;
         }
 
+        /* =====================================================
+           Sector Card Entry Button (Health Management Center)
+        ===================================================== */
+        .sector-entry {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-top: 1.2rem;
+            padding: .7rem 1.1rem;
+            font-size: .82rem;
+            font-weight: 800;
+            color: #fff;
+            background: #0a8a8a;
+            border: 1px solid #0a8a8a;
+            border-radius: 4px;
+            text-decoration: none;
+            letter-spacing: .04em;
+            transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+        }
+
+        .sector-entry::after {
+            content: '→';
+            transition: transform .35s ease;
+        }
+
+        .sector-entry:hover {
+            background: #066b6b;
+            border-color: #066b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(10, 138, 138, .25);
+        }
+
+        .sector-entry:hover::after {
+            transform: translateX(4px);
+        }
+
         @media (max-width: 900px) {
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -291,7 +327,7 @@
         </ul>
         <span class="eyebrow">Services & Partnerships</span>
         <h1>从证据到行动的<br>合作伙伴网络</h1>
-        <p>中心面向公共部门、医疗与公共卫生机构、高校院所、健康企业、文旅康养机构与社会组织提供科研、咨询、评价与转化服务，构建科研、政策、产业与公众健康的协同生态。</p>
+        <p>中心面向公共部门、医疗与公共卫生机构、高校院所、健康产业与康养机构、社会组织以及社会大众提供科研、咨询、评价、转化与健康管理服务，构建科研、政策、产业与公众健康的协同生态。</p>
     </div>
 </section>
 
@@ -410,7 +446,7 @@
         <div class="section-head">
             <span class="eyebrow">Who We Serve</span>
             <h2>服务对象</h2>
-            <p class="lead">中心面向以下六类对象提供科研、咨询、评价与转化服务，针对不同合作方的需求构建差异化的服务方案。</p>
+            <p class="lead">中心面向五类机构合作方与社会大众个人，提供差异化的科研、咨询、评价、转化与健康管理服务方案。</p>
         </div>
 
         <div class="grid grid--2">
@@ -455,32 +491,19 @@
 
             <article class="card">
                 <div class="num">SECTOR · 04</div>
-                <h3>数字健康与健康管理企业</h3>
-                <span class="en">Digital Health & Health Management Enterprises</span>
-                <p>面向数字健康产品方与健康管理服务机构，提供产品真实世界评价、用户依从性研究、健康效果验证、数据治理咨询与市场准入证据支持。</p>
+                <h3>健康产业、文旅与康养机构</h3>
+                <span class="en">Health Industry, Hospitality & Wellness</span>
+                <p>面向数字健康产品方、健康管理服务机构、酒店集团、度假区、康养机构与文旅综合体，提供产品真实世界评价、用户依从性研究、健康款待学诊断、健康空间评价、服务标准设计与品牌科学背书。</p>
                 <ul class="checklist mt-2" style="font-size:.92rem;">
-                    <li>产品真实世界效果评价</li>
-                    <li>用户依从性与体验研究</li>
-                    <li>数据治理与合规咨询</li>
-                    <li>市场准入证据支持</li>
+                    <li>产品真实世界效果评价与依从性研究</li>
+                    <li>数据治理与市场准入证据支持</li>
+                    <li>健康款待学研究与康养服务效用评价</li>
+                    <li>健康空间评价、服务标准与品牌背书</li>
                 </ul>
             </article>
 
             <article class="card">
                 <div class="num">SECTOR · 05</div>
-                <h3>酒店、文旅与康养企业</h3>
-                <span class="en">Hospitality, Tourism & Wellness Enterprises</span>
-                <p>面向酒店集团、度假区、康养机构、会展空间与文旅综合体，提供健康款待学研究、康养服务效果评价、健康空间评价、服务标准设计与品牌科学背书。</p>
-                <ul class="checklist mt-2" style="font-size:.92rem;">
-                    <li>健康款待学研究与诊断</li>
-                    <li>康养服务真实世界效用评价</li>
-                    <li>健康空间与环境暴露评价</li>
-                    <li>服务标准设计与品牌背书</li>
-                </ul>
-            </article>
-
-            <article class="card">
-                <div class="num">SECTOR · 06</div>
                 <h3>社区、学校与企业组织</h3>
                 <span class="en">Communities, Schools & Corporate Organizations</span>
                 <p>面向社区、学校与企业组织，提供人群健康风险评估、生活方式干预项目、员工健康管理、心理健康促进与长期效果监测。</p>
@@ -490,6 +513,22 @@
                     <li>员工健康管理方案</li>
                     <li>心理健康促进与长期监测</li>
                 </ul>
+            </article>
+
+            <article class="card">
+                <div class="num">SECTOR · 06</div>
+                <h3>社会大众与个人健康管理</h3>
+                <span class="en">Public & Individual Health Management</span>
+                <p>面向关注主动健康、生活方式优化与日常恢复体验的社会大众，由健康管理服务中心提供基础健康评估、健康数据洞察、N-of-1 营养实验、餐后反应分析、HRV 生物反馈、昼夜节律优化与沉浸式感官恢复等非诊疗型健康管理服务。</p>
+                <ul class="checklist mt-2" style="font-size:.92rem;">
+                    <li>基础健康状态评估与建档</li>
+                    <li>多源健康数据整合与生活方式洞察</li>
+                    <li>营养行为优化与餐后反应分析</li>
+                    <li>睡眠节律改善与压力恢复训练</li>
+                </ul>
+                <a href="health-management.html" class="sector-entry" aria-label="进入健康管理服务中心页面">
+                    进入健康管理服务中心
+                </a>
             </article>
         </div>
     </div>
