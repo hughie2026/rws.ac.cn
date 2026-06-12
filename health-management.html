@@ -7,21 +7,22 @@
     <meta name="description" content="健康管理服务中心是真研健康科学中心面向主动健康、生活方式优化与健康服务转化建设的非诊疗型健康管理服务平台，提供基础健康评估、数据洞察、N-of-1 营养实验、餐后反应分析、HRV 生物反馈、昼夜节律优化与沉浸式感官恢复等服务。">
     <link rel="icon" href="img/logo-mark.png" type="image/png">
 
-    <!-- Fonts: Latin / Numbers use Inter; Chinese falls back to 黑体体系 -->
+    <!-- Fonts: Latin / Numbers use Inter; Chinese uses 黑体 family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
 
     <!-- =====================================================
          Typography & Page Specific Styles
+         CJK font is locked to Heiti (黑体) family
     ===================================================== -->
     <style>
         :root {
             --font-latin: "Inter", "Helvetica Neue", Arial, sans-serif;
-            --font-cjk: "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
-            --font-main: "Inter", "Helvetica Neue", Arial, "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+            --font-cjk: "SimHei", "Heiti SC", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            --font-main: "Inter", "Helvetica Neue", Arial, "SimHei", "Heiti SC", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
         }
 
         html,
@@ -33,7 +34,9 @@
         }
 
         h1, h2, h3, h4, h5, h6,
-        p, li, a, span, td, th, blockquote, button {
+        p, li, a, span, td, th, blockquote, button,
+        .lead, .module-summary, .audience-tag p, .compliance-block,
+        .section-head p, .page-header p {
             font-family: var(--font-main);
         }
 
@@ -79,13 +82,28 @@
         }
 
         /* =====================================================
-           Functional Module Card
+           Functional Modules — 3 + 4 symmetric grid
         ===================================================== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .modules-grid .module-card.row-top {
+            grid-column: span 4;
+        }
+
+        .modules-grid .module-card.row-bottom {
+            grid-column: span 3;
+        }
+
         .module-card {
             background: #fff;
             border: 1px solid rgba(0, 0, 0, .08);
             border-radius: 6px;
-            padding: 2rem 1.8rem;
+            padding: 2rem 1.6rem;
             transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
             position: relative;
             overflow: hidden;
@@ -118,32 +136,61 @@
         .module-card .num {
             color: #0a8a8a;
             font-weight: 800;
-            font-size: .78rem;
+            font-size: .76rem;
             letter-spacing: .12em;
         }
 
         .module-card h3 {
             margin: .5rem 0 .25rem;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #143a3a;
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .module-card .en {
             display: block;
-            font-size: .72rem;
+            font-size: .7rem;
             color: #0a8a8a;
             font-weight: 700;
-            margin-bottom: .9rem;
+            margin-bottom: .85rem;
             letter-spacing: .04em;
         }
 
         .module-card .module-summary {
-            font-size: .98rem;
+            font-size: .95rem;
             line-height: 1.75;
             color: #143a3a;
             margin: 0;
             font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .modules-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .modules-grid .module-card.row-top {
+                grid-column: span 2;
+            }
+
+            .modules-grid .module-card.row-bottom {
+                grid-column: span 3;
+            }
+
+            .modules-grid .module-card.row-bottom:nth-last-child(-n+2) {
+                grid-column: span 3;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .modules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modules-grid .module-card.row-top,
+            .modules-grid .module-card.row-bottom {
+                grid-column: span 1;
+            }
         }
 
         /* =====================================================
@@ -276,7 +323,7 @@
 </section>
 
 <!-- =====================================================
-     Section 1: Seven Functional Centers
+     Section 1: Seven Functional Centers (3 + 4)
 ===================================================== -->
 <section class="section">
     <div class="container">
@@ -286,59 +333,56 @@
             <p class="lead">健康管理服务中心下设七大功能中心，各中心既可独立提供服务，也可根据客户需求组合为完整健康管理方案。一句话看懂每个中心能做什么。</p>
         </div>
 
-        <div class="grid grid--3">
-            <article class="module-card">
+        <div class="modules-grid">
+            <!-- Row 1: 3 cards -->
+            <article class="module-card row-top">
                 <div class="num">MODULE · 01</div>
                 <h3>基础健康状态评估中心</h3>
                 <span class="en">Health Baseline Assessment</span>
                 <p class="module-summary">建立你的健康状态基线，明确健康目标并匹配后续服务路径。</p>
             </article>
 
-            <article class="module-card">
+            <article class="module-card row-top">
                 <div class="num">MODULE · 02</div>
                 <h3>健康数据洞察中心</h3>
                 <span class="en">Health Data Insights</span>
                 <p class="module-summary">整合可穿戴、饮食与作息数据，看见生活方式与身体状态之间的关系。</p>
             </article>
 
-            <article class="module-card">
+            <article class="module-card row-top">
                 <div class="num">MODULE · 03</div>
                 <h3>N-of-1 营养实验中心</h3>
                 <span class="en">N-of-1 Nutrition Experiment</span>
                 <p class="module-summary">用单变量短周期实验，找到最适合自己生活节奏的饮食方案。</p>
             </article>
 
-            <article class="module-card">
+            <!-- Row 2: 4 cards -->
+            <article class="module-card row-bottom">
                 <div class="num">MODULE · 04</div>
                 <h3>餐后反应分析中心</h3>
                 <span class="en">Post-Meal Response Analysis</span>
                 <p class="module-summary">分析不同食物与进餐方式对饱腹感、精力与睡眠的影响，优化日常饮食。</p>
             </article>
 
-            <article class="module-card">
+            <article class="module-card row-bottom">
                 <div class="num">MODULE · 05</div>
                 <h3>HRV 生物反馈恢复中心</h3>
                 <span class="en">HRV Biofeedback Recovery</span>
                 <p class="module-summary">通过呼吸与心率反馈训练，提升压力下的自我调节与恢复能力。</p>
             </article>
 
-            <article class="module-card">
+            <article class="module-card row-bottom">
                 <div class="num">MODULE · 06</div>
                 <h3>昼夜节律与睡眠优化中心</h3>
                 <span class="en">Circadian & Sleep Optimization</span>
                 <p class="module-summary">从 24 小时节律出发，优化作息与睡前流程，提升睡眠与恢复质量。</p>
             </article>
 
-            <article class="module-card">
+            <article class="module-card row-bottom">
                 <div class="num">MODULE · 07</div>
                 <h3>沉浸式感官恢复中心</h3>
                 <span class="en">Immersive Sensory Recovery</span>
                 <p class="module-summary">用声、光、呼吸与环境设计，提供非医疗型的放松、短休与睡前恢复体验。</p>
-            </article>
-
-            <article class="module-card feature-card">
-                <h3>模块联动</h3>
-                <p>七大模块可独立预约，也可串联为完整的健康管理路径。例如餐后反应分析衔接 N-of-1 营养实验，HRV 训练联动沉浸式感官恢复。</p>
             </article>
         </div>
     </div>
@@ -386,7 +430,7 @@
             </div>
             <div class="audience-tag">
                 <span class="tag-num">08</span>
-                <p>对可穿戴设备、HRV、营养实验、睡眠节律等前沿健康科技感兴趣的人群。</p>
+                <p>对前沿健康科技感兴趣的人群。</p>
             </div>
         </div>
     </div>
